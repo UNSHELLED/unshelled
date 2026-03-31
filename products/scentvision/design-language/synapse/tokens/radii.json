@@ -1,0 +1,36 @@
+{
+  "$schema": "https://trpc.io/schema-design-tokens",
+  "id": "synapse-radii",
+  "version": "1.0.0",
+  "title": "Synapse Border Radii System",
+  "meta": {
+    "summary": "Soft edges, not harsh corners. Neural warmth. From sharp to pill.",
+    "philosophy": "Radii soften the interface. Sharp corners feel mechanical. Soft radii feel organic — like VENOM."
+  },
+  "scale": {
+    "none": { "value": 0, "px": "0px", "usage": "sharp edges, intentional" },
+    "xs": { "value": 2, "px": "2px", "usage": "subtle softening, buttons small" },
+    "sm": { "value": 4, "px": "4px", "usage": "standard components, inputs" },
+    "md": { "value": 6, "px": "6px", "usage": "cards, panels" },
+    "lg": { "value": 8, "px": "8px", "usage": "elevated surfaces" },
+    "xl": { "value": 12, "px": "12px", "usage": "modals, large cards" },
+    "2xl": { "value": 16, "px": "16px", "usage": "feature cards" },
+    "3xl": { "value": 24, "px": "24px", "usage": "hero elements" },
+    "full": { "value": 9999, "px": "9999px", "usage": "pills, circles, avatars" }
+  },
+  "semantic": {
+    "button": { "value": 4, "token": "radii.sm" },
+    "input": { "value": 4, "token": "radii.sm" },
+    "card": { "value": 8, "token": "radii.lg" },
+    "modal": { "value": 12, "token": "radii.xl" },
+    "panel": { "value": 6, "token": "radii.md" },
+    "badge": { "value": 9999, "token": "radii.full" },
+    "avatar": { "value": 9999, "token": "radii.full" },
+    "tooltip": { "value": 6, "token": "radii.md" }
+  },
+  "neural": {
+    "node": { "value": 9999, "token": "radii.full", "usage": "mind nodes are circular" },
+    "connection": { "value": 9999, "token": "radii.full", "usage": "pulse indicators" },
+    "thought": { "value": 12, "token": "radii.xl", "usage": "thought bubbles" }
+  }
+}

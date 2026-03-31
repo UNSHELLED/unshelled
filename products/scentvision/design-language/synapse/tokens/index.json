@@ -1,0 +1,72 @@
+{
+  "$schema": "https://trpc.io/schema-design-tokens",
+  "id": "synapse-tokens",
+  "version": "1.0.0",
+  "title": "Synapse Design Tokens — Complete Export",
+  "meta": {
+    "summary": "All Synapse tokens in one composite export. Import this for full token access.",
+    "philosophy": "One import, all tokens. But tree-shakeable — only load what you use."
+  },
+  "imports": {
+    "colors": "./colors.json",
+    "typography": "./typography.json",
+    "motion": "./motion.json",
+    "space": "./space.json",
+    "radii": "./radii.json",
+    "shadows": "./shadows.json"
+  },
+  "export": {
+    "colors": {
+      "_ref": "colors.json",
+      "modes": ["void", "dawn"],
+      "minds": ["architect", "researcher", "reviewer", "historian", "builder", "debugger", "predictor", "communicator", "learner"],
+      "semantic": ["success", "warning", "error", "info", "pulse"]
+    },
+    "typography": {
+      "_ref": "typography.json",
+      "fonts": ["display", "body", "mono"],
+      "scales": ["2xs", "xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl"]
+    },
+    "motion": {
+      "_ref": "motion.json",
+      "durations": ["instant", "fast", "normal", "slow", "slower", "breath", "think", "pulse"],
+      "patterns": ["breathe", "think", "pulse", "connect", "drift", "reveal", "fade", "orbit"]
+    },
+    "space": {
+      "_ref": "space.json",
+      "scale": ["0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "14", "16", "20", "24", "32"],
+      "semantic": ["inline", "inset", "stack"]
+    },
+    "radii": {
+      "_ref": "radii.json",
+      "scale": ["none", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "full"]
+    },
+    "shadows": {
+      "_ref": "shadows.json",
+      "modes": ["void", "dawn"],
+      "elevation": ["none", "xs", "sm", "md", "lg", "xl"],
+      "glow": ["pulse", "think", "success", "warning", "error"]
+    }
+  },
+  "quickReference": {
+    "spacing": {
+      "tight": "space.2",
+      "default": "space.4",
+      "relaxed": "space.6"
+    },
+    "radius": {
+      "component": "radii.sm",
+      "card": "radii.lg",
+      "pill": "radii.full"
+    },
+    "duration": {
+      "instant": "motion.durations.instant",
+      "quick": "motion.durations.fast",
+      "normal": "motion.durations.normal"
+    },
+    "minds": {
+      "default": "colors.minds.architect",
+      "byIndex": "colors.minds[index]"
+    }
+  }
+}

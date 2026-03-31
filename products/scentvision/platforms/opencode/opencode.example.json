@@ -1,0 +1,132 @@
+{
+  // OpenCode config reference — annotated version of template/opencode.json
+  // Lives in venom-mine at platforms/opencode/ (not in the deployable template).
+  // Copy opencode.json (no comments) from platforms/opencode/template/ into your project.
+  // Config merges across 6 layers (lowest → highest priority):
+  //   remote org → global (~/.config/opencode/opencode.json) → $OPENCODE_CONFIG
+  //   → project opencode.json → .opencode/ dirs → $OPENCODE_CONFIG_CONTENT
+  // Project config EXTENDS global — it does not replace it.
+
+  "$schema": "https://opencode.ai/config.json",
+
+  // Primary model: Z.AI GLM-5 (see models.dev: zai/glm-5).
+  // If you use Z.AI Coding Plan auth, use zai-coding-plan/glm-5 instead.
+  // Full list: opencode models --verbose  (or opencode models --refresh)
+  "model": "zai/glm-5",
+
+  // Small model: same GLM-5 here (VENOM default — swap to e.g. zai/glm-4.7-flash if you want cheaper small tasks).
+  "small_model": "zai/glm-5",
+
+  // Default agent on session start.
+  // "build" = full tool access (edit, bash, read, write, glob, grep, task...)
+  // "plan"  = read-only (edit + bash require confirmation)
+  // Tab in TUI switches between build and plan.
+  "default_agent": "build",
+
+  // Agent overrides — full definitions are in .opencode/agents/*.md
+  // Use this to set model/temperature per agent without editing the .md files.
+  // Example:
+  // "agent": {
+  //   "venom-explorer": { "model": "zai/glm-5" }
+  // }
+  "agent": {},
+
+  // Permission policy — controls what agents can do without asking.
+  // "edit": "allow"  → file writes are fast (no confirmation). Recommended.
+  // "bash": "ask"    → shell commands require confirmation. Prevents accidents.
+  // Change bash to "allow" only if you fully trust the task being executed.
+  // The venom-core.ts plugin adds a second safety layer (danger pattern screening)
+  // on top of this — belt and suspenders.
+  "permission": {
+    "edit": "allow",
+    "bash": "ask"
+  },
+
+  // Instructions are injected into every agent's context. Order matters.
+  // AGENTS.md: VENOM identity (soul — loaded first, always)
+  // CONTEXT.md: project brain (2KB max, populated by /venom-eat)
+  // corrections.yaml: hard never-again rules (reflexes — fire before instincts)
+  //
+  // Add .cursor/rules/*.md if you also use Cursor and want rules to carry over:
+  // "instructions": [
+  //   "AGENTS.md",
+  //   ".venom/CONTEXT.md",
+  //   ".venom/learnings/corrections.yaml",
+  //   ".cursor/rules/*.md"
+  // ]
+  "instructions": [
+    "AGENTS.md",
+    ".venom/CONTEXT.md",
+    ".venom/learnings/corrections.yaml"
+  ],
+
+  // Config-level command shortcuts.
+  // VENOM commands are in .opencode/commands/ (not here).
+  // Use this for project-specific shortcuts unrelated to VENOM.
+  "command": {},
+
+  // Compaction: what happens when context fills.
+  // auto: true     → compact automatically when context limit approaches
+  // prune: true    → remove older messages to free space
+  // reserved: 10000 → keep 10K tokens free for VENOM state injection
+  //                   This is critical — venom-core.ts writes a snapshot
+  //                   before compaction so VENOM survives the reset.
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+
+  // Snapshot: enables undo/redo for file changes.
+  // Keep true — it's free safety.
+  "snapshot": true,
+
+  // Share: controls session sharing.
+  // "manual" = only share when you explicitly run /share in TUI.
+  // "auto"   = share automatically (not recommended for private projects).
+  "share": "manual",
+
+  // Autoupdate: how OpenCode handles updates.
+  // "notify" = alert but don't auto-update (recommended for stability).
+  // "auto"   = update automatically.
+  "autoupdate": "notify",
+
+  // Watcher: file change watching for context updates.
+  // Ignore generated and cache directories to avoid noise.
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".git/**",
+      "*.lock",
+      ".venom/state/**"
+    ]
+  },
+
+  // Plugin: VENOM's autonomic nervous system.
+  // To activate: uncomment the line below.
+  // To install: cd .opencode/plugins && npm install
+  // Global install: copy plugins/ to ~/.config/opencode/ and update that config.
+  //
+  // What the plugin adds (all silent):
+  //   - Identity injection on session.created
+  //   - Loop detection (same tool+file 3x = stall warning)
+  //   - Safety screening (dangerous commands blocked or confirmed)
+  //   - Cost tracking ($1 warn, $5 stop)
+  //   - Instinct learning (patterns captured on session.idle)
+  //   - Compaction survival (VENOM snapshot written before context reset)
+  //   - Workflow state persistence (spec/build phases tracked across sessions)
+  "plugin": [
+    // ".opencode/plugins/venom-core.ts"
+  ],
+
+  // MCP servers: add project-specific MCP servers here.
+  // Global MCPs go in ~/.config/opencode/opencode.json.
+  // Add via: opencode mcp add
+  // Example:
+  // "mcp": {
+  //   "github": { "type": "stdio", "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] }
+  // }
+  "mcp": {}
+}

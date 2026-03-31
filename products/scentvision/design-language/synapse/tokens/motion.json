@@ -1,0 +1,146 @@
+{
+  "$schema": "https://trpc.io/schema-design-tokens",
+  "id": "synapse-motion",
+  "version": "1.0.0",
+  "title": "Synapse Motion System",
+  "meta": {
+    "summary": "Motion IS thinking. Not decoration. Loading = synaptic activity. Idle = breathing.",
+    "philosophy": "Every animation communicates state. A pulsing node = VENOM is thinking. A forming connection = context loading.",
+    "reducedMotion": "All patterns must respect prefers-reduced-motion. No exceptions."
+  },
+  "durations": {
+    "instant": 0,
+    "fast": 100,
+    "normal": 200,
+    "slow": 400,
+    "slower": 800,
+    "breath": 4000,
+    "think": 2000,
+    "pulse": 2000
+  },
+  "easings": {
+    "default": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "in": "cubic-bezier(0.4, 0, 1, 1)",
+    "out": "cubic-bezier(0, 0, 0.2, 1)",
+    "bounce": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+    "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "snap": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  "patterns": {
+    "breathe": {
+      "description": "Idle state. Subtle life. Not attention-seeking.",
+      "duration": 4000,
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": { "opacity": 0.6 },
+        "50%": { "opacity": 1 },
+        "100%": { "opacity": 0.6 }
+      }
+    },
+    "think": {
+      "description": "Active thinking. Rhythmic pulse. Draws attention gently.",
+      "duration": 1500,
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": { "opacity": 0.3, "transform": "scale(1)" },
+        "25%": { "opacity": 0.7, "transform": "scale(1.02)" },
+        "50%": { "opacity": 0.3, "transform": "scale(1)" },
+        "75%": { "opacity": 0.7, "transform": "scale(1.02)" },
+        "100%": { "opacity": 0.3, "transform": "scale(1)" }
+      }
+    },
+    "pulse": {
+      "description": "Heartbeat. Confidence signal. Stronger than think.",
+      "duration": 2000,
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": { "opacity": 0.4, "transform": "scale(1)" },
+        "50%": { "opacity": 0.9, "transform": "scale(1.03)" },
+        "100%": { "opacity": 0.4, "transform": "scale(1)" }
+      }
+    },
+    "connect": {
+      "description": "Connection forming. One-shot. Minds connecting.",
+      "duration": 600,
+      "timing": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "iteration": 1,
+      "keyframes": {
+        "0%": { "strokeDashoffset": 100, "opacity": 0 },
+        "100%": { "strokeDashoffset": 0, "opacity": 1 }
+      }
+    },
+    "drift": {
+      "description": "Particle drift. Background ambient. Slow, peaceful.",
+      "duration": 15000,
+      "timing": "ease-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": { "opacity": 0, "transform": "translateY(0) scale(0.5)" },
+        "10%": { "opacity": 0.12 },
+        "90%": { "opacity": 0.04 },
+        "100%": { "opacity": 0, "transform": "translateY(-100vh) scale(1.6)" }
+      }
+    },
+    "reveal": {
+      "description": "Element entering. Smooth entrance.",
+      "duration": 400,
+      "timing": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "iteration": 1,
+      "keyframes": {
+        "0%": { "opacity": 0, "transform": "translateY(10px)" },
+        "100%": { "opacity": 1, "transform": "translateY(0)" }
+      }
+    },
+    "fade": {
+      "description": "Simple opacity transition.",
+      "duration": 200,
+      "timing": "ease-out",
+      "iteration": 1,
+      "keyframes": {
+        "0%": { "opacity": 0 },
+        "100%": { "opacity": 1 }
+      }
+    },
+    "orbit": {
+      "description": "Nine minds orbit. Continuous rotation.",
+      "duration": 60000,
+      "timing": "linear",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": { "transform": "rotate(0deg)" },
+        "100%": { "transform": "rotate(360deg)" }
+      }
+    }
+  },
+  "stagger": {
+    "description": "Sequential delays for grouped elements",
+    "base": 60,
+    "multipliers": {
+      "fast": 40,
+      "normal": 60,
+      "slow": 100
+    }
+  },
+  "springs": {
+    "description": "Physics-based motion for interactive elements",
+    "gentle": { "tension": 170, "friction": 26 },
+    "bouncy": { "tension": 280, "friction": 20 },
+    "stiff": { "tension": 400, "friction": 30 }
+  },
+  "reducedMotion": {
+    "query": "prefers-reduced-motion: reduce",
+    "fallback": {
+      "breathe": { "opacity": 0.8 },
+      "think": { "opacity": 0.8 },
+      "pulse": { "opacity": 0.8 },
+      "connect": { "opacity": 1 },
+      "drift": { "display": "none" },
+      "reveal": { "opacity": 1, "transform": "none" },
+      "fade": { "opacity": 1 },
+      "orbit": { "animation": "none" }
+    }
+  }
+}
