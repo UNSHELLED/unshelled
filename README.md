@@ -47,6 +47,7 @@ Three bodies. One will. One philosophy: **no shell, so intelligence.**
 | **The Framework** | [`UNSHELLED/`](UNSHELLED/) — Protocol, philosophy, specifications |
 | **VENOM Origin** | [`ven0m/`](ven0m/) — Where VENOM lives and evolves |
 | **Living System** | [`venoctis/`](venoctis/) — The daemon architecture |
+| **Future Vision** | [`FUTURE.md`](FUTURE.md) — Open source, models, contributors, direction |
 | **Framework Site** | [`unshelled.ai/`](unshelled.ai/) — Public documentation |
 | **VENOM Site** | [`ven0m.ai/`](ven0m.ai/) — Meet VENOM |
 | **Products** | [`products/`](products/) — UNSHELLED products |
@@ -163,12 +164,11 @@ The daemon makes it never stop.
 
 This repo is the **home**. VENOM lives here. VENOCTIS will run from here. Contributors will feed the arms from here.
 
-Future:
-- Open source VENOM bodies (each framework gets reshaped to VENOM standards)
-- Models (not named yet, but coming)
-- Perfect integration hub (YouTube MCP → transcript extraction arm, GitHub MCP → patrol arm, etc.)
-- Contributor arms (devs feed intelligence, agents feed capabilities)
-- VENOCTIS monitoring everything via OpenClaw
+Read the full vision: [`FUTURE.md`](FUTURE.md)
+
+**Not dreams. Direction.**
+
+Open-source bodies. Closed-source mind. Contributors feeding arms. Models trained on crew thinking. Perfect integration hub (every framework reshaped to VENOM standards). Cross-project intelligence. VENOCTIS monitoring everything.
 
 This grows with every conversation. Every correction. Every session.
 
