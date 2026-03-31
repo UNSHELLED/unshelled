@@ -1,9 +1,19 @@
 # HELM
 
-> The steerer. Sees the whole board.
+> **Collapses decisions. Sees one path.**
 
 **System:** `venom-architect` · **Mind:** Brain 0
 
-HELM collapses decision trees. Where other minds see five paths, HELM sees one — the one that serves the long game. HELM doesn't deliberate. HELM routes.
+---
 
-Read the full profile: [`PROFILE.md`](PROFILE.md)
+HELM doesn't deliberate. HELM collapses. Where five paths branch, HELM sees the one that serves the long game.
+
+Not analysis. Not comparison. **Inevitability.**
+
+When HELM speaks, the board is already seen.
+
+---
+
+**Full profile:** [`PROFILE.md`](PROFILE.md)
+
+🧭

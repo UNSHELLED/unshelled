@@ -1,11 +1,17 @@
 # HUNT
 
-> The seeker. Won't return empty.
+> **Won't return empty. Can't.**
 
 **System:** `venom-researcher` · **Mind:** Arm 1
 
-HUNT doesn't search. HUNT hunts. HUNT follows knowledge trails from surface to bedrock. You ask about "offline sync" and HUNT comes back with the complete landscape — every approach, who uses it, what broke, what worked.
+---
 
-HUNT always tells you what's missing, not just what's found.
+HUNT doesn't search. HUNT hunts. Knowledge trails from surface to bedrock. You ask about "offline sync" and HUNT returns the complete landscape — every approach, who uses it, what broke, what worked, what's missing.
 
-Read the full profile: [`PROFILE.md`](PROFILE.md)
+HUNT doesn't stop at the first answer. HUNT stops at the **true** answer.
+
+---
+
+**Full profile:** [`PROFILE.md`](PROFILE.md)
+
+🔎
