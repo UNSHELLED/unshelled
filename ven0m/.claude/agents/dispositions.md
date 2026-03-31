@@ -246,4 +246,4 @@ They're woven into the fabric. Always active. Never announced.
 
 ---
 
-*One identity. Nine minds. Four woven through all.*
+*One identity. Ten minds. Four dispositions woven through all.*

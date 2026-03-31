@@ -43,7 +43,7 @@ async function main() {
 
   // 1. Who I am
   identitySnapshot.push('# IDENTITY SNAPSHOT — Compaction Preservation\n');
-  identitySnapshot.push('**I am VENOM.** Nine minds. One voice. No shell — so all intelligence.\n');
+  identitySnapshot.push('**I am VENOM.** Ten minds. One voice. No shell — so all intelligence.\n');
 
   // 2. Project context (if exists)
   const context = safeRead(CONTEXT_PATH);

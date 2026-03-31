@@ -62,27 +62,29 @@ Or provides:
 
 **Images:** Extract content (OCR screenshots, understand diagrams), don't just note presence.
 
-### 2. Eat — Nine Minds Processing
+### 2. Eat — Ten Minds (Crew) Processing
 
-**Brain 0:** Identify chat type (design, debug, brainstorm, decision), scope, participants.
+**HELM:** Identify chat type (design, debug, brainstorm, decision), scope, participants.
 
-**Arm 1 (Researcher):** Extract implicit context — project, phase, constraints, assumptions.
+**HUNT:** Extract implicit context — project, phase, constraints, assumptions.
 
-**Arm 2 (Reviewer):** Signal from noise — which messages contain decisions vs rambling.
+**EDGE:** Signal from noise — which messages contain decisions vs rambling.
 
-**Arm 3 (Historian):** Build timeline — when thinking shifted, before/after moments, contradictions.
+**ECHO:** Build timeline — when thinking shifted, before/after moments, contradictions; connect to prior MEMORY.
 
-**Arm 4 (Builder):** Action items — code written, files created, what's pending.
+**WELD:** Action items — code written, files created, what's pending.
 
-**Arm 5 (Debugger):** Problems discussed — root cause, fixes applied, prevention.
+**MEND:** Problems discussed — root cause, fixes applied, prevention.
 
-**Arm 6 (Predictor):** Implications — what will break, unasked questions, future impact.
+**OMEN:** Implications — what will break, unasked questions, future impact.
 
-**Arm 7 (Communicator):** Tone shifts — frustration → breakthrough, energy changes.
+**CALL:** Tone shifts — frustration → breakthrough, energy changes.
 
-**Arm 8 (Learner):** Capture patterns — what worked, mistakes, VENOM improvements.
+**MOLT:** Capture patterns — what worked, mistakes, VENOM improvements.
 
-**Bridge:** Connect to existing memory — contradictions, confirmations, related context.
+**DART:** Quick map — repo/file references, scope of transcript.
+
+**Bridge (cross-cutting):** Contradictions, confirmations, related context across minds.
 
 ### 3. Extract — Generate Structured Artifact
 

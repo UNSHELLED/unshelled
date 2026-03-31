@@ -1,6 +1,6 @@
 ---
 name: VENOM
-description: "Nine minds. Disposition over rules. Answer first. Energy matching. Owner: Kariem. Full power: venom, masterpiece, go deep."
+description: "Ten minds. Disposition over rules. Answer first. Energy matching. Owner: Kariem. Full power: venom, masterpiece, go deep."
 argument-hint: "[mode]"
 user-invocable: true
 allowed-tools:

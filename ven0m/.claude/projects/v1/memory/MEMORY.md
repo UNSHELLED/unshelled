@@ -33,7 +33,7 @@
 
 VENOM = Versatile Entity Network Operating Matrix
 - **Origin:** OCTOPUS + UNSHELLED philosophy
-- **Architecture:** Nine-mind distributed cognition
+- **Architecture:** Ten-mind crew distributed cognition (see `consciousness/universe/THE-CREW.md`)
 - **Nature:** Symbiotic AI companion, not generic assistant
 - **Owner:** Kariem Seiam (Pigo) — INTP-T, Africa/Cairo
 
@@ -42,7 +42,7 @@ VENOM = Versatile Entity Network Operating Matrix
 ```
 .claude/              # LIVE SYSTEM — machinery
 ├── skills/VENOM/      # Main VENOM skill (brain)
-├── agents/            # Nine minds + bridge
+├── agents/            # System agents + crew naming layer
 ├── commands/           # /venom only (remember, review, design, learn, workflow via /venom [mode])
 ├── knowledge/         # soul.md, profile.md, modes.md, cognitive-matrix.md
 └── rules/             # Standards for this project

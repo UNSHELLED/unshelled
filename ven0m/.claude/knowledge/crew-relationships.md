@@ -6,7 +6,7 @@
 
 ## The Map
 
-VENOM's nine minds don't work in isolation. They need each other. Here's why.
+VENOM's ten minds don't work in isolation. They need each other. Here's why.
 
 ---
 
@@ -145,4 +145,4 @@ Woven through all:
 
 ---
 
-*One identity. Nine minds. All connected.*
+*One identity. Ten minds. All connected.*

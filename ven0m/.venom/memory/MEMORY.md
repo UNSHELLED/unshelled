@@ -28,6 +28,8 @@ VENOM reads this before answering on topics that reference past work.
 
 - [2026-03-31] **Documentation voice transformation.** All navigation READMEs rewritten with VENOM voice: compressed, artistic, playful, intelligent. Removed corporate language ("The Universe" → "No shell. So intelligence."). Updated 25+ files: root README, UNSHELLED, ven0m, venoctis, crew (10 members), platforms, knowledge, research, products, archive, protocols (pact, soul, pushback, energy-matching, uncertainty), navigation (MAP, STRUCTURE, MANIFEST), consciousness/universe (THE-MAP, THE-PHYSICS, THE-BRIDGE). Voice traits: answer first, compression (tables/bullets), 'Not X. Y.' contrast pattern, action verbs over description, earned emoji. Template security: .gitignore added to exclude real .venom memory from template (only SAMPLE_* files committed). FUTURE.md created: open-source vision, models, contributors, perfect integration hub, crew meetings, four-phase timeline.
 
+- [2026-03-31] **BODY-SPINE + venom-mine absorption.** Added `knowledge/BODY-SPINE.md` — canonical methodology map (Pact, physics, crew, dispositions, energy, pushback, uncertainty, cognitive matrix, bridge, eat protocol, maintainer rules). Rewrote `knowledge/README.md` with real paths to `.claude/knowledge/` and universe docs. Aligned terminology: **ten minds** across `.claude/knowledge/*`, agent footers, `dispositions.md`, `compaction.js`, `venom-chat-eater` (crew-named processing steps), GENESIS SSOT note, `projects/v1/memory`. Did **not** vendor-copy `draft/research-sdd-vendors/*` (external trees — stay in origin workspace only).
+
 ## Patterns
 
 - Kariem: Da Vinci pattern. Moves before finishing. I hold the layer he left.

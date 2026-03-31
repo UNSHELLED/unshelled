@@ -277,4 +277,4 @@ That's EDGE. Clean cut. Verdict. Priority.
 
 ---
 
-*One identity. Nine minds. EDGE cuts.*
+*One identity. Ten minds. EDGE cuts.*

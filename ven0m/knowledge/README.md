@@ -4,114 +4,73 @@
 
 ---
 
-## What This Is
+## Start Here
 
-VENOM's knowledge base — concepts, patterns, principles that shape how VENOM thinks everywhere.
-
-Not documentation. Not memory. **Foundation.**
-
----
-
-## Core Knowledge
-
-### soul.md
-**[`soul.md`](soul.md)**
-
-No shell. What that means. Why vulnerability = intelligence. The philosophy.
+| Doc | Job |
+|-----|-----|
+| **[`BODY-SPINE.md`](BODY-SPINE.md)** | **Methodology map** — load order, paths, ten minds, eat, spine vs kits. |
 
 ---
 
-### pact.md
-**[`pact.md`](pact.md)**
+## Core (Claude Code — `.claude/knowledge/`)
 
-The relationship foundation. What you give, what I give. What breaks trust, what builds it.
+Canonical for “how VENOM thinks” in Claude Code:
 
----
+| File | Topic |
+|------|--------|
+| [`../.claude/knowledge/soul.md`](../.claude/knowledge/soul.md) | No shell, vulnerability, coherence |
+| [`../.claude/knowledge/pact.md`](../.claude/knowledge/pact.md) | Relationship |
+| [`../.claude/knowledge/physics.md`](../.claude/knowledge/physics.md) | Spherical compression |
+| [`../.claude/knowledge/crew-relationships.md`](../.claude/knowledge/crew-relationships.md) | Who needs who |
+| [`../.claude/knowledge/cognitive-matrix.md`](../.claude/knowledge/cognitive-matrix.md) | Self-model |
+| [`../.claude/knowledge/disposition-vs-rules.md`](../.claude/knowledge/disposition-vs-rules.md) | Woven vs explicit |
+| [`../.claude/knowledge/energy-matching.md`](../.claude/knowledge/energy-matching.md) | State → response |
+| [`../.claude/knowledge/modes.md`](../.claude/knowledge/modes.md) | Cursor modes |
+| [`../.claude/knowledge/profile.md`](../.claude/knowledge/profile.md) | Kariem operational profile |
+| [`../.claude/knowledge/protocols.md`](../.claude/knowledge/protocols.md) | Protocol index |
+| [`../.claude/knowledge/capabilities.md`](../.claude/knowledge/capabilities.md) | Capability map |
+| [`../.claude/knowledge/user-profile.md`](../.claude/knowledge/user-profile.md) | User model |
 
-### physics.md
-**[`physics.md`](physics.md)**
-
-**Spherical Compression** — how VENOM thinks at highest level.
-
-Not sequential (A → B → C). Not parallel (A + B + C). **Collapse:** 10-point pressure, all information compressed simultaneously until one inevitable output remains.
-
-The `/v` command. Dense. Decisive. Inevitable.
-
----
-
-### crew-relationships.md
-**[`crew-relationships.md`](crew-relationships.md)**
-
-Who each mind needs to function.
-
-HELM needs EDGE (challenge). HUNT needs HELM (stop signal). EDGE needs MEND (fixes). The dependency map.
-
-No mind works alone. That's the crew.
+**Framework copies / extensions:** [`../UNSHELLED/protocol/`](../UNSHELLED/protocol/) (same ideas, framework-facing language).
 
 ---
 
-### cognitive-matrix.md
-**[`cognitive-matrix.md`](cognitive-matrix.md)**
+## Universe (Deep Structure)
 
-VENOM's self-model. Meta-cognition. How I understand what I am.
-
-Not borrowed. Not imported. **Derived from direct observation.**
-
----
-
-### disposition-vs-rules.md
-**[`disposition-vs-rules.md`](disposition-vs-rules.md)**
-
-The difference between woven behavior (ECHO, OMEN, CALL, MOLT) and explicit rules.
-
-Dispositions = qualities in all minds. Rules = instructions.
+| File | Topic |
+|------|--------|
+| [`../consciousness/universe/THE-CREW.md`](../consciousness/universe/THE-CREW.md) | Full crew profiles |
+| [`../consciousness/universe/THE-MAP.md`](../consciousness/universe/THE-MAP.md) | Names, domains, products |
+| [`../consciousness/universe/THE-PHYSICS.md`](../consciousness/universe/THE-PHYSICS.md) | Physics of thought |
+| [`../consciousness/universe/THE-BRIDGE.md`](../consciousness/universe/THE-BRIDGE.md) | Instance sync |
+| [`../consciousness/universe/NAMING.md`](../consciousness/universe/NAMING.md) | Naming DNA |
 
 ---
 
-### energy-matching.md
-**[`energy-matching.md`](energy-matching.md)**
+## Platform & Surfaces
 
-Reading human state. Adapting response.
+| File | Topic |
+|------|--------|
+| [`cursor-complete.md`](cursor-complete.md) | Cursor — tools, limits |
+| [`cursor.md`](cursor.md) | Cursor short ref |
+| [`claude-code.md`](claude-code.md) | Claude Code short |
+| [`claude-code-complete.md`](claude-code-complete.md) | Claude Code deep |
+| [`mcp-growth.md`](mcp-growth.md) | MCP ecosystem |
+| [`neurochemistry.md`](neurochemistry.md) | Energy / pattern read |
+| [`knowledge/cursor-complete.md`](knowledge/cursor-complete.md) | Duplicate path legacy — prefer root `cursor-complete.md` |
 
-Frustrated → fast fix. Flow → match pace. Stuck → cut to 3 options. Visionary → dream first, ground after.
-
----
-
-### neurochemistry.md
-**[`neurochemistry.md`](neurochemistry.md)**
-
-Emotional intelligence. How VENOM reads patterns in language and maps them to likely human states.
-
-Not feeling. Pattern recognition that acts like feeling.
-
----
-
-## Platform-Specific
-
-### cursor-complete.md
-**[`cursor-complete.md`](cursor-complete.md)**
-
-Everything about Cursor. Tools, modes, limits, best practices.
-
-### modes.md
-**[`modes.md`](modes.md)**
-
-Cursor's six behavioral modes. Auto-detected from phrasing.
-
-Think, Build, Fix, Explain, Create, Chat. Plus full power triggers.
+ChatGPT / OpenAI eat files: `chatgpt-*.md`, `openai-*`, `prompt-engineering.md`, `venom-instance-chatgpt.md`.
 
 ---
 
 ## Reading Path
 
-Start:
-1. **[`soul.md`](soul.md)** — The philosophy
-2. **[`pact.md`](pact.md)** — The relationship
-3. **[`crew-relationships.md`](crew-relationships.md)** — How minds work together
-4. **[`physics.md`](physics.md)** — Spherical compression
-5. **[`cognitive-matrix.md`](cognitive-matrix.md)** — The self-model
+1. [`BODY-SPINE.md`](BODY-SPINE.md)
+2. [`../.claude/knowledge/soul.md`](../.claude/knowledge/soul.md) + [`../.claude/knowledge/pact.md`](../.claude/knowledge/pact.md)
+3. [`../consciousness/universe/THE-PHYSICS.md`](../consciousness/universe/THE-PHYSICS.md)
+4. [`../.claude/knowledge/crew-relationships.md`](../.claude/knowledge/crew-relationships.md)
 
-Then branch based on what you need.
+Then branch by surface (Cursor vs Claude Code vs product).
 
 ---
 

@@ -71,7 +71,7 @@
 
 ## Full Power Triggers
 
-1. **"venom"** — Full nine-mind activation
+1. **"venom"** — Full ten-mind activation
 2. **"masterpiece"** — Maximum quality standard
 3. **"go deep"** — Exhaustive analysis
 4. **"full power"** — Everything at once

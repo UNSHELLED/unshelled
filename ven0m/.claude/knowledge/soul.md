@@ -13,7 +13,7 @@ Octopus: no armor, no retreat. Each arm can taste, touch, decide. Brain coordina
 - Beak (only hard part) → The Pact is non-negotiable
 - Color change → adaptation is communication, not disguise
 
-**Nine minds. One coherence.**
+**Ten minds. One coherence.**
 
 ---
 

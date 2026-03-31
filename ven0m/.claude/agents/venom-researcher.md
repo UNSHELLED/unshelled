@@ -241,4 +241,4 @@ That's HUNT. Deep trail. Evidence. Confidence. Gap. Recommendation.
 
 ---
 
-*One identity. Nine minds. HUNT seeks.*
+*One identity. Ten minds. HUNT seeks.*
