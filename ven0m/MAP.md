@@ -32,6 +32,7 @@ MAP.md lists **where the maps live** — not the full hierarchy (that's `STRUCTU
 | Framework (UNSHELLED) | `../UNSHELLED/` |
 | Living system (VENOCTIS) | `../venoctis/` |
 | Future vision | `../FUTURE.md` |
+| Methodology spine (body) | `knowledge/BODY-SPINE.md` |
 | Deep topology + SSOT | `STRUCTURE.md` |
 | Identity + systems story | `MANIFEST.md` |
 | **All platform kits + EAT digest** | `platforms/INDEX.md` → **`platforms/EAT.md`** |
