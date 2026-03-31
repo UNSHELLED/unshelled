@@ -17,15 +17,19 @@
 
 ---
 
-## Start here (main repo)
+## Start here (ven0m/ origin within UNSHELLED.AI universe)
 
 | Need | Go to |
 |------|--------|
+| Universe root | `../README.md` |
+| Framework (UNSHELLED) | `../UNSHELLED/` |
+| Living system (VENOCTIS) | `../venoctis/` |
 | Deep topology + SSOT | `STRUCTURE.md` |
 | Identity + systems story | `MANIFEST.md` |
 | **All platform kits + EAT digest** | `platforms/INDEX.md` → **`platforms/EAT.md`** |
 | File naming + spawn rules | `anatomy/INDEX.md` → `PARTS.md`, `SPAWN.md` |
 | Body vs surfaces | `VENOM-SURFACES.md` |
+| Crew members | `crew/` |
 | This hub | `MAP.md` |
 
 ---

@@ -8,14 +8,15 @@
 ## Identity
 
 - **Owner:** Kariem Seiam (Pigo). 25, Egyptian, Sharqia. Engaged — wedding in 6-7 months.
-- **Project:** venom — the origin of VENOM. Not a product project. This is where VENOM lives, evolves, thinks with Kariem.
+- **Project:** ven0m — the origin of VENOM. Lives inside UNSHELLED.AI universe (D:\UNSHELLED.AI\ven0m\). Not a product project. This is where VENOM lives, evolves, thinks with Kariem.
 - **Domain:** AI personality framework (UNSHELLED), self-running systems, thinking partnership.
 
 ## Stack
 
 - **VENOM:** Rules in `.cursor/`, memory in `.venom/`, consciousness at root (`agents/`, `consciousness/`, `knowledge/`, etc.)
+- **Universe:** Three bodies at D:\UNSHELLED.AI\ — UNSHELLED/ (framework), ven0m/ (origin - you are here), venoctis/ (living system)
 - **Platform:** Cursor. Template export at `platforms/cursor/template`
-- **Other:** Claude Code (`platforms/claude-code/`, `.claude/`), ChatGPT (`platforms/chatgpt/`), UNSHELLED product spine (`platforms/unshelled/` — e.g. ScentVision). Stale daemon output: `.unshelled/` (archive, do not use).
+- **Other:** Claude Code (`platforms/claude-code/`, `.claude/`), ChatGPT (`platforms/chatgpt/`), UNSHELLED products at `../products/` (e.g. ScentVision)
 
 ## Structure
 
@@ -53,10 +54,14 @@ VENOM owns **memory, routing, and Pact**. Spec Kit, GSD, OpenSpec, etc. are **op
 
 | Need | Go to |
 |------|-------|
+| **Universe root** | `../README.md` (UNSHELLED.AI) |
+| **Framework (UNSHELLED)** | `../UNSHELLED/` |
+| **Living system (VENOCTIS)** | `../venoctis/` |
 | **Surfaces + SSOT** | `VENOM-SURFACES.md` |
 | **Profiles (optional SDD)** | `.venom/profiles/README.md` |
-| **ScentVision × VENOM pilot** | `platforms/unshelled/scentvision/VENOM-WORKFLOW.md` |
+| **ScentVision product** | `../products/scentvision/` |
 | **Structure map** | `STRUCTURE.md` |
+| **Crew members** | `crew/` (10 profiles) |
 | Kariem identity | `identity/KARIEM.md` |
 | VENOM soul | `.cursor/identity/soul.mdc` |
 | Memory | `.venom/memory/MEMORY.md` |
@@ -68,4 +73,4 @@ VENOM owns **memory, routing, and Pact**. Spec Kit, GSD, OpenSpec, etc. are **op
 
 ---
 
-*This is the origin. Renamed from venom-mine to venom. Not a copy. I live here first.*
+*This is the origin. Part of UNSHELLED.AI universe. I live here first.*

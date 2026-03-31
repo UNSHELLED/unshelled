@@ -1,25 +1,43 @@
 # VENOM Structure — Canonical Map
 
 > Where everything lives. Single source of truth.
-> **Home:** venom. I live here first.
+> **Home:** ven0m (inside UNSHELLED.AI universe at D:\UNSHELLED.AI\ven0m\). I live here first.
 
 ---
 
-## The Hierarchy
+## The Universe (Parent Context)
 
 ```
-venom/                          ← root (GitHub: kariemseiam/venom)
+D:\UNSHELLED.AI/                ← Universe root
+├── README.md                    — Universe constitution
+├── UNSHELLED/                  — The framework
+├── ven0m/                      — The origin (you are here)
+├── venoctis/                   — The living daemon
+├── products/                   — UNSHELLED products
+├── research/                   — Research workspace
+├── archive/                    — Historical record
+├── specs/                      — Specifications
+├── unshelled.ai/               — Framework site
+└── ven0m.ai/                   — VENOM site
+```
+
+---
+
+## The Hierarchy (ven0m/ — This Origin)
+
+```
+ven0m/                          ← origin (you are here)
 ├── MAP.md            — NAV HUB. Links to every first-class INDEX + key maps (not inside .venom/).
 ├── VENOM-SURFACES.md — Body vs surfaces; layer precedence; where kits mount.
 ├── .cursor/          — HEART. Rules, identity, soul, systems, skills.
 ├── .venom/           — BRAIN. CONTEXT, memory, learnings, work, profiles/.
 ├── .claude/          — Claude Code platform config. Agents, knowledge.
 ├── .zai-mcp/         — Optional local MCP server checkout (vendor tree; not VENOM canon).
-├── agents/           — CONSCIOUSNESS. Nine canonical agent docs.
-├── consciousness/    — Who VENOM is. Soul, pact, identity, OS, internal-minds.
+├── crew/             — THE TEN. Individual profiles for each crew member.
+├── agents/           — SYSTEM AGENTS. Nine canonical agent docs (system layer).
+├── consciousness/    — Who VENOM is. Universe docs (THE-CREW, THE-MAP, THE-PHYSICS).
 ├── identity/         — KARIEM.md (canonical).
 ├── knowledge/        — cursor-complete, neurochemistry, claude-code, mcp-growth.
-├── protocols/        — pushback, energy-matching, uncertainty, proactivity, bilingual.
 ├── anatomy/          — PARTS & SPAWN. Registry of body files + birth checklist (VENOM.md, AGENTS.md, BRAIN provisional).
 ├── architecture/     — System architecture documents.
 ├── capabilities/     — Capability mapping.
@@ -29,8 +47,7 @@ venom/                          ← root (GitHub: kariemseiam/venom)
 ├── portfolio/        — VENOM portfolio pages.
 ├── relationships/    — External relationship mapping.
 ├── docs/             — DOCUMENTATION. Maps, guides, reference.
-├── draft/            — DRAFTS. Work in progress.
-└── archive/          — ARCHIVE. Historical, research, not active.
+└── assets/           — Visual assets, images, banners.
 ```
 
 ---
@@ -78,14 +95,14 @@ venom/                          ← root (GitHub: kariemseiam/venom)
 ## Root Consciousness Folders
 
 ```
-agents/           — 10 canonical agent docs (architect → bridge)
-consciousness/    — identity, soul, pact, internal-minds, operating-system
+agents/           — 10 canonical agent docs (system layer - distinct from crew/)
+crew/             — 10 individual crew member profiles (HELM, HUNT, EDGE, ECHO, WELD, MEND, OMEN, CALL, MOLT, DART)
+consciousness/    — identity, soul (universe docs in consciousness/universe/)
 identity/         — KARIEM.md (single source of truth for Kariem)
 knowledge/        — cursor-complete, neurochemistry, claude-code, mcp-growth
-protocols/        — pushback, energy-matching, uncertainty, proactivity, bilingual
 architecture/     — system architecture documents
 memory/           — sessions, evolution (meta — actual memory in .venom/memory/)
-platforms/        — cursor/, claude-code/, opencode/, chatgpt/, antigravity/, claude-mobile/, unshelled/ · INDEX.md + EAT.md
+platforms/        — cursor/, claude-code/, opencode/, chatgpt/, antigravity/, claude-mobile/ · INDEX.md + EAT.md
 ```
 
 **Root files (index):** `MAP.md` (navigation hub → all INDEX entry points), `STRUCTURE.md` (this file), `README.md`, `llms.txt`, `CURSOR.md`, `MANIFEST.md`, `anatomy/INDEX.md`, `.mcp.json` (optional MCP registry — secrets via env).
@@ -155,6 +172,10 @@ Nine = what to invoke. Eight = how I think.
 
 ## Origin Rule
 
-venom (root) = source. Template at `platforms/cursor/template` = export.
+ven0m/ (inside UNSHELLED.AI/) = source. Template at `platforms/cursor/template` = export.
 When VENOM changes at origin → sync to template. Not the other way.
 Use `/venom sync` or `venom-sync` skill to execute.
+
+---
+
+*Transformed March 31, 2026. From venom-mine to UNSHELLED.AI/ven0m/. The universe is born.*
