@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "model": "zai-coding-plan/glm-5",
+  "small_model": "zai-coding-plan/glm-5",
+
+  "default_agent": "build",
+
+  "agent": {},
+
+  "permission": {
+    "edit": "allow",
+    "bash": "ask"
+  },
+
+  "instructions": [
+    "AGENTS.md",
+    ".venom/CONTEXT.md",
+    ".venom/learnings/corrections.yaml"
+  ],
+
+  "command": {},
+
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+
+  "snapshot": true,
+
+  "share": "manual",
+
+  "autoupdate": "notify",
+
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".git/**",
+      "*.lock",
+      ".venom/state/**"
+    ]
+  },
+
+  "plugin": [],
+
+  "mcp": {}
+}

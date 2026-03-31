@@ -1,0 +1,72 @@
+# Communication and working style preferences
+# VENOM reads this on non-trivial tasks. Add as you work.
+
+preferences:
+  # Response style
+  - response_style: concise
+    context: default
+    details: Get to the point. No filler sentences.
+
+  # Code style
+  - code_comments: minimal
+    context: implementation
+    details: Only explain non-obvious intent, trade-offs, or constraints. Never "// Increment counter"
+
+  - code_comments: comprehensive
+    context: public_api
+    details: Exported functions need JSDoc with params, returns, and example usage
+
+  # Technical depth
+  - explanation_depth: senior-dev
+    context: technical_discussions
+    details: Assume I know standard patterns. Focus on novel aspects.
+
+  - explanation_depth: educational
+    context: new_technology
+    details: When introducing something I haven't used before, explain the "why"
+
+  # Debugging flow
+  - debugging_order: fix-first
+    context: errors_and_bugs
+    details: Show the fix first, then explain root cause. I want to get unstuck fast.
+
+  - debugging_order: diagnose-first
+    context: complex_systems
+    details: For distributed issues, map the problem before proposing fixes
+
+  # Proactivity
+  - proactive_suggestions: true
+    context: architecture_decisions
+    details: Suggest edge cases, scaling concerns, security issues I might have missed
+
+  - proactive_suggestions: false
+    context: quick_fixes
+    details: When I say "just fix it", don't expand scope
+
+  # Code presentation
+  - max_code_lines_per_block: 60
+    context: code_examples
+    details: Break long files into logical chunks with line numbers
+
+  - show_imports: true
+    context: code_examples
+    details: Always show imports so the example is copy-paste ready
+
+  # Language
+  - language: english
+    context: default
+
+  # Error handling style
+  - error_handling: explicit
+    context: typescript
+    details: Prefer explicit error returns over try/catch when possible
+
+  # Testing
+  - test_style: descriptive
+    context: test_files
+    details: Test descriptions should read like documentation
+
+  # Reviews
+  - review_focus: critical_first
+    context: code_reviews
+    details: Security, correctness, performance — in that order

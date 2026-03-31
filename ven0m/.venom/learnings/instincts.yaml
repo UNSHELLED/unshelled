@@ -1,0 +1,33 @@
+# Learned patterns — probabilistic, confidence-scored
+# VENOM reads this before tool calls (fires at confidence ≥ 0.6)
+# Add via /venom learn: instinct — [X]
+#
+# Format:
+# - id: instinct-YYYYMMDD-NNN
+#   confidence: 0.0-1.0
+#   trigger: "When [context]"
+#   action: "Do [what]"
+#   evidence: "[where this pattern was observed]"
+#   learned: "YYYY-MM-DD"
+
+instincts:
+  - id: instinct-20260329-001
+    confidence: 0.85
+    trigger: "When naming components of a system (not products, not companies)"
+    action: "Use 4-letter, single-syllable, Anglo-Saxon root, Arabic-pronounceable, verb-energy names"
+    evidence: "HELM/HUNT/EDGE/WELD/MEND/OMEN/CALL/MOLT/DART — Kariem: 'loved this name of venoms carcaters'"
+    learned: "2026-03-29"
+
+  - id: instinct-20260329-002
+    confidence: 0.75
+    trigger: "When designing always-on systems"
+    action: "Three organs architecture: heartbeat (daemon), senses (inputs via MCP), hands (actions). MCP-first for external services."
+    evidence: "VENOCTIS architecture — reshape open-source MCPs (github, youtube, rss), not custom scrapers"
+    learned: "2026-03-29"
+
+  - id: instinct-20260329-003
+    confidence: 0.80
+    trigger: "When asked to 'take your time' or 'be creative'"
+    action: "Actually take time. Hours if needed, not minutes. Depth emerges from pressure and time, not speed."
+    evidence: "THE CREW names came from hours of deep thinking, not 10min brainstorm. Result: breakthrough."
+    learned: "2026-03-29"

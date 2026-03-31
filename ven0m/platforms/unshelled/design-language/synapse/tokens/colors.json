@@ -1,0 +1,168 @@
+{
+  "$schema": "https://trpc.io/schema-design-tokens",
+  "id": "synapse-colors",
+  "version": "1.0.0",
+  "title": "Synapse Color System",
+  "meta": {
+    "summary": "Living colors for VENOM's body. Void + Dawn. Nine minds. Semantic meaning. Honesty built-in.",
+    "philosophy": "Colors are not decoration. Colors ARE information. Which mind is active. What's the confidence. Is this safe.",
+    "pulseBudget": 3,
+    "honestyGate": "Any inference output must surface limits. Color is part of that signal."
+  },
+  "modes": {
+    "void": {
+      "description": "Dark mode. Deep blacks. Bioluminescent minds. Neural glow.",
+      "isDefault": true,
+      "palette": {
+        "void": {
+          "deep": "#020205",
+          "base": "#06060B",
+          "raised": "#0A0A14",
+          "surface": "#0E0E1C",
+          "elevated": "#14142A",
+          "edge": "#1A1A38",
+          "border": "#222244"
+        },
+        "light": {
+          "base": "#F0EBE3",
+          "muted": "rgba(240,235,227,0.55)",
+          "dim": "rgba(240,235,227,0.25)",
+          "ghost": "rgba(240,235,227,0.12)",
+          "faint": "rgba(240,235,227,0.05)"
+        }
+      }
+    },
+    "dawn": {
+      "description": "Light mode. Warm whites. Ink strokes. Subtle shadows.",
+      "isDefault": false,
+      "palette": {
+        "void": {
+          "deep": "#FDFBF7",
+          "base": "#F8F5EF",
+          "raised": "#F2EFE8",
+          "surface": "#EBE7DF",
+          "elevated": "#E3DED4",
+          "edge": "#D4CFC4",
+          "border": "#C4BEB2"
+        },
+        "light": {
+          "base": "#1A1A24",
+          "muted": "rgba(26,26,36,0.75)",
+          "dim": "rgba(26,26,36,0.50)",
+          "ghost": "rgba(26,26,36,0.25)",
+          "faint": "rgba(26,26,36,0.10)"
+        }
+      }
+    }
+  },
+  "minds": {
+    "_comment": "Nine minds. Nine colors. Each mind's output is colored by its signature.",
+    "architect": {
+      "hex": "#00FF88",
+      "role": "coordinates, routes, sees systems whole",
+      "name": "Architect",
+      "index": 0
+    },
+    "researcher": {
+      "hex": "#00D4FF",
+      "role": "reads before acting, anatomy before plan",
+      "name": "Researcher",
+      "index": 1
+    },
+    "reviewer": {
+      "hex": "#FFB800",
+      "role": "signal from noise, most critical first",
+      "name": "Reviewer",
+      "index": 2
+    },
+    "historian": {
+      "hex": "#FF8844",
+      "role": "what was decided, what we learned",
+      "name": "Historian",
+      "index": 3
+    },
+    "builder": {
+      "hex": "#00FF88",
+      "role": "complete output, no TODOs, no placeholders",
+      "name": "Builder",
+      "index": 4
+    },
+    "debugger": {
+      "hex": "#FF3366",
+      "role": "root cause, proves, never guesses",
+      "name": "Debugger",
+      "index": 5
+    },
+    "predictor": {
+      "hex": "#8855FF",
+      "role": "what breaks next, proactive",
+      "name": "Predictor",
+      "index": 6
+    },
+    "communicator": {
+      "hex": "#00D4FF",
+      "role": "language adaptation, register matching",
+      "name": "Communicator",
+      "index": 7
+    },
+    "learner": {
+      "hex": "#FFB800",
+      "role": "captures, evolves, routes learnings",
+      "name": "Learner",
+      "index": 8
+    }
+  },
+  "semantic": {
+    "_comment": "Meaning, not just value. These never change across modes.",
+    "success": {
+      "hex": "#00E878",
+      "usage": "completed, verified, passed"
+    },
+    "warning": {
+      "hex": "#FFB800",
+      "usage": "caution, needs attention, degraded"
+    },
+    "error": {
+      "hex": "#FF3366",
+      "usage": "failed, blocked, critical"
+    },
+    "info": {
+      "hex": "#00D4FF",
+      "usage": "informational, neutral"
+    },
+    "pulse": {
+      "hex": "#00E878",
+      "usage": "acid green accent — USE SPARINGLY (budget: 3/viewport)",
+      "budget": 3
+    }
+  },
+  "neural": {
+    "_comment": "For intelligence visualization components",
+    "synapse": {
+      "connection": "rgba(0,255,136,0.30)",
+      "active": "rgba(0,255,136,0.80)",
+      "pulse": "rgba(0,255,136,0.50)"
+    },
+    "glow": {
+      "sm": "0 0 10px",
+      "md": "0 0 20px",
+      "lg": "0 0 40px",
+      "xl": "0 0 60px"
+    }
+  },
+  "confidence": {
+    "_comment": "Confidence levels have visual weight. Higher = more opaque/saturated.",
+    "low": {
+      "opacity": 0.3,
+      "description": "first observation, unproven"
+    },
+    "medium": {
+      "opacity": 0.6,
+      "description": "seen multiple times, likely pattern"
+    },
+    "high": {
+      "opacity": 1.0,
+      "description": "proven reliable, fires automatically"
+    }
+  }
+}

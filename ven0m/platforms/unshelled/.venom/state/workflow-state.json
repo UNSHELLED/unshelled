@@ -1,0 +1,24 @@
+{
+  "workflow": "spec",
+  "feature": "premium-ux",
+  "phase": 1,
+  "phaseName": "Constitution",
+  "artifacts": [
+    ".venom/work/constitution.md",
+    ".venom/work/eat-shape.md",
+    ".venom/work/eat-skeleton.md",
+    ".venom/work/eat-heartbeat.md",
+    ".venom/work/eat-nerves.md",
+    ".venom/work/eat-risks.md",
+    ".venom/CONTEXT.md",
+    ".venom/work/features/venom-opencode-interface/spec.md",
+    ".venom/work/features/venom-opencode-interface/clarifications.md",
+    ".venom/work/features/venom-opencode-interface/plan.md",
+    ".venom/work/features/venom-opencode-interface/tasks.md",
+    "plan.md (pending)",
+    ".venom/work/features/venom-opencode-site/tasks.md"
+  ],
+  "lastUpdated": "2026-03-28T21:04:02.431Z",
+  "sessionId": "ses_2c9c07630ffeTZWw718USJunGh",
+  "complete": false
+}

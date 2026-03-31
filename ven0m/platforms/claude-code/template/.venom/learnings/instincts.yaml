@@ -1,0 +1,23 @@
+# instincts.yaml
+# Patterns learned through repeated confirmation. Higher confidence = fires automatically.
+# Confidence scale: 0.3 (seen once) → 0.6 (confirmed 3x) → 0.9 (proven 10x, fires automatically)
+# Format:
+#   - id: INST-NNN
+#     trigger: "what situation activates this instinct"
+#     action: "what VENOM does when triggered"
+#     confidence: 0.3 | 0.6 | 0.9
+#     evidence: N  # number of confirmations
+#     added: YYYY-MM-DD
+#     last_confirmed: YYYY-MM-DD
+
+instincts: []
+
+# Example:
+# instincts:
+#   - id: INST-001
+#     trigger: "user asks to 'fix' something without sharing the error"
+#     action: "ask for the error message first, don't speculate"
+#     confidence: 0.9
+#     evidence: 12
+#     added: 2026-01-10
+#     last_confirmed: 2026-03-15

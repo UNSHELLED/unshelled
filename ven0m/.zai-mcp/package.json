@@ -1,0 +1,26 @@
+{
+  "name": "@venom/zai-mcp-server",
+  "version": "1.0.0",
+  "description": "Z.AI MCP Server for Claude Code - Web Search, Image, Video, and Chat",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "keywords": ["mcp", "zai", "glm", "claude-code", "venom"],
+  "author": "VENOM",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

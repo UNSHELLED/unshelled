@@ -1,0 +1,109 @@
+# Project conventions observed by VENOM
+# Updated via /venom learn: [X] or proactive offer after patterns emerge.
+
+conventions:
+  # Naming conventions
+  - pattern: All API routes use kebab-case
+    example: /api/order-items, /api/user-profile, /api/inventory-sync
+    observed: 2025-02-12
+    confidence: high
+    
+  - pattern: Components use named exports only
+    example: export { Button } not export default Button
+    observed: 2025-02-15
+    confidence: high
+    
+  - pattern: Database table names use snake_case, plural
+    example: order_items, product_categories, inventory_logs
+    observed: 2025-02-14
+    confidence: high
+
+  # Code organization
+  - pattern: Database queries only through tRPC routers
+    exception: Seed scripts in prisma/seed.ts, migrations
+    observed: 2025-02-20
+    confidence: high
+    
+  - pattern: Business logic lives in services, not routers
+    example: src/server/services/order-service.ts handles order creation
+    observed: 2025-02-22
+    confidence: medium
+
+  # Error handling
+  - pattern: Error responses standardized to { error, code }
+    examples:
+      - { error: "Order not found", code: "ORDER_NOT_FOUND" }
+      - { error: "Insufficient inventory", code: "INSUFFICIENT_STOCK" }
+      - { error: "Payment declined", code: "PAYMENT_FAILED" }
+    observed: 2025-02-25
+    confidence: high
+    
+  - pattern: HTTP status codes consistent with error type
+    example: 404 for not found, 409 for conflicts, 422 for validation errors
+    observed: 2025-02-26
+    confidence: high
+
+  # Testing
+  - pattern: Tests live next to source files
+    example: Button.tsx + Button.test.tsx in same folder
+    observed: 2025-02-18
+    confidence: high
+    
+  - pattern: Integration tests in __tests__/ folders
+    example: src/server/routers/__tests__/order.test.ts
+    observed: 2025-02-28
+    confidence: medium
+
+  # Async patterns
+  - pattern: Prefer async/await over raw promises
+    observed: 2025-03-01
+    confidence: high
+    
+  - pattern: Use Promise.all for parallel independent operations
+    example: fetching user and order data simultaneously
+    observed: 2025-03-03
+    confidence: medium
+
+  # TypeScript
+  - pattern: Strict null checks enabled
+    observed: 2025-02-10
+    confidence: high
+    
+  - pattern: No explicit 'any' types in production code
+    exception: Migration scripts, test utilities
+    observed: 2025-02-12
+    confidence: high
+
+  # Styling
+  - pattern: Tailwind classes ordered by function
+    example: layout (flex, grid) → sizing (w-, h-) → spacing (m-, p-) → visual (bg-, text-)
+    observed: 2025-02-20
+    confidence: low  # Not consistently enforced
+
+  # State management
+  - pattern: Server state uses tRPC queries with caching
+    observed: 2025-02-25
+    confidence: high
+    
+  - pattern: Client state uses Zustand stores
+    observed: 2025-02-26
+    confidence: high
+    
+  - pattern: No React Context for data fetching
+    observed: 2025-03-01
+    confidence: high
+
+  # Security patterns
+  - pattern: All user input validated with Zod schemas
+    observed: 2025-02-15
+    confidence: high
+    
+  - pattern: SQL queries only via Prisma ORM
+    observed: 2025-02-18
+    confidence: high
+
+  # Performance
+  - pattern: Database queries use select to limit fields
+    example: prisma.order.findMany({ select: { id: true, status: true } })
+    observed: 2025-03-05
+    confidence: medium

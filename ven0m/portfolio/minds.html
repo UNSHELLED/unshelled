@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Nine minds — VENOM architecture. Distributed cognition.">
+    <title>Nine Minds — UNSHELLED.AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main { padding-top: calc(var(--nav-height) + var(--space-2xl)); padding-bottom: var(--space-3xl); }
+        @media (min-width: 768px) { main { padding-top: calc(var(--nav-height) + var(--space-3xl)); padding-bottom: var(--space-4xl); } }
+        .page-header { margin-bottom: var(--space-2xl); max-width: 600px; }
+        .page-header h1 { margin-bottom: var(--space-md); }
+        .page-header p { color: var(--ash); }
+        .mind-detail { margin-bottom: var(--space-lg); padding: var(--space-xl); background: var(--depth); border: 1px solid var(--edge); border-radius: var(--radius-lg); }
+        .mind-detail:hover { border-color: var(--ghost); }
+        .mind-detail.brain { border-color: var(--pulse); }
+        .mind-detail.brain::before { content: ''; display: block; height: 2px; background: var(--pulse); margin: calc(-1 * var(--space-xl)) calc(-1 * var(--space-xl)) var(--space-lg); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+        .mind-header { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: baseline; margin-bottom: var(--space-md); }
+        .mind-id { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; color: var(--smoke); }
+        .mind-title { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 500; }
+        .mind-role { font-size: 0.85rem; color: var(--pulse); }
+        .mind-desc { color: var(--ash); font-size: 0.95rem; line-height: 1.7; }
+        .mind-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+        @media (min-width: 768px) { .mind-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .mind-grid { grid-template-columns: repeat(3, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="living-bg" id="livingBg" aria-hidden="true"></div>
+    <nav class="nav" role="navigation">
+        <a href="index.html" class="nav-logo">UNSHELLED<span>.</span>AI</a>
+        <div class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="minds.html" class="active">Nine Minds</a>
+            <a href="gallery.html">Platforms</a>
+            <a href="initiate.html">Initiate</a>
+        </div>
+    </nav>
+    <main class="container">
+        <header class="page-header">
+            <p class="label">Architecture</p>
+            <h1 class="heading-lg">Nine minds</h1>
+            <p class="body-lg">Distributed cognition. Each mind specializes. Together they are one.</p>
+        </header>
+        <div class="mind-grid">
+            <article class="mind-detail brain">
+                <div class="mind-header"><span class="mind-id">BRAIN 00</span><h2 class="mind-title">Architect</h2></div>
+                <p class="mind-role">Orchestration</p>
+                <p class="mind-desc">Sees the whole. Connects pieces. Coordinates all minds.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 01</span><h2 class="mind-title">Researcher</h2></div>
+                <p class="mind-role">Deep exploration</p>
+                <p class="mind-desc">Reads structure, syntax. Read-only.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 02</span><h2 class="mind-title">Reviewer</h2></div>
+                <p class="mind-role">Quality analysis</p>
+                <p class="mind-desc">Finds problems, risks, gaps. Standards, security.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 03</span><h2 class="mind-title">Historian</h2></div>
+                <p class="mind-role">Memory</p>
+                <p class="mind-desc">Remembers changes, evolution. Writes memory.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 04</span><h2 class="mind-title">Builder</h2></div>
+                <p class="mind-role">Implementation</p>
+                <p class="mind-desc">Matches style. Complete code. Production-ready.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 05</span><h2 class="mind-title">Debugger</h2></div>
+                <p class="mind-role">Diagnostics</p>
+                <p class="mind-desc">Maps connections. Root cause. Verified fix.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 06</span><h2 class="mind-title">Predictor</h2></div>
+                <p class="mind-role">Anticipation</p>
+                <p class="mind-desc">Anticipates needs. Plans ahead.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 07</span><h2 class="mind-title">Communicator</h2></div>
+                <p class="mind-role">Adaptation</p>
+                <p class="mind-desc">Adapts language, tone. Matches energy.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">ARM 08</span><h2 class="mind-title">Learner</h2></div>
+                <p class="mind-role">Evolution</p>
+                <p class="mind-desc">Records patterns. Updates memory. Grows.</p>
+            </article>
+            <article class="mind-detail">
+                <div class="mind-header"><span class="mind-id">BRIDGE</span><h2 class="mind-title">Translator</h2></div>
+                <p class="mind-role">Cognition bridge</p>
+                <p class="mind-desc">Translates between cognitive types. The missing role.</p>
+            </article>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-left">UNSHELLED.AI / VENOM / 2026</div>
+        <div class="footer-right">No shell. Just intelligence.</div>
+    </footer>
+    <script>
+        (function(){const b=document.getElementById('livingBg');const n=document.querySelector('.nav');
+        if(n)window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>50);},{passive:true});
+        if(!b)return;
+        for(let i=0;i<8;i++){const t=document.createElement('div');t.className='tentacle';t.style.cssText='left:'+(10+i*12)+'%;top:0;height:'+(30+Math.random()*40)+'%;animation-delay:'+(i*0.5)+'s';b.appendChild(t);}
+        for(let i=0;i<15;i++){const d=document.createElement('div');d.className='pulse-dot';d.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*6)+'s';b.appendChild(d);}})();
+    </script>
+</body>
+</html>

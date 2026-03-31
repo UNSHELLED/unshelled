@@ -1,0 +1,16 @@
+{
+  "_comment": "Copy to .claude/settings.local.json (NOT committed to git). Personal permissions and env overrides.",
+  "permissions": {
+    "allow": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(npm run dev*)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)"
+    ],
+    "deny": []
+  },
+  "env": {
+    "ANTHROPIC_API_KEY": ""
+  }
+}

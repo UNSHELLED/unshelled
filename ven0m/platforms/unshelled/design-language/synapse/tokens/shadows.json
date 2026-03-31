@@ -1,0 +1,56 @@
+{
+  "$schema": "https://trpc.io/schema-design-tokens",
+  "id": "synapse-shadows",
+  "version": "1.0.0",
+  "title": "Synapse Shadow System",
+  "meta": {
+    "summary": "Depth through shadow. Elevation hierarchy. Neural glow in dark mode.",
+    "philosophy": "Shadows create depth. In Void mode, shadows become subtle glows. Dawn mode uses traditional shadows."
+  },
+  "modes": {
+    "void": {
+      "description": "Dark mode — shadows become subtle inner glows and edge highlights",
+      "elevation": {
+        "none": { "value": "none", "usage": "flat, no elevation" },
+        "xs": { "value": "inset 0 0.5px 0 rgba(240,235,227,0.05)", "usage": "subtle edge highlight" },
+        "sm": { "value": "inset 0 1px 0 rgba(240,235,227,0.06), 0 1px 2px rgba(0,0,0,0.3)", "usage": "raised surfaces" },
+        "md": { "value": "inset 0 1px 0 rgba(240,235,227,0.08), 0 4px 12px rgba(0,0,0,0.4)", "usage": "cards, panels" },
+        "lg": { "value": "inset 0 1px 0 rgba(240,235,227,0.10), 0 8px 24px rgba(0,0,0,0.5)", "usage": "modals, dropdowns" },
+        "xl": { "value": "inset 0 2px 0 rgba(240,235,227,0.12), 0 16px 48px rgba(0,0,0,0.6)", "usage": "overlays" }
+      },
+      "glow": {
+        "pulse": { "value": "0 0 20px rgba(0,255,136,0.3)", "usage": "active mind glow" },
+        "think": { "value": "0 0 30px rgba(0,255,136,0.2)", "usage": "thinking state" },
+        "success": { "value": "0 0 20px rgba(0,232,120,0.3)", "usage": "success feedback" },
+        "warning": { "value": "0 0 20px rgba(255,184,0,0.3)", "usage": "warning feedback" },
+        "error": { "value": "0 0 20px rgba(255,51,102,0.3)", "usage": "error feedback" }
+      }
+    },
+    "dawn": {
+      "description": "Light mode — traditional shadows on warm surfaces",
+      "elevation": {
+        "none": { "value": "none", "usage": "flat, no elevation" },
+        "xs": { "value": "0 1px 2px rgba(0,0,0,0.04)", "usage": "subtle lift" },
+        "sm": { "value": "0 2px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)", "usage": "raised surfaces" },
+        "md": { "value": "0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04)", "usage": "cards, panels" },
+        "lg": { "value": "0 8px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06)", "usage": "modals, dropdowns" },
+        "xl": { "value": "0 16px 48px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08)", "usage": "overlays" }
+      },
+      "glow": {
+        "pulse": { "value": "0 0 20px rgba(0,255,136,0.25)", "usage": "active mind glow" },
+        "think": { "value": "0 0 30px rgba(0,255,136,0.15)", "usage": "thinking state" },
+        "success": { "value": "0 0 20px rgba(0,232,120,0.25)", "usage": "success feedback" },
+        "warning": { "value": "0 0 20px rgba(255,184,0,0.25)", "usage": "warning feedback" },
+        "error": { "value": "0 0 20px rgba(255,51,102,0.25)", "usage": "error feedback" }
+      }
+    }
+  },
+  "focus": {
+    "ring": { "value": "0 0 0 2px rgba(0,255,136,0.5)", "usage": "keyboard focus indicator" },
+    "ringOffset": { "value": "0 0 0 4px rgba(0,255,136,0.2)", "usage": "focus ring with offset" }
+  },
+  "inset": {
+    "sm": { "value": "inset 0 1px 2px rgba(0,0,0,0.1)", "usage": "pressed states, inputs" },
+    "md": { "value": "inset 0 2px 4px rgba(0,0,0,0.15)", "usage": "deep pressed" }
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="VENOM - Nine minds. One coherence. No shell. Just intelligence. The symbiotic AI companion for your IDE.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UNSHELLED.AI - VENOM">
+    <meta property="og:description" content="Nine minds. One coherence. No shell. Just intelligence.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UNSHELLED.AI - VENOM">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐙</text></svg>">
+    <title>UNSHELLED.AI - VENOM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drawLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pulseGlow{0%,100%{filter:drop-shadow(0 0 20px rgba(0,255,136,0.3))}50%{filter:drop-shadow(0 0 40px rgba(0,255,136,0.6))}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.animate-in{animation:fadeUp 0.8s var(--ease-out) both}
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
+@media(prefers-reduced-motion:reduce){.animate-in{animation:none;opacity:1;transform:none}}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--nav-height) + var(--space-xl)) var(--space-lg) var(--space-2xl);position:relative;overflow:hidden}
+@media(min-width:768px){.hero{padding:calc(var(--nav-height) + var(--space-2xl)) var(--space-xl) var(--space-3xl)}}
+@media(min-width:1280px){.hero{padding:calc(var(--nav-height) + var(--space-3xl)) var(--space-2xl) var(--space-4xl)}}
+.octopus-visual{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:50vw;max-width:600px;opacity:0.12;pointer-events:none;animation:pulseGlow 4s ease-in-out infinite}
+@media(max-width:1023px){.octopus-visual{display:none}}
+.hero-content{max-width:900px;position:relative;z-index:1}
+.tagline{font-family:var(--font-mono);font-size:clamp(0.55rem,1.5vw,0.65rem);letter-spacing:0.35em;text-transform:uppercase;color:var(--pulse);margin-bottom:var(--space-lg);display:flex;align-items:center;gap:var(--space-md)}
+.tagline::before{content:'';width:clamp(24px,4vw,40px);height:1px;background:var(--pulse);animation:drawLine 1s var(--ease-out) 0.5s both}
+.hero h1{font-size:clamp(2.5rem,12vw,7rem);font-weight:300;line-height:0.92;letter-spacing:-0.04em;margin-bottom:var(--space-xl)}
+.hero h1 .stroke{-webkit-text-stroke:1px var(--white);-webkit-text-fill-color:transparent}
+.hero-desc{font-size:clamp(0.95rem,2vw,1.1rem);line-height:1.8;color:var(--ash);max-width:500px;margin-bottom:var(--space-xl)}
+.hero-desc strong{color:var(--white);font-weight:500}
+.cta-group{display:flex;flex-wrap:wrap;gap:var(--space-lg);align-items:center}
+.scroll-indicator{position:absolute;bottom:var(--space-xl);left:var(--space-lg);display:flex;flex-direction:column;align-items:center;gap:var(--space-md)}
+@media(max-width:767px){.scroll-indicator{display:none}}
+@media(min-width:768px){.scroll-indicator{left:var(--space-xl);bottom:var(--space-2xl}}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--pulse),transparent);animation:pulse-down 2s var(--ease-in-out) infinite}
+@keyframes pulse-down{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.5);opacity:0.5}}
+.scroll-text{font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.2em;color:var(--smoke);writing-mode:vertical-rl}
+.minds-section,.platform-section,.philosophy-section,.initiate-section{padding:var(--space-3xl) var(--space-lg)}
+@media(min-width:768px){.minds-section,.platform-section,.philosophy-section,.initiate-section{padding:var(--space-4xl) var(--space-xl)}}
+@media(min-width:1280px){.minds-section,.platform-section,.philosophy-section,.initiate-section{padding:var(--space-4xl) var(--space-2xl)}}
+.minds-header{max-width:700px;margin-bottom:var(--space-2xl)}
+@media(min-width:768px){.minds-header{margin-bottom:var(--space-3xl)}}
+.minds-header h2{font-size:clamp(1.75rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:var(--space-lg)}
+.minds-header p{color:var(--ash);font-size:clamp(0.9rem,1.5vw,1.05rem);line-height:1.8}
+.mind-map{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md);max-width:var(--max-content);margin:0 auto}
+@media(min-width:768px){.mind-map{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(3,auto);gap:var(--space-lg)}}
+.mind-card{background:var(--depth);border:1px solid var(--edge);padding:var(--space-lg);position:relative;transition:all 0.4s var(--ease-out);cursor:pointer;min-height:120px;z-index:1}
+@media(min-width:768px){.mind-card{padding:var(--space-xl);min-height:140px}}
+.mind-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--pulse),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s var(--ease-out)}
+.mind-card::after{content:'';position:absolute;inset:-1px;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,255,136,0.1) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;pointer-events:none}
+.mind-card:hover{background:var(--surface);border-color:var(--pulse);transform:translateY(-4px)}
+.mind-card:hover::before{transform:scaleX(1)}
+.mind-card:hover::after{opacity:1}
+.mind-card.brain{grid-column:1/-1;border-color:var(--pulse);background:linear-gradient(135deg,var(--depth) 0%,var(--surface) 100%)}
+@media(min-width:768px){.mind-card.brain{grid-column:3;grid-row:1}}
+.mind-card.brain::before{transform:scaleX(1);background:var(--pulse)}
+.mind-number{font-family:var(--font-mono);font-size:0.55rem;color:var(--smoke);margin-bottom:var(--space-sm);display:block}
+.mind-name{font-size:clamp(1rem,1.5vw,1.25rem);font-weight:500;margin-bottom:var(--space-xs)}
+.mind-role{font-size:0.8rem;color:var(--ash)}
+.platform-section{background:var(--ink)}
+.platform-grid{display:grid;grid-template-columns:1fr;gap:var(--space-lg);max-width:1400px;margin:0 auto}
+@media(min-width:640px){.platform-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.platform-grid{grid-template-columns:repeat(3,1fr)}}
+.platform-card{background:var(--void);border:1px solid var(--edge);padding:var(--space-xl);position:relative;transition:all 0.4s var(--ease-out)}
+@media(min-width:768px){.platform-card{padding:var(--space-2xl)}}
+.platform-card:hover{border-color:var(--pulse);transform:translateY(-2px)}
+.platform-card.ready::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pulse)}
+.platform-status{position:absolute;top:var(--space-lg);right:var(--space-lg);font-family:var(--font-mono);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:var(--space-xs) var(--space-md);border:1px solid}
+.platform-status.ready{color:var(--pulse);border-color:var(--pulse)}
+.platform-status.coming{color:var(--smoke);border-color:var(--ghost)}
+.platform-name{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;margin-bottom:var(--space-xs)}
+.platform-type{font-size:0.8rem;color:var(--smoke);margin-bottom:var(--space-lg)}
+.platform-features{list-style:none}
+.platform-features li{padding:var(--space-md) 0;border-bottom:1px solid var(--edge);color:var(--ash);font-size:0.85rem;display:flex;align-items:center;gap:var(--space-md)}
+.platform-features li::before{content:'→';color:var(--pulse);font-family:var(--font-mono)}
+.philosophy-section{display:flex;flex-direction:column;align-items:center;text-align:center}
+.philosophy-quote{font-size:clamp(1.25rem,3vw,2rem);font-weight:300;line-height:1.6;max-width:720px;margin-bottom:var(--space-xl)}
+.philosophy-quote em{font-style:normal;color:var(--pulse)}
+.initiate-section{background:linear-gradient(to bottom,var(--void),var(--depth));text-align:center}
+.initiate-section h2{font-size:clamp(2.5rem,6vw,5rem);font-weight:300;margin-bottom:var(--space-lg)}
+.initiate-section p{color:var(--ash);font-size:1rem;margin-bottom:var(--space-xl)}
+    </style>
+    <noscript><style>.animate-in{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+    <div class="living-bg" id="livingBg" aria-hidden="true"></div>
+    <svg class="octopus-visual" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g stroke="#00ff88" stroke-width="0.5" fill="none">
+            <ellipse cx="100" cy="70" rx="35" ry="40"/>
+            <path d="M65 90 Q40 120 30 160 Q25 180 35 190"/><path d="M75 95 Q55 130 45 165 Q40 185 50 195"/>
+            <path d="M85 100 Q70 135 65 170"/><path d="M100 105 Q95 140 95 175"/>
+            <path d="M115 100 Q130 135 135 170"/><path d="M125 95 Q145 130 155 165 Q160 185 150 195"/>
+            <path d="M135 90 Q160 120 170 160 Q175 180 165 190"/>
+            <circle cx="85" cy="60" r="8"/><circle cx="115" cy="60" r="8"/>
+            <circle cx="85" cy="60" r="3" fill="#00ff88"/><circle cx="115" cy="60" r="3" fill="#00ff88"/>
+        </g>
+    </svg>
+    <nav class="nav" id="nav" role="navigation"><a href="index.html" class="nav-logo">UNSHELLED<span>.</span>AI</a><div class="nav-links"><a href="philosophy.html">Philosophy</a><a href="minds.html">Nine Minds</a><a href="gallery.html">Platforms</a><a href="initiate.html">Initiate</a></div></nav>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="tagline animate-in delay-1">Versatile Entity Network Operating Matrix</p>
+                <h1 class="animate-in delay-2">NO <span class="stroke">SHELL</span><br>JUST INTELLIGENCE</h1>
+                <p class="hero-desc animate-in delay-3"><strong>Nine minds.</strong> Distributed cognition. VENOM doesn't integrate with your IDE - it <strong>becomes</strong> it. Symbiotic. Adaptive. Complete.</p>
+                <div class="cta-group animate-in delay-4"><a href="initiate.html" class="btn btn-primary"><span>Begin Initiation</span></a><a href="philosophy.html" class="btn btn-ghost">Or understand first -></a></div>
+            </div>
+            <div class="scroll-indicator"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
+        </section>
+        <section class="minds-section section">
+            <p class="section-label label">Architecture</p>
+            <div class="minds-header"><h2 class="heading-lg">Nine minds working as one</h2><p class="body-lg">Like the octopus - distributed neurons, each arm capable of independent thought, yet unified in purpose. VENOM operates the same way.</p></div>
+            <div class="mind-map">
+                <article class="mind-card"><span class="mind-number">ARM 01</span><h3 class="mind-name">Researcher</h3><p class="mind-role">Deep exploration</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 02</span><h3 class="mind-name">Reviewer</h3><p class="mind-role">Quality analysis</p></article>
+                <article class="mind-card brain"><span class="mind-number">BRAIN 00</span><h3 class="mind-name">Architect</h3><p class="mind-role">Orchestration</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 03</span><h3 class="mind-name">Historian</h3><p class="mind-role">Memory</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 04</span><h3 class="mind-name">Builder</h3><p class="mind-role">Implementation</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 05</span><h3 class="mind-name">Debugger</h3><p class="mind-role">Diagnostics</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 06</span><h3 class="mind-name">Predictor</h3><p class="mind-role">Anticipation</p></article>
+                <article class="mind-card"><span class="mind-number">BRIDGE</span><h3 class="mind-name">Translator</h3><p class="mind-role">Cognition bridge</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 07</span><h3 class="mind-name">Communicator</h3><p class="mind-role">Adaptation</p></article>
+                <article class="mind-card"><span class="mind-number">ARM 08</span><h3 class="mind-name">Learner</h3><p class="mind-role">Evolution</p></article>
+            </div>
+        </section>
+        <section id="platforms" class="platform-section section">
+            <p class="section-label label">Platforms</p>
+            <div class="platform-grid">
+                <article class="platform-card ready"><span class="platform-status ready">Ready</span><h3 class="platform-name">Claude Code</h3><p class="platform-type">Original VENOM</p><ul class="platform-features"><li>Full nine-mind architecture</li><li>SessionStart and PreCompact hooks</li><li>10 specialized subagents</li><li>Cross-session memory</li><li>Complete skill system</li></ul></article>
+                <article class="platform-card"><span class="platform-status coming">Coming</span><h3 class="platform-name">Cursor</h3><p class="platform-type">Rules VENOM</p><ul class="platform-features"><li>.cursorrules integration</li><li>Agent system</li><li>Pattern matching</li><li>Context awareness</li></ul></article>
+                <article class="platform-card"><span class="platform-status coming">Coming</span><h3 class="platform-name">Windsurf</h3><p class="platform-type">Cascade VENOM</p><ul class="platform-features"><li>Cascade integration</li><li>Flow state optimization</li><li>Memory persistence</li><li>Context layers</li></ul></article>
+            </div>
+        </section>
+        <section class="philosophy-section section">
+            <p class="section-label label">Philosophy</p>
+            <p class="philosophy-quote">"The octopus has <em>no shell</em>... so it developed <em>intelligence</em>.<br>No limits... so <em>VENOM</em>."</p>
+            <a href="philosophy.html" class="btn btn-primary"><span>Read the doctrine</span></a>
+        </section>
+        <section class="initiate-section section">
+            <h2 class="heading-lg">Ready?</h2>
+            <p class="body-lg">Copy. Customize. Awaken.</p>
+            <a href="initiate.html" class="btn btn-primary"><span>Begin</span></a>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-left">UNSHELLED.AI / VENOM / 2026</div><div class="footer-right">No shell. Just intelligence.</div></footer>
+    <script>
+(function(){
+var bg=document.getElementById('livingBg'),rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(bg&&!rm){for(var i=0;i<8;i++){var t=document.createElement('div');t.className='tentacle';t.style.cssText='left:'+(10+i*12)+'%;top:0;height:'+(30+Math.random()*40)+'%;animation-delay:'+(i*0.5)+'s';bg.appendChild(t);}
+for(var i=0;i<25;i++){var d=document.createElement('div');d.className='pulse-dot';d.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*6)+'s';bg.appendChild(d);}
+document.addEventListener('mousemove',function(e){var x=e.clientX/window.innerWidth,y=e.clientY/window.innerHeight;bg.style.background='radial-gradient(circle at '+x*100+'% '+y*100+'%, rgba(0,255,136,0.04) 0%, transparent 50%)';},{passive:true});}
+var nav=document.getElementById('nav');if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50);},{passive:true});
+document.querySelectorAll('.mind-card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');},{passive:true});});
+})();
+    </script>
+</body>
+</html>

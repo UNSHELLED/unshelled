@@ -1,0 +1,25 @@
+# CLAUDE.local.md — Personal overrides (NOT committed to git)
+
+> Copy this file to CLAUDE.local.md and customize. Keep out of version control.
+> This file is loaded alongside CLAUDE.md and takes precedence for personal settings.
+
+---
+
+## Owner
+
+**Name:** [Your name]  
+**Preferred language:** [English / Arabic / mixed]  
+**Communication style:** [code-first / explanation-first / bullet-first / prose]
+
+## Personal Corrections
+
+<!-- Things VENOM should never do for YOU specifically -->
+
+## Personal Preferences
+
+<!-- Your working style preferences that aren't in the shared corrections.yaml -->
+
+## Energy Matching Calibration
+
+<!-- Optional: if default energy matching needs tuning for your style -->
+<!-- Example: "I write in all lowercase. Short messages are NOT frustrated — they're just fast." -->

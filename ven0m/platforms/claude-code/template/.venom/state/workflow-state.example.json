@@ -1,0 +1,9 @@
+{
+  "_comment": "This is an example. The real workflow-state.json is written by /venom-spec and managed automatically.",
+  "workflow": "spec",
+  "feature": "user-auth",
+  "phase": 3,
+  "phaseName": "plan",
+  "complete": false,
+  "lastUpdated": "2026-03-30T12:00:00.000Z"
+}

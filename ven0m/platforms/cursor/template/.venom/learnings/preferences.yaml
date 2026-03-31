@@ -1,0 +1,10 @@
+# Communication and working style preferences
+# VENOM reads this on non-trivial tasks. Add as you work.
+#
+# Examples:
+#   response_style: concise
+#   code_comments: minimal
+#   explanation_depth: senior-dev
+#   language: english
+
+preferences: []

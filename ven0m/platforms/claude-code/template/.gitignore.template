@@ -1,0 +1,15 @@
+# VENOM — gitignore additions
+# Copy relevant sections to your project's .gitignore
+
+# Personal overrides — never commit
+CLAUDE.local.md
+.claude/settings.local.json
+
+# VENOM state — ephemeral, don't commit
+.venom/state/.tool-counter.json
+.venom/work/eat-*.md
+
+# Keep: .venom/CONTEXT.md, MEMORY.md, learnings/, work/ACTIVE.md
+# These are project memory and should be committed if team-shared.
+# For personal projects: commit everything in .venom/
+# For team projects: .gitignore .venom/learnings/preferences.yaml (personal)

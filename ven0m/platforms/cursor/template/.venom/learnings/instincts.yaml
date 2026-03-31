@@ -1,0 +1,8 @@
+# Instincts — learned patterns with confidence (0.3 → 0.6 → 0.9)
+# Written via `/remember` or explicit capture — not auto-guessed.
+
+# - trigger: "example signal"
+#   action: "example response"
+#   confidence: 0.3
+#   evidence: "why you believe this"
+#   added: "YYYY-MM-DD"

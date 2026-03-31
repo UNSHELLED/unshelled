@@ -1,0 +1,20 @@
+# preferences.yaml
+# Working style preferences observed over time.
+# Format:
+#   - category: communication | code | workflow | review | other
+#     preference: "observed preference"
+#     strength: strong | mild
+#     added: YYYY-MM-DD
+
+preferences: []
+
+# Example:
+# preferences:
+#   - category: communication
+#     preference: "prefers code-first responses — show the fix, explain after"
+#     strength: strong
+#     added: 2026-01-10
+#   - category: code
+#     preference: "early returns over nested conditionals"
+#     strength: mild
+#     added: 2026-02-01

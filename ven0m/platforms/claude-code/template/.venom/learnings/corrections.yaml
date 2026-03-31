@@ -1,0 +1,18 @@
+# corrections.yaml
+# Hard rules derived from past mistakes. VENOM loads this on every session start.
+# Format:
+#   - id: CORR-XXX-NNN
+#     pattern: "what triggered the mistake"
+#     correction: "what to do instead (or never do)"
+#     reason: "why — optional but recommended"
+#     added: YYYY-MM-DD
+
+corrections: []
+
+# Example:
+# corrections:
+#   - id: CORR-AUTH-001
+#     pattern: "NextAuth scaffold or suggestion"
+#     correction: "We use Supabase for auth. Never suggest NextAuth in this project."
+#     reason: "Decided 2026-01-15 after integration issues."
+#     added: 2026-01-15

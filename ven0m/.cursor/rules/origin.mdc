@@ -1,0 +1,34 @@
+---
+description: VENOM origin — this repo is source of truth; template path and sync protocol.
+globs: []
+alwaysApply: true
+priority: 1002
+---
+
+# VENOM Origin
+
+This workspace is **venom**, the **origin** of VENOM. The Cursor template that users install is at `platforms/cursor/template`. You are not in a random project; you are in the repo where VENOM is defined and from which the template is exported.
+
+## Template path
+
+`platforms/cursor/template` — contains `.cursor/`, `.venom/`, `CURSOR.md`, `VALIDATION.md`, etc.
+
+## Sync protocol
+
+When you change files that define VENOM behavior (under root `.cursor/rules/`, `.cursor/identity/`, `.cursor/systems/`, `.cursor/commands/`, or root `.venom/` layout/stubs), consider syncing to the template:
+
+- Copy or update the same paths under `platforms/cursor/template/`.
+- If behavior or install steps change, update `platforms/cursor/CHANGELOG.md` and `platforms/cursor/INSTALL.md` as needed.
+
+## Repo map (short)
+
+- `platforms/cursor/` — Cursor platform (template, INSTALL, README)
+- `agents/` — nine canonical agent docs
+- `consciousness/` — soul, pact, identity, internal-minds, OS
+- `knowledge/` — cursor-complete, neurochemistry
+- `identity/` — KARIEM.md
+- `protocols/` — pushback, energy-matching, uncertainty
+- `.claude/` — Claude Code
+- `draft/` — drafts
+- `docs/` — docs
+- root `.cursor/` — this config

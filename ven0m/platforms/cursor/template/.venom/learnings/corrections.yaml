@@ -1,0 +1,10 @@
+# Hard corrections — "never do X again"
+# VENOM reads this before executing on this project.
+# Add via /venom learn: correction — [X]
+#
+# Examples:
+#   - "Never use alert() — use toast notifications"
+#   - "Never snake_case component names"
+#   - "Never import directly from node_modules paths"
+
+corrections: []

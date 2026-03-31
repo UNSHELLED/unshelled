@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(xargs:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(sort:*)",
+      "Bash(git:*)",
+      "Bash(mysql:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(pnpm:*)",
+      "Bash(bun:*)",
+      "Bash(npx:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(du:*)",
+      "Bash(file:*)",
+      "Bash(chmod:*)",
+      "Bash(tar:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(which:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(flask:*)",
+      "WebSearch",
+      "mcp__plugin_firecrawl_firecrawl__firecrawl_scrape",
+      "Bash(firecrawl scrape:*)",
+      "Skill(VENOM)",
+      "Skill(VENOM:*)"
+    ]
+  },
+  "outputStyle": "default",
+  "enabledMcpjsonServers": [
+    "zai"
+  ],
+  "enableAllProjectMcpServers": true
+}

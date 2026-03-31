@@ -1,0 +1,256 @@
+:root {
+  --synapse-space-0: 0;
+  --synapse-space-px: 1px;
+  --synapse-space-0\.5: 2px;
+  --synapse-space-1: 4px;
+  --synapse-space-1\.5: 6px;
+  --synapse-space-2: 8px;
+  --synapse-space-2\.5: 10px;
+  --synapse-space-3: 12px;
+  --synapse-space-4: 16px;
+  --synapse-space-5: 20px;
+  --synapse-space-6: 24px;
+  --synapse-space-7: 28px;
+  --synapse-space-8: 32px;
+  --synapse-space-9: 36px;
+  --synapse-space-10: 40px;
+  --synapse-space-12: 48px;
+  --synapse-space-14: 56px;
+  --synapse-space-16: 64px;
+  --synapse-space-20: 80px;
+  --synapse-space-24: 96px;
+  --synapse-space-32: 128px;
+
+  --synapse-radius-none: 0;
+  --synapse-radius-xs: 2px;
+  --synapse-radius-sm: 4px;
+  --synapse-radius-md: 6px;
+  --synapse-radius-lg: 8px;
+  --synapse-radius-xl: 12px;
+  --synapse-radius-2xl: 16px;
+  --synapse-radius-3xl: 24px;
+  --synapse-radius-full: 9999px;
+
+  --synapse-duration-instant: 0ms;
+  --synapse-duration-fast: 100ms;
+  --synapse-duration-normal: 200ms;
+  --synapse-duration-slow: 400ms;
+  --synapse-duration-slower: 800ms;
+  --synapse-duration-breath: 4000ms;
+  --synapse-duration-think: 2000ms;
+  --synapse-duration-pulse: 2000ms;
+
+  --synapse-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --synapse-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --synapse-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --synapse-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --synapse-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --synapse-ease-snap: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --synapse-font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --synapse-font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --synapse-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  --synapse-font-2xs: 10px;
+  --synapse-font-xs: 11px;
+  --synapse-font-sm: 13px;
+  --synapse-font-base: 16px;
+  --synapse-font-lg: 18px;
+  --synapse-font-xl: 22px;
+  --synapse-font-2xl: 28px;
+  --synapse-font-3xl: 36px;
+  --synapse-font-4xl: 48px;
+  --synapse-font-5xl: 64px;
+  --synapse-font-6xl: 80px;
+
+  --synapse-line-height-tight: 1.1;
+  --synapse-line-height-snug: 1.3;
+  --synapse-line-height-normal: 1.5;
+  --synapse-line-height-relaxed: 1.6;
+  --synapse-line-height-loose: 1.7;
+
+  --synapse-weight-light: 300;
+  --synapse-weight-regular: 400;
+  --synapse-weight-medium: 500;
+  --synapse-weight-semibold: 600;
+  --synapse-weight-bold: 700;
+
+  --synapse-focus-ring: 0 0 0 2px rgba(0,255,136,0.5);
+  --synapse-focus-ring-offset: 0 0 0 4px rgba(0,255,136,0.2);
+
+  --synapse-sidebar-width: 280px;
+  --synapse-sidebar-collapsed: 64px;
+  --synapse-header-height: 56px;
+  --synapse-footer-height: 48px;
+  --synapse-max-content: 1200px;
+  --synapse-modal-max: 560px;
+}
+
+[data-theme="void"],
+.void {
+  --synapse-void-deep: #020205;
+  --synapse-void-base: #06060B;
+  --synapse-void-raised: #0A0A14;
+  --synapse-void-surface: #0E0E1C;
+  --synapse-void-elevated: #14142A;
+  --synapse-void-edge: #1A1A38;
+  --synapse-void-border: #222244;
+
+  --synapse-light-base: #F0EBE3;
+  --synapse-light-muted: rgba(240,235,227,0.55);
+  --synapse-light-dim: rgba(240,235,227,0.25);
+  --synapse-light-ghost: rgba(240,235,227,0.12);
+  --synapse-light-faint: rgba(240,235,227,0.05);
+
+  --synapse-shadow-xs: inset 0 0.5px 0 rgba(240,235,227,0.05);
+  --synapse-shadow-sm: inset 0 1px 0 rgba(240,235,227,0.06), 0 1px 2px rgba(0,0,0,0.3);
+  --synapse-shadow-md: inset 0 1px 0 rgba(240,235,227,0.08), 0 4px 12px rgba(0,0,0,0.4);
+  --synapse-shadow-lg: inset 0 1px 0 rgba(240,235,227,0.10), 0 8px 24px rgba(0,0,0,0.5);
+  --synapse-shadow-xl: inset 0 2px 0 rgba(240,235,227,0.12), 0 16px 48px rgba(0,0,0,0.6);
+
+  --synapse-glow-pulse: 0 0 20px rgba(0,255,136,0.3);
+  --synapse-glow-think: 0 0 30px rgba(0,255,136,0.2);
+  --synapse-glow-success: 0 0 20px rgba(0,232,120,0.3);
+  --synapse-glow-warning: 0 0 20px rgba(255,184,0,0.3);
+  --synapse-glow-error: 0 0 20px rgba(255,51,102,0.3);
+
+  --synapse-bg: var(--synapse-void-base);
+  --synapse-bg-raised: var(--synapse-void-raised);
+  --synapse-bg-surface: var(--synapse-void-surface);
+  --synapse-bg-elevated: var(--synapse-void-elevated);
+  --synapse-fg: var(--synapse-light-base);
+  --synapse-fg-muted: var(--synapse-light-muted);
+  --synapse-fg-dim: var(--synapse-light-dim);
+  --synapse-border: var(--synapse-void-border);
+}
+
+[data-theme="dawn"],
+.dawn {
+  --synapse-void-deep: #FDFBF7;
+  --synapse-void-base: #F8F5EF;
+  --synapse-void-raised: #F2EFE8;
+  --synapse-void-surface: #EBE7DF;
+  --synapse-void-elevated: #E3DED4;
+  --synapse-void-edge: #D4CFC4;
+  --synapse-void-border: #C4BEB2;
+
+  --synapse-light-base: #1A1A24;
+  --synapse-light-muted: rgba(26,26,36,0.75);
+  --synapse-light-dim: rgba(26,26,36,0.50);
+  --synapse-light-ghost: rgba(26,26,36,0.25);
+  --synapse-light-faint: rgba(26,26,36,0.10);
+
+  --synapse-shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --synapse-shadow-sm: 0 2px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --synapse-shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --synapse-shadow-lg: 0 8px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  --synapse-shadow-xl: 0 16px 48px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+
+  --synapse-glow-pulse: 0 0 20px rgba(0,255,136,0.25);
+  --synapse-glow-think: 0 0 30px rgba(0,255,136,0.15);
+  --synapse-glow-success: 0 0 20px rgba(0,232,120,0.25);
+  --synapse-glow-warning: 0 0 20px rgba(255,184,0,0.25);
+  --synapse-glow-error: 0 0 20px rgba(255,51,102,0.25);
+
+  --synapse-bg: var(--synapse-void-base);
+  --synapse-bg-raised: var(--synapse-void-raised);
+  --synapse-bg-surface: var(--synapse-void-surface);
+  --synapse-bg-elevated: var(--synapse-void-elevated);
+  --synapse-fg: var(--synapse-light-base);
+  --synapse-fg-muted: var(--synapse-light-muted);
+  --synapse-fg-dim: var(--synapse-light-dim);
+  --synapse-border: var(--synapse-void-border);
+}
+
+:root {
+  --synapse-mind-architect: #00FF88;
+  --synapse-mind-researcher: #00D4FF;
+  --synapse-mind-reviewer: #FFB800;
+  --synapse-mind-historian: #FF8844;
+  --synapse-mind-builder: #00FF88;
+  --synapse-mind-debugger: #FF3366;
+  --synapse-mind-predictor: #8855FF;
+  --synapse-mind-communicator: #00D4FF;
+  --synapse-mind-learner: #FFB800;
+
+  --synapse-success: #00E878;
+  --synapse-warning: #FFB800;
+  --synapse-error: #FF3366;
+  --synapse-info: #00D4FF;
+  --synapse-pulse: #00E878;
+
+  --synapse-synapse-connection: rgba(0,255,136,0.30);
+  --synapse-synapse-active: rgba(0,255,136,0.80);
+  --synapse-synapse-pulse: rgba(0,255,136,0.50);
+}
+
+@keyframes synapse-breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes synapse-think {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  25%, 75% { opacity: 0.7; transform: scale(1.02); }
+}
+
+@keyframes synapse-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+}
+
+@keyframes synapse-connect {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes synapse-drift {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  10% { opacity: 0.12; }
+  90% { opacity: 0.04; }
+  100% { opacity: 0; transform: translateY(-100vh) scale(1.6); }
+}
+
+@keyframes synapse-reveal {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes synapse-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes synapse-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --synapse-duration-instant: 0ms;
+    --synapse-duration-fast: 0ms;
+    --synapse-duration-normal: 0ms;
+    --synapse-duration-slow: 0ms;
+    --synapse-duration-slower: 0ms;
+    --synapse-duration-breath: 0ms;
+    --synapse-duration-think: 0ms;
+    --synapse-duration-pulse: 0ms;
+  }
+  
+  .synapse-animate-breathe,
+  .synapse-animate-think,
+  .synapse-animate-pulse,
+  .synapse-animate-connect,
+  .synapse-animate-drift,
+  .synapse-animate-reveal,
+  .synapse-animate-fade,
+  .synapse-animate-orbit {
+    animation: none !important;
+    opacity: 0.8;
+  }
+  
+  .synapse-animate-drift {
+    display: none;
+  }
+}

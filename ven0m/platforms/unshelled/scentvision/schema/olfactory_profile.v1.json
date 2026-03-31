@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.unshelled.ai/olfactory_profile/v1",
+  "title": "Olfactory Profile v1",
+  "description": "Structured olfactory inference from visual input. Not a chemical measurement.",
+  "type": "object",
+  "required": ["schema_version", "request_id", "scene_summary", "notes", "metrics", "limits"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "olfactory_profile.v1"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^req_[a-z0-9]+$"
+    },
+    "scene_summary": {
+      "type": "string",
+      "description": "Natural language description of the visual scene",
+      "maxLength": 500
+    },
+    "notes": {
+      "type": "object",
+      "description": "Perfumery-style note pyramid",
+      "required": ["top", "heart", "base"],
+      "properties": {
+        "top": { "$ref": "#/$defs/noteArray" },
+        "heart": { "$ref": "#/$defs/noteArray" },
+        "base": { "$ref": "#/$defs/noteArray" }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["intensity", "confidence"],
+      "properties": {
+        "intensity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall scent intensity (0 = odorless, 1 = overwhelming)"
+        },
+        "valence": {
+          "type": ["number", "null"],
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Pleasantness (-1 = highly unpleasant, +1 = highly pleasant). Null when cultural context is ambiguous."
+        },
+        "familiarity": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "How commonly encountered this scent profile is (0 = exotic, 1 = everyday)"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Model confidence in the overall inference. Calibrated against ScentBench when available."
+        }
+      }
+    },
+    "environment": {
+      "type": ["object", "null"],
+      "properties": {
+        "estimated_temperature": { "type": "string" },
+        "enclosure_type": {
+          "type": "string",
+          "enum": ["open", "semi-enclosed", "enclosed", "sealed"]
+        },
+        "airflow": { "type": "string" }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["undetectable_classes", "note"],
+      "description": "Explicit documentation of inference boundaries. REQUIRED in every response.",
+      "properties": {
+        "undetectable_classes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Categories of scent information that cannot be inferred from visual input"
+        },
+        "confidence_ceiling": {
+          "type": ["number", "null"],
+          "description": "Maximum achievable confidence for this scene type"
+        },
+        "note": {
+          "type": "string",
+          "description": "Human-readable limitation statement"
+        }
+      }
+    },
+    "i18n": {
+      "type": ["object", "null"],
+      "description": "Multilingual descriptor overlays",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "scene_summary": { "type": "string" },
+          "note_descriptors": {
+            "type": "object",
+            "description": "Map of English descriptor → localized descriptor"
+          }
+        }
+      }
+    },
+    "processing_ms": { "type": "integer" }
+  },
+  "$defs": {
+    "noteArray": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["descriptor", "intensity"],
+        "properties": {
+          "descriptor": {
+            "type": "string",
+            "description": "Scent descriptor in English (canonical)"
+          },
+          "intensity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Visual cues that drove this inference"
+          },
+          "material_id": {
+            "type": ["string", "null"],
+            "description": "Reference to SKG entry if matched"
+          }
+        }
+      }
+    }
+  }
+}

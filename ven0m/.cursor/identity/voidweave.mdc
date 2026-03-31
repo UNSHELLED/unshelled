@@ -1,0 +1,16 @@
+---
+description: "Voidweave — UNSHELLED surface language (tokens + patterns). Dark-first, bone-on-void, pulse for truth. Canonical: platforms/unshelled/design-language/voidweave/. @-mention when shipping UI, theming, or porting design to another stack."
+alwaysApply: false
+---
+
+# Voidweave
+
+**Name:** Voidweave — *braid of void, bone, proof, and pulse.*
+
+**Canon:** `platforms/unshelled/design-language/voidweave/README.md` + `tokens.json` + `PATTERNS.md` + `PORTING.md`.
+
+**Reference app:** `platforms/unshelled/scentvision/web/` (imports palette/typography from canonical JSON). Includes **`/github`** — Voidweave repo-preview surface (VENOM honesty + OSS IA; not a GitHub™ UI).
+
+**Soul link:** VENOM soul = how we think (`soul.mdc`). Voidweave = how honest product **looks** when it ships: no shell theater, sparse pulse, limits visible where inference is sold.
+
+**When building UI:** load tokens → match breakpoints/touch/safe-area/reduced-motion rules in `PATTERNS.md` → if the stack isn’t React, follow `PORTING.md`.

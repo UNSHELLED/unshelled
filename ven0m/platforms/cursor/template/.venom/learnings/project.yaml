@@ -1,0 +1,9 @@
+# Project conventions observed by VENOM
+# Updated via /venom learn: [X] or proactive offer after patterns emerge.
+#
+# Examples:
+#   - "All API routes use snake_case"
+#   - "Components use named exports only"
+#   - "Tests live next to source files"
+
+conventions: []
