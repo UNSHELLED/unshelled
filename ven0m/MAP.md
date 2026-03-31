@@ -36,7 +36,7 @@
 
 ## INDEX.md — canonical entry points (maintainer)
 
-*Prefer these paths when updating; nested copies under `platforms/unshelled/` may mirror them.*
+*Prefer these paths when updating; ScentVision product lives under `../products/scentvision/` (not under `platforms/`).*
 
 | Area | INDEX |
 |------|--------|

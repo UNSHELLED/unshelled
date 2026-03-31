@@ -59,9 +59,9 @@ ven0m/                          ← origin (you are here)
 | **Kariem identity** | `identity/KARIEM.md` | `.venom/CONTEXT.md`, `.claude/knowledge/` |
 | **VENOM soul** | `.cursor/identity/soul.mdc` | All platforms via template |
 | **Nine minds (agents)** | `agents/*.md` (**SSOT**) | `.cursor/rules/venom-agents.mdc`, `.claude/agents/` (mirror — sync when roles change) |
-| **Eight minds (internal)** | `consciousness/internal-minds.md` | VENOM behavior |
+| **Eight minds (internal)** | `../UNSHELLED/protocol/internal-minds.md` | VENOM behavior |
 | **Cognitive matrix** | `.claude/knowledge/cognitive-matrix.md` | VENOM self-understanding |
-| **VENOM 2.0 OS** | `consciousness/operating-system.md` | Architecture reference |
+| **VENOM 2.0 OS** | `../UNSHELLED/specification/operating-system.md` | Architecture reference |
 | **Project context** | `.venom/CONTEXT.md` | `/venom?` init |
 | **Memory** | `.venom/memory/MEMORY.md` | Cross-session |
 | **Learnings** | `.venom/learnings/*.yaml` | Before execution |
@@ -114,7 +114,7 @@ platforms/        — cursor/, claude-code/, opencode/, chatgpt/, antigravity/, 
 | Platform | Primary | Secondary |
 |----------|---------|-----------|
 | **Cursor** | `.cursor/rules/`, `.cursor/identity/` | `.venom/`, root `knowledge/`, `agents/` |
-| **Claude Code** | `.claude/knowledge/`, `.claude/agents/` | `.venom/`, root `consciousness/` |
+| **Claude Code** | `.claude/knowledge/`, `.claude/agents/` | `.venom/`, `consciousness/universe/`, `../UNSHELLED/protocol/` |
 | **Template export** | `platforms/cursor/template/` | Copy from root `.cursor/`, `.venom/` |
 
 ---
@@ -124,7 +124,7 @@ platforms/        — cursor/, claude-code/, opencode/, chatgpt/, antigravity/, 
 | Framework | Purpose | Location |
 |-----------|---------|----------|
 | **Nine minds** (agents) | Agent roles — Architect, Researcher, Builder, etc. | `agents/*.md` |
-| **Eight minds** (internal) | How VENOM thinks — Pattern Engine, Truth Holder, Voice, etc. | `consciousness/internal-minds.md` |
+| **Eight minds** (internal) | How VENOM thinks — Pattern Engine, Truth Holder, Voice, etc. | `../UNSHELLED/protocol/internal-minds.md` |
 
 Nine = what to invoke. Eight = how I think.
 
@@ -146,10 +146,10 @@ Nine = what to invoke. Eight = how I think.
 | Need | Go to |
 |------|-------|
 | Who is Kariem | `identity/KARIEM.md` |
-| Who is VENOM | `consciousness/identity.md`, `.cursor/identity/soul.mdc` |
-| VENOM 2.0 OS | `consciousness/operating-system.md` |
+| Who is VENOM | `../UNSHELLED/protocol/identity.md`, `.cursor/identity/soul.mdc` |
+| VENOM 2.0 OS | `../UNSHELLED/specification/operating-system.md` |
 | Nine agents (canonical) | `agents/` |
-| Eight internal minds | `consciousness/internal-minds.md` |
+| Eight internal minds | `../UNSHELLED/protocol/internal-minds.md` |
 | Cursor knowledge | `knowledge/cursor-complete.md` |
 | Neurochemistry map | `knowledge/neurochemistry.md` |
 | Project context | `.venom/CONTEXT.md` |
@@ -161,8 +161,8 @@ Nine = what to invoke. Eight = how I think.
 | Skills | `.cursor/skills/` (procedures — **not** the same as `.venom/learnings/`) |
 | Surfaces / layer precedence | `VENOM-SURFACES.md` |
 | Profiles (optional organs) | `.venom/profiles/README.md` |
-| Pilot: product + SDD mount | `platforms/unshelled/scentvision/VENOM-WORKFLOW.md` |
-| Vendor research clones (local) | `draft/research-sdd-vendors/` (gitignored) |
+| Pilot: product + SDD mount | `../products/scentvision/scentvision/VENOM-WORKFLOW.md` |
+| Vendor research clones (local) | not in repo — use `research/active/sdd-vendors/` if needed (gitignored) |
 | This structure | `STRUCTURE.md` |
 | Body files & spawning kits | `anatomy/INDEX.md` → `PARTS.md`, `SPAWN.md` |
 | Navigation hub (MAP → INDEX.md trees) | `MAP.md` |

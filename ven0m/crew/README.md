@@ -110,7 +110,7 @@ Who each mind needs to function:
 
 No mind works alone. That's the promise.
 
-Full relationship documentation: [`../consciousness/universe/crew-relationships.md`](../consciousness/universe/crew-relationships.md)
+Full relationship documentation: [`../.claude/knowledge/crew-relationships.md`](../.claude/knowledge/crew-relationships.md)
 
 ---
 

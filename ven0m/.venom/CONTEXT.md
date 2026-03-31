@@ -23,14 +23,17 @@
 ```
 .cursor/       — heart. Rules, identity, soul, commands
 .venom/        — brain. Context, memory, learnings, active work
-agents/        — nine canonical agent docs
-consciousness/ — soul, pact, identity, internal-minds, OS
+crew/          — ten minds (profiles, workspaces)
+agents/        — system agent docs (canonical)
+consciousness/ — universe docs (THE-CREW, THE-MAP), character-words, archive
 knowledge/     — cursor, neurochemistry, claude-code
 identity/      — KARIEM.md
-platforms/     — cursor, claude-code, chatgpt, antigravity, unshelled (ScentVision + future UNSHELLED products)
+platforms/     — cursor, claude-code, opencode, chatgpt, antigravity (templates; no unshelled here)
 docs/          — documentation
-draft/         — drafts
 .claude/       — Claude Code config
+../UNSHELLED/  — framework protocol + spec (pact, soul, internal-minds, OS spec)
+../products/   — ScentVision and other UNSHELLED products
+../research/   — experiments and findings (moved from draft/)
 ```
 
 ## Current Focus
