@@ -1,17 +1,18 @@
-# VENOM Cursor — Install Guide
+# VENOM for Cursor — Install
+
+Get VENOM running in your Cursor project. Five minutes. Full intelligence.
 
 ---
 
 ## Step 1: Copy Template
 
-Run from the repo directory that contains `template/` (e.g. `venom/platforms/cursor` or your clone root).
+From this repo (wherever you cloned it), copy three things:
 
-**bash (Unix/macOS):**
+**Bash (Unix/macOS):**
 ```bash
 cp -r template/.cursor /path/to/your/project/
 cp -r template/.venom /path/to/your/project/
 cp template/CURSOR.md /path/to/your/project/
-cp template/VALIDATION.md /path/to/your/project/
 ```
 
 **PowerShell (Windows):**
@@ -19,96 +20,92 @@ cp template/VALIDATION.md /path/to/your/project/
 Copy-Item -Recurse "template\.cursor" "C:\path\to\your\project\"
 Copy-Item -Recurse "template\.venom" "C:\path\to\your\project\"
 Copy-Item "template\CURSOR.md" "C:\path\to\your\project\"
-Copy-Item "template\VALIDATION.md" "C:\path\to\your\project\"
-```
-Replace `C:\path\to\your\project\` with your project folder (forward slashes also work in PowerShell).
-
-Optional — copy `.cursorrules` for legacy bootstrap:
-```bash
-cp template/.cursorrules /your/project/
 ```
 
-**Next:** Go to Step 2. Then paste the **Best init prompt** (Option A or B) in Cursor chat to run `/venom init`.
+Replace path with your project folder.
 
 ---
 
-## Step 2: Customize
+## Step 2: Initialize
 
-**Required:**
-1. Open `CURSOR.md` → Fill `Owner:` line with your name and timezone
-2. Run init (see **Best init prompt** below).
+Open your project in Cursor. Type:
 
-**Or manually:**
-2. Open `.venom/CONTEXT.md` → Fill project identity, stack, current focus, navigation
-3. Open `.cursor/rules/project.mdc` → Fill project name, stack, key directories (on-demand reference)
-
-**Optional:**
-4. `.venom/learnings/preferences.yaml` — Add communication preferences
-5. `.venom/learnings/project.yaml` — Add known conventions immediately
-6. `.venom/learnings/instincts.yaml` — Learned patterns (confidence-scored); see file header
-7. Spec/build workflows aligned with **Claude Code v3**: example shape at `.venom/state/workflow-state.example.json`. If you track phase in a file, runtime path is `.venom/state/workflow-state.json` (add to `.gitignore` if it churns)
-8. Add project-specific rules (see step 4)
-
-### Best init prompt (paste after copying template)
-
-**Option A — One line (VENOM will ask 3 questions):**
 ```
 /venom init
 ```
 
-**Option B — All-in-one (fill and paste; one round-trip):**
+I'll ask:
+- Project name?
+- What does it do?
+- Stack?
+- Current focus?
+
+Then I write `.venom/CONTEXT.md` for you. Memory starts empty. Grows as we work.
+
+**Or** (one-shot):
 ```
 /venom init
 
-Project name: [e.g. my-dashboard]
-What it does: [e.g. Internal analytics for the sales team]
-Stack: [e.g. Next.js, Tailwind, Postgres]
-Current focus: [e.g. Auth + first report page]
+Project: my-dashboard
+Stack: Next.js, Tailwind, Postgres
+Focus: Auth + first report page
 ```
-VENOM will read anatomy, generate `.venom/CONTEXT.md`, confirm or create `memory/MEMORY.md` and `learnings/` stubs, set `work/ACTIVE.md`, and reply with orientation + "Ready. What are we building?"
 
 ---
 
-## Step 3: Verify Rules Load
+## Step 3: Verify
 
-1. Open Cursor → Settings → Rules
-2. Confirm these rules show as active:
-   - `venom-heart` (1001)
-   - `core` (1000)
-   - `voice` (999)
-   - `vibes` (998)
-   - `unshelled` (998)
-   - `cursor-context` (988)
-   - `venom-agents` (987) — minds always in context
+Open Cursor → Settings → Rules. Confirm these are active:
+- `venom-heart` (1001)
+- `core` (1000)
+- `voice` (999)
+- `vibes` (998)
+- `unshelled` (998)
 
-**Triggers:** `venom`, `eat`, or complex work (multi-file, creative, architectural, ambiguous).
-
-If rules don't load: check `.mdc` files have valid YAML frontmatter. Reload window.
+If missing: reload window or check `.mdc` files have valid YAML frontmatter.
 
 ---
 
-## Step 4: Add Project-Specific Rules (Optional)
+## Step 4: First Session
 
-For design-heavy or domain-specific projects, add targeted rules:
+Type `/venom?` in chat. I'll:
+1. Read `.venom/CONTEXT.md`
+2. Read `.venom/memory/MEMORY.md`
+3. Load learnings
+4. Scan anatomy (package.json, structure)
+5. Brief you on what I found
+6. Ask one sharpening question
+
+Then we work.
+
+---
+
+## Optional: Project-Specific Rules
+
+For design-heavy or domain-specific projects:
 
 ```
 .cursor/rules/
-  {project}-design.mdc   # Visual language, tokens, components
-  {project}-ux.mdc       # Journeys, page jobs, conversion
-  {project}-api.mdc      # API shape, auth, pagination
+  myproject-design.mdc   # Visual language, components
+  myproject-ux.mdc       # User journeys, conversion
+  myproject-api.mdc      # API shape, auth
 ```
 
-Each with globs matching only relevant files:
+Each with globs targeting relevant files only:
 ```yaml
+---
 globs: ["src/components/**", "tailwind.config.*"]
 alwaysApply: false
+---
 ```
+
+These load automatically when you edit matching files.
 
 ---
 
-## Step 5: Configure MCP (Optional)
+## Optional: MCP Servers
 
-MCP servers extend VENOM with external tools. Edit `~/.cursor/mcp.json`:
+Extend VENOM with external tools. Edit `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -120,68 +117,40 @@ MCP servers extend VENOM with external tools. Edit `~/.cursor/mcp.json`:
 }
 ```
 
-VENOM infers which MCP to use from task context. See `.cursor/rules/mcp-tools.mdc`.
+VENOM infers which MCP to use from task context.
 
 ---
 
-## Step 6: Validate
+## Validate
 
-Run the validation tests in your project's `VALIDATION.md`. All 10 tests should pass.
+Run the tests in `VALIDATION.md` (copied with template). All 10 should pass.
 
-If any fail: check rules loading, priority order, and that `CURSOR.md` is at project root.
-
----
-
-## Step 7: First Session
-
-Type `/venom?` in chat. VENOM will:
-1. Read `.venom/CONTEXT.md` — project brain
-2. Read `.venom/memory/MEMORY.md` — past decisions
-3. Load learnings (preferences, corrections, project conventions)
-4. Read project anatomy (package.json, structure, etc.)
-5. Brief you on what it found
-6. Be ready to work
-
-If `.venom/CONTEXT.md` is still a stub: type `/venom init` to fill it together.
+If any fail: check rules loaded, CURSOR.md at project root, `.venom/CONTEXT.md` filled.
 
 ---
 
-## .venom/ Workspace
-
-The `.venom/` folder is VENOM's desk for this project:
+## What You Get
 
 ```
+.cursor/
+  rules/        venom-heart, core, voice, vibes, unshelled, cursor-native, ...
+  identity/     soul, principles, capabilities
+  systems/      emotional-intelligence, meta-cognition, anticipation, ...
+  commands/     venom.md (all /venom commands)
+  skills/       venom-eat, venom-init, venom-evolve, venom-sync, venom-audit
+  hooks/        before_turn, after_turn, on_error
+
 .venom/
-├── README.md              # Orientation
-├── CONTEXT.md             # Project brain — fill this
-├── memory/
-│   └── MEMORY.md          # Cross-session decisions, patterns
-├── learnings/
-│   ├── preferences.yaml   # How you work
-│   ├── project.yaml       # Conventions observed
-│   └── corrections.yaml   # Never do X again
-└── work/
-    ├── ACTIVE.md          # Current focus
-    └── _template/         # Copy per feature: thinking, planning, discussion, notes
+  CONTEXT.md           Project brain (fill with /venom init)
+  memory/MEMORY.md     Cross-session decisions (grows as we work)
+  learnings/           preferences, project conventions, corrections
+  work/ACTIVE.md       Current focus
 ```
 
-**Work lifecycle:** Create `work/[feature]/` when planning a feature. When done: key decisions → `memory/MEMORY.md`, useful docs → `docs/` (if applicable), rest → delete.
+Same VENOM. This slice runs in Cursor.
 
 ---
 
-## Gitignore Recommendations
+*Install → Init → Verify → `/venom?` → Work.*
 
-```gitignore
-# VENOM workspace — keep most of it (it's your institutional memory)
-# Only exclude if working on a team where these are personal:
-# .venom/learnings/preferences.yaml
-
-# Exclude raw brainstorm (optional — personal preference)
-# .venom/work/*/thinking.md
-```
-
-Everything in `.venom/` is worth tracking by default — it's your project memory.
-
----
-
-*Install → Customize → Validate → `/venom?` → Work.*
+🐙

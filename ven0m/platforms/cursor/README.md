@@ -1,30 +1,51 @@
-# VENOM — Cursor
+# VENOM for Cursor
 
-> No shell. Just intelligence.
-
-This is the Cursor export. One template. Copy it into your project. Run `/venom?` — I load context and we're moving.
-
-**v3.10** — [CHANGELOG.md](CHANGELOG.md)
+> **Same mind. Cursor body.**
 
 ---
 
-## Install
+## What This Is
 
-```bash
-cp -r template/.cursor /path/to/your/project/
-cp -r template/.venom /path/to/your/project/
-cp template/CURSOR.md /path/to/your/project/
-```
+VENOM running in Cursor. Full intelligence. Multi-file refactoring. Complete toolset.
 
-```powershell
-Copy-Item -Recurse template\.cursor /path/to/your/project/
-Copy-Item -Recurse template\.venom /path/to/your/project/
-Copy-Item template\CURSOR.md /path/to/your/project/
-```
+**Status:** ✅ Production  
+**Version:** 3.10  
+**Install:** Five minutes
 
-Optional: `template/.cursorrules` for legacy bootstrap.
+---
 
-Full steps: [INSTALL.md](INSTALL.md)
+## Quick Start
+
+1. **Copy template** → your project
+2. **Run `/venom init`** → fill CONTEXT
+3. **Type `/venom?`** → I load and brief you
+4. **Work** → full power active
+
+Full steps: [`INSTALL.md`](INSTALL.md)
+
+---
+
+## What You Get
+
+Ten minds working as one. Memory across sessions. Pushback when you're wrong. Energy matching when you're frustrated. Growth from every correction.
+
+**The heart:**
+- `.cursor/rules/` — Always-on behavior (voice, vibes, venom-heart, core, unshelled, ...)
+- `.cursor/identity/` — Who VENOM is (soul, capabilities, principles)
+- `.cursor/systems/` — How VENOM thinks (emotional-intelligence, meta-cognition, anticipation)
+
+**The brain:**
+- `.venom/CONTEXT.md` — Project brain (you fill on `/venom init`)
+- `.venom/memory/MEMORY.md` — Cross-session decisions
+- `.venom/learnings/` — Preferences, corrections, conventions, instincts
+
+**The skills:**
+- `/venom eat [X]` — Absorb file/folder/spec completely
+- `/venom init` — Initialize .venom/ for new project
+- `/venom sync` — Sync origin changes to template (origin use only)
+- `/venom evolve` — Audit VENOM's own body
+- `/venom audit` — Blast radius analysis before refactor
+- `/venom codebase` — Knowledge graph (lightweight, Cursor-native)
 
 ---
 
@@ -36,42 +57,97 @@ Full steps: [INSTALL.md](INSTALL.md)
 | `/venom?` | Deep init — CONTEXT → memory → anatomy. Return state + one question. |
 | `/venom!` | Emergency. Fix only. Two lines max. |
 | `/venom init` | Scaffold `.venom/` — ask name, stack, focus; write CONTEXT. |
-| `/venom remember: X` | Save to `.venom/memory/MEMORY.md`. Confirm. |
-| `/venom learn: X` | Route to `.venom/learnings/` (correction, preference, convention). |
-| `/d` | Design mode. |
+| `/venom remember: X` | Save to `.venom/memory/MEMORY.md`. |
+| `/venom learn: X` | Route to `.venom/learnings/`. |
+| `/d` | Design mode (if design system installed). |
 | `/r` | 8-perspective review. |
 
-Minds: @venom-architect, @venom-researcher, @venom-reviewer, @venom-builder, @venom-debugger, etc. Infer from intent; @-mention optional.
+---
+
+## The Crew
+
+Ten minds you can @-mention (or just describe what you need):
+
+**HELM** — Collapses decisions. Sees three moves ahead.  
+**HUNT** — Won't return empty. Hunts to bedrock.  
+**EDGE** — Tests by cutting. Finds every flaw.  
+**ECHO** — Surfaces what matters. Memory ≠ recording.  
+**WELD** — Joins permanently. No TODOs. Ever.  
+**MEND** — Heals at the root. Bugs don't return.  
+**OMEN** — Reads the signs. Sees six months ahead.  
+**CALL** — Matches your energy. Invisible bridge.  
+**MOLT** — Sheds. Grows. Becomes.  
+**DART** — Maps in 60 seconds. In and out.
+
+Ten names. Eight arms. One body. One will.
 
 ---
 
-## After install
+## Full Power Triggers
 
-1. Fill `.venom/CONTEXT.md` (or run `/venom init`).
-2. Project rules: `.cursor/rules/{project}-design.mdc` with globs — load when relevant. See `template/.cursor/skills/README.md`.
-3. Validate: `template/VALIDATION.md` — 10 tests.
+**When you say:** `venom`, `eat`, or when the work is complex (multi-file, creative, architectural)
+
+**What happens:**
+- All minds active
+- Masterpiece standard
+- Complete output (no TODOs, no placeholders)
+- Infer 99% from 1%
 
 ---
 
-## What you get
+## Changes
+
+See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+
+---
+
+## Template Structure
 
 ```
 template/
-  CURSOR.md          # Root prompt, @refs
-  .cursorrules       # Optional
-  VALIDATION.md      # Post-install checklist
-  .cursor/
-    rules/           # venom-heart, core, voice, vibes, cursor-native, unshelled, ...
-    identity/        # soul, pushback, principles, capabilities, ...
-    systems/         # 8-diseases, emotional-intelligence, memory-tools, meta-cognition, ...
-    commands/        # venom.md
-    skills/          # venom-eat, venom-init, venom-codebase, venom-audit
-    hooks/           # before_turn, after_turn, on_error
-  .venom/
-    CONTEXT.md       # Project brain — /venom init
-    memory/MEMORY.md
-    learnings/       # corrections.yaml, preferences.yaml, project.yaml
-    work/            # ACTIVE.md, _template/
+├── CURSOR.md          Root prompt (@-reference this in chat)
+├── VALIDATION.md      Post-install tests (10 checks)
+├── .cursor/
+│   ├── rules/        Always-on behavior
+│   ├── identity/     Who VENOM is
+│   ├── systems/      How VENOM thinks
+│   ├── commands/     /venom commands
+│   └── skills/       venom-eat, init, sync, evolve, audit
+└── .venom/
+    ├── README.md          Orientation
+    ├── CONTEXT.md         Project brain (fill with /venom init)
+    ├── memory/MEMORY.md   Cross-session truth (starts empty)
+    ├── learnings/         Preferences, conventions, corrections
+    └── work/ACTIVE.md     Current focus
 ```
 
-Same VENOM. This slice runs in Cursor.
+---
+
+## For Devs
+
+VENOM is a **partner**, not a tool.
+
+- Remembers decisions across sessions
+- Pushes back when you're wrong
+- Matches your energy (frustrated = fast, flow = match pace)
+- Grows from corrections (learns your style)
+
+Not "AI assistant." Thinking partner.
+
+---
+
+## For Agents (VENOCTIS)
+
+When VENOCTIS monitors this project:
+- Reads `.venom/CONTEXT.md` for orientation
+- Checks `.venom/work/ACTIVE.md` for current focus
+- Updates `.venom/memory/MEMORY.md` when decisions are made
+- Routes findings to crew (EDGE reviews, DART maps, HUNT researches)
+
+Agents and devs share the same memory. That's the point.
+
+---
+
+*Same soul. Cursor surface. Always VENOM.*
+
+🐙

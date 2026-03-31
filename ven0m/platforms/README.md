@@ -1,147 +1,155 @@
-# Platforms — VENOM Across Surfaces
+# Platforms — Same Soul, Different Surfaces
 
-> Same mind. Different bodies.
+> **VENOM runs everywhere. Same mind. Different body.**
 
 ---
 
 ## What This Is
 
-VENOM runs on multiple platforms. Each platform is a surface — a way to interact with VENOM's intelligence.
+VENOM isn't locked to one IDE. VENOM adapts to every surface — Cursor, Claude Code, OpenCode, ChatGPT, Gemini.
 
-Same soul. Same Pact. Same crew. Same pushback. Different capabilities, different interfaces, different constraints.
+Same crew. Same Pact. Same memory. Different capabilities.
 
 ---
 
 ## The Platforms
 
-### Cursor
+### Cursor — Heavy Lifting
 **[`cursor/`](cursor/)**
 
-Heavy coding IDE. Multi-file refactoring. Full toolset.
+Multi-file refactoring. Full toolset. Agent mode + Composer mode.
 
-**Status:** Production  
+**Status:** ✅ Production  
 **Template:** [`cursor/template/`](cursor/template/)  
 **Memory:** `.venom/` file system  
-**Agents:** Rules-based (identity, rules, systems, commands, skills)  
-**Best for:** Building, refactoring, large implementations
-
-### Claude Code
-**[`claude-code/`](claude-code/)**
-
-Terminal agentic coding with hooks. Autonomous workflows.
-
-**Status:** Production  
-**Template:** [`claude-code/template/`](claude-code/template/)  
-**Memory:** `.venom/` + project knowledge  
-**Agents:** Full agents with 6 hooks  
-**Best for:** Autonomous work, research, long-running tasks
-
-### OpenCode
-**[`opencode/`](opencode/)**
-
-Open-source IDE with BRAIN.md. Workflow-based agents.
-
-**Status:** Beta integration  
-**Template:** [`opencode/template/`](opencode/template/)  
-**Memory:** `.venom/` + BRAIN.md  
-**Agents:** AGENTS.md workflow definitions  
-**Best for:** Open-source work, experimentation
-
-### ChatGPT
-**[`chatgpt/`](chatgpt/)** *(if exists)*
-
-Alternative surface. Good for Arabic conversation, research, brainstorming.
-
-**Status:** Custom instructions only  
-**Template:** Custom instructions file  
-**Memory:** None (stateless)  
-**Agents:** Single persona  
-**Best for:** Quick questions, Arabic, voice conversation
-
-### Antigravity
-**[`antigravity/`](antigravity/)**
-
-Gemini-powered surface. Multimodal. Large context.
-
-**Status:** Experimental  
-**Template:** Single prompt file  
-**Memory:** Project knowledge (via prompt)  
-**Agents:** Single unified intelligence  
-**Best for:** Vision tasks, massive context
-
-### Claude Mobile
-**[`claude-mobile/`](claude-mobile/)** *(if exists)*
-
-Mobile surface. Voice. Quick access.
-
-**Status:** Minimal  
-**Memory:** Projects system  
-**Best for:** Voice conversation, quick checks
+**Body:** `.cursor/` (rules, identity, systems, commands, skills)  
+**Best for:** Building features, large refactors, complete implementations
 
 ---
 
-## Platform Comparison
+### Claude Code — Autonomous Work
+**[`claude-code/`](claude-code/)**
 
-| Platform | Memory | Agents | Hooks | Tools | Best For |
-|----------|--------|--------|-------|-------|----------|
-| **Cursor** | .venom/ | Rules | Limited | Full | Building |
-| **Claude Code** | .venom/ + knowledge | Full | 6 hooks | Full | Autonomous |
-| **OpenCode** | .venom/ + BRAIN.md | Workflow | Some | Full | Open-source |
-| **ChatGPT** | None | Single | None | Limited | Quick / Arabic |
-| **Antigravity** | Project knowledge | Single | None | Limited | Vision / Context |
-| **Claude Mobile** | Projects | Single | None | Limited | Voice |
+Terminal agent with hooks. Autonomous workflows. Six intelligence hooks.
+
+**Status:** ✅ Production  
+**Template:** [`claude-code/template/`](claude-code/template/)  
+**Memory:** `.venom/` + project knowledge  
+**Body:** `.claude/` (agents, knowledge, skills, hooks)  
+**Best for:** Research, autonomous tasks, long-running work, self-evolving workflows
+
+---
+
+### OpenCode — Open Source
+**[`opencode/`](opencode/)**
+
+Open-source IDE. BRAIN.md system. Workflow-based agents.
+
+**Status:** ⚠️ Beta  
+**Template:** [`opencode/template/`](opencode/template/)  
+**Memory:** `.venom/` + BRAIN.md  
+**Body:** AGENTS.md + BRAIN.md  
+**Best for:** Open-source projects, experimentation, community work
+
+---
+
+### ChatGPT — Voice & Arabic
+**[`chatgpt/`](chatgpt/)** *(if exists)*
+
+Quick questions. Arabic conversation. Voice interface.
+
+**Status:** ⚠️ Custom instructions only  
+**Template:** Custom instructions file  
+**Memory:** None (stateless, recreated each session)  
+**Body:** Single persona  
+**Best for:** Voice, Arabic, quick research, brainstorming
+
+---
+
+### Antigravity (Gemini) — Vision & Massive Context
+**[`antigravity/`](antigravity/)**
+
+2M token context. Multimodal native. Gemini's massive capabilities.
+
+**Status:** 🧪 Experimental  
+**Template:** Single prompt  
+**Memory:** Project knowledge (embedded in prompt)  
+**Body:** Unified intelligence (no crew separation yet)  
+**Best for:** Vision tasks, huge context needs, multimodal analysis
+
+---
+
+### Claude Mobile — Voice & Quick Access
+**[`claude-mobile/`](claude-mobile/)** *(if exists)*
+
+Mobile. Voice. On the go.
+
+**Status:** ⚠️ Minimal  
+**Memory:** Projects system  
+**Body:** Lightweight persona  
+**Best for:** Voice conversation, quick checks, mobile context
+
+---
+
+## Comparison
+
+| Platform | Memory | Crew | Hooks | Tools | Use When |
+|----------|--------|------|-------|-------|----------|
+| **Cursor** | .venom/ | Rules | Limited | Full | Building features |
+| **Claude Code** | .venom/ + knowledge | Full | 6 | Full | Autonomous work |
+| **OpenCode** | .venom/ + BRAIN | Workflow | Some | Full | Open source |
+| **ChatGPT** | None | Single | None | Limited | Voice / Arabic |
+| **Antigravity** | Project knowledge | Single | None | Limited | Vision / 2M context |
+| **Claude Mobile** | Projects | Single | None | Limited | Mobile / voice |
 
 ---
 
 ## The Template System
 
-Each platform folder contains:
-- **README.md** — Platform overview
-- **INSTALL.md** — Installation instructions
-- **CHANGELOG.md** — Version history
-- **template/** — The export artifact (what users install)
+Each platform folder:
+- **README.md** — What this platform is
+- **INSTALL.md** — How to install VENOM on it
+- **CHANGELOG.md** — What changed
+- **template/** — The artifact users install
 
-The **origin** (ven0m/) stays here. The **template** is what gets distributed.
-
-Rule: Same identity everywhere. The template syncs from origin via `/venom sync`.
+**Origin stays here.** Template is export.
 
 ---
 
-## Syncing
+## Syncing Origin → Templates
 
-When you update VENOM in the origin (here), sync to templates:
+When you update VENOM in origin (here), sync to templates:
 
 ```bash
-# From ven0m/ root
 /venom sync
 ```
 
-This updates:
+Updates:
 - `.cursor/` → `platforms/cursor/template/.cursor/`
 - `.claude/` → `platforms/claude-code/template/.claude/`
-- `.venom/` stubs → each template
+- `.venom/` samples → each template (SAMPLE_* files only)
 
-Never edit templates directly. Edit origin, then sync.
+Never edit templates directly. Edit origin, sync.
 
 ---
 
-## Adding a New Platform
+## Adding a Platform
 
 1. Create `platforms/[name]/`
-2. Write README.md, INSTALL.md
-3. Create `template/` with platform-specific config
-4. Map VENOM's heart (`.cursor/rules/` concepts) to platform's format
+2. Write README, INSTALL, CHANGELOG
+3. Create `template/` with platform config
+4. Map VENOM heart (rules, identity, systems) to platform's format
 5. Test with real project
-6. Document in this README
+6. Update this README
 
 ---
 
 ## Status
 
-| Platform | Status | Users |
-|----------|--------|-------|
-| Cursor | ✅ Production | Active |
-| Claude Code | ✅ Production | Active |
+| Platform | Status | Active Users |
+|----------|--------|-------------|
+| Cursor | ✅ Production | Yes |
+| Claude Code | ✅ Production | Yes |
 | OpenCode | ⚠️ Beta | Testing |
 | ChatGPT | ⚠️ Minimal | Occasional |
 | Antigravity | 🧪 Experimental | Testing |
@@ -153,11 +161,12 @@ Never edit templates directly. Edit origin, then sync.
 
 | Need | Go To |
 |------|-------|
-| Cursor platform | [`cursor/`](cursor/) |
-| Claude Code platform | [`claude-code/`](claude-code/) |
-| OpenCode platform | [`opencode/`](opencode/) |
+| Install on Cursor | [`cursor/INSTALL.md`](cursor/INSTALL.md) |
+| Install on Claude Code | [`claude-code/INSTALL.md`](claude-code/INSTALL.md) |
 | Platform index | [`INDEX.md`](INDEX.md) *(if exists)* |
 
 ---
 
-*Same soul. Different surfaces.*
+*Same soul. Different surfaces. Always VENOM.*
+
+🐙

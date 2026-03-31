@@ -1,0 +1,27 @@
+# Cursor Template .gitignore
+
+# User's actual .venom memory (never commit)
+.venom/memory/
+.venom/work/
+.venom/state/
+.venom/profiles/
+.venom/CONTEXT.md
+.venom/learnings/*.yaml
+
+# Keep only samples (SAMPLE_* files are included in repo)
+!.venom/SAMPLE_*
+
+# Node
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.log

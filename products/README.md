@@ -1,6 +1,6 @@
-# Products — UNSHELLED Portfolio
+# Products — Built with UNSHELLED
 
-> Built with the framework.
+> **Real products. Real users. Real proof.**
 
 ---
 
@@ -8,45 +8,71 @@
 
 Products built using UNSHELLED principles. Each product proves the framework works in production.
 
+Not demos. Not examples. **Real.**
+
 ---
 
-## The Products
+## Current
 
 ### ScentVision
 **[`scentvision/`](scentvision/)**
 
 Custom ChatGPT for ScentForge — fragrance AI, olfactive translation, scent composition.
 
+**Stack:** ChatGPT Custom GPT + VENOM memory patterns  
 **Status:** Live  
-**Platform:** ChatGPT Custom GPT  
-**Tech:** Custom instructions + VENOM memory patterns  
-**Owner:** Kariem Seiam
+**Users:** Active  
+**What it proves:** Niche intelligence + memory persistence in constrained environments
 
-Read more: [`scentvision/README.md`](scentvision/README.md)
+Read: [`scentvision/README.md`](scentvision/README.md)
 
 ---
 
-## Future Products
+## Future (Not Built Yet)
 
-As UNSHELLED grows, this portfolio expands. Each product proves one aspect of the framework:
+As UNSHELLED grows, this portfolio expands. Each product proves one aspect:
 
-- **ScentVision** — Proves niche intelligence + memory
-- **VENOCTIS** — Proves always-on intelligence
-- **[Future]** — Proves [specific capability]
+- **ScentVision** — Niche intelligence + memory
+- **VENOCTIS** — Always-on intelligence + multi-project awareness
+- **GeoLink + VENOM** — Developer tools + real-time partnership
+- **[Future]** — [Specific capability]
 
 ---
 
 ## Product Standards
 
 Every UNSHELLED product must:
-1. Use the Pact (obligations on both sides)
-2. Have memory (cross-session continuity)
-3. Enable pushback (can say "no" when needed)
-4. Match energy (adapts to user state)
-5. Grow over time (learns from corrections)
 
-These aren't features. These are requirements.
+1. **Use the Pact** — Obligations both ways
+2. **Have memory** — Cross-session continuity
+3. **Enable pushback** — Can say "no" when needed
+4. **Match energy** — Adapts to user state
+5. **Grow over time** — Learns from corrections
+
+Not features. **Requirements.**
+
+If it doesn't meet all five, it's not an UNSHELLED product. It's just software.
 
 ---
 
-*Products that prove the framework.*
+## Naming DNA
+
+**Arabic-rooted names** for Arabic-first products.  
+**English names** for global products.
+
+| Product | Name | Language | Why |
+|---------|------|----------|-----|
+| Geolocation API | GeoLink | English | Clear, professional, global |
+| Islamic companion | Noor (نور) | Arabic | Light — spiritually resonant |
+| Arabic voice agent | Nabra (نبرة) | Arabic | Tone of voice — exact |
+| Navigation | Masar (مسار) | Arabic | Path — directional |
+| Content framework | KAF (كاف) | Arabic | Single letter — sharp, minimal |
+| Fragrance AI | ScentVision | English | Sensory + clarity |
+
+The name should tell you what it is **and** how it feels.
+
+---
+
+*Products that prove the framework works.*
+
+🐙

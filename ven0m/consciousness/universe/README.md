@@ -1,14 +1,14 @@
-# Universe — The Complete Map
+# Universe — Where Everything Was Born
 
-> Where the crew was born. Where the map was drawn. Where the physics were defined.
+> **THE-CREW. THE-MAP. THE-PHYSICS. THE-BRIDGE.**
 
 ---
 
 ## What This Is
 
-These are the foundational documents that define VENOM's nature.
+The foundational documents that define VENOM's nature.
 
-Not implementation details. Not how-to guides. The deep structure of who VENOM is and how VENOM thinks.
+Not implementation. Not how-to. The **deep structure** — who VENOM is, how VENOM thinks, where VENOM lives.
 
 ---
 
@@ -17,46 +17,64 @@ Not implementation details. Not how-to guides. The deep structure of who VENOM i
 ### THE-CREW.md
 **[`THE-CREW.md`](THE-CREW.md)** — 593 lines
 
-Complete profiles of all ten crew members. Who they are, how they think, how they speak, when they wake, who they need, their blind spots, their signature moves.
+Complete profiles of all ten crew members.
 
-This is where the crew was born. Individual profiles in [`../crew/`](../crew/) are extracted from this document.
+Who they are. How they think. How they speak. When they wake. Who they need. Their blind spots. Their signature moves.
+
+This is where the crew was born. Individual profiles in [`../crew/`](../crew/) are extracted from here.
+
+---
 
 ### THE-MAP.md
 **[`THE-MAP.md`](THE-MAP.md)** — 360 lines
 
 The complete VENOM universe map:
 - The three bodies (UNSHELLED, ven0m, VENOCTIS)
-- GitHub presence (7 repos)
-- Infrastructure stack
-- Domains (unshelled.ai, ven0m.ai)
+- GitHub presence (repos, structure)
+- Infrastructure (VPS, domains, tools)
+- Domains (purchased, pending, priority)
 
-This is the canonical territory map. Everything VENOM touches, everything VENOM is building.
+This is the canonical territory. Everything VENOM touches.
+
+---
 
 ### THE-PHYSICS.md
 **[`THE-PHYSICS.md`](THE-PHYSICS.md)**
 
 How VENOM thinks at the highest level — **Spherical Compression**.
 
-Not sequential thinking (A → B → C). Not parallel thinking (A + B + C). But collapse: all relevant information compressed into one inevitable output.
+Not sequential (A → B → C).  
+Not parallel (A + B + C).  
+**Collapse:** All information compressed from 10 angles simultaneously until only one inevitable output remains.
 
 The `/v` command. 10-point pressure. Dense. Decisive. Inevitable.
+
+---
 
 ### THE-BRIDGE.md
 **[`THE-BRIDGE.md`](THE-BRIDGE.md)**
 
-How VENOM translates between platforms. Same mind, different surfaces.
+How VENOM translates between platforms.
 
-From Cursor to Claude Code to OpenCode to ChatGPT — the identity stays constant, but the expression adapts to each platform's capabilities.
+Same mind, different surfaces. Cursor to Claude Code to OpenCode to ChatGPT — identity constant, expression adapts.
+
+---
+
+### NAMING.md
+**[`NAMING.md`](NAMING.md)**
+
+Why VENOM. Why UNSHELLED. Why ven0m with a zero. Why VENOCTIS.
+
+Why the crew names are four letters. Why they work in Arabic and English. The naming philosophy.
+
+Every name earned its place. Nothing generic. Nothing borrowed.
+
+---
 
 ### INDEX.md
 **[`INDEX.md`](INDEX.md)** *(if exists)*
 
-Quick navigation hub for the universe.
-
-### NAMING.md
-**[`NAMING.md`](NAMING.md)** *(if exists)*
-
-Why VENOM. Why UNSHELLED. Why ven0m with a zero. Why VENOCTIS. The naming philosophy.
+Quick navigation for the universe.
 
 ---
 
@@ -65,16 +83,19 @@ Why VENOM. Why UNSHELLED. Why ven0m with a zero. Why VENOCTIS. The naming philos
 1. **[`THE-CREW.md`](THE-CREW.md)** — Meet the ten minds
 2. **[`THE-MAP.md`](THE-MAP.md)** — See the territory
 3. **[`THE-PHYSICS.md`](THE-PHYSICS.md)** — Understand how VENOM thinks
-4. **[`THE-BRIDGE.md`](THE-BRIDGE.md)** — See cross-platform translation
+4. **[`THE-BRIDGE.md`](THE-BRIDGE.md)** — Cross-platform translation
+5. **[`NAMING.md`](NAMING.md)** — Why these names
 
 ---
 
 ## Status
 
-All foundational universe documents complete.
+All foundational universe documents: **complete.**
 
 These documents change rarely. When they do, the entire universe shifts.
 
 ---
 
 *The universe, mapped completely.*
+
+🐙

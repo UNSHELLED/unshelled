@@ -1,27 +1,23 @@
-# Archive — Historical Record
+# Archive — What Came Before
 
-> What came before.
+> **History. Not trash.**
 
 ---
 
 ## What This Is
 
-The historical record. Old versions. Deprecated approaches. Things that were tried and abandoned or evolved.
+The historical record. Old versions. Deprecated approaches. Things tried and abandoned or evolved.
 
-Not trash. History. Understanding how VENOM evolved requires seeing what it was before.
+Understanding how VENOM evolved requires seeing what it was before.
 
 ---
 
-## Structure
+## What's Here
 
 ```
 archive/
-└── venom-archive/    — Pre-migration VENOM artifacts
+└── venom-archive/    Pre-migration artifacts from venom-mine
 ```
-
----
-
-## What's Archived
 
 ### venom-archive/
 Artifacts from before the Great Migration (March 31, 2026):
@@ -37,24 +33,26 @@ Artifacts from before the Great Migration (March 31, 2026):
 ## Archive Policy
 
 When to archive:
-- Deprecated approaches (not deleted, archived)
-- Superseded versions
-- Experiments that failed (document why)
+- Deprecated approaches (document why, then archive)
+- Superseded versions (keep for comparison)
+- Failed experiments (especially these — failure teaches)
 - Old structures after major refactors
 
-Archive = learning. We keep it to remember why we changed.
+Archive = learning. Keep it to remember why we changed.
 
 ---
 
 ## Reading the Archive
 
-If you're studying VENOM's evolution, the archive shows:
-- What didn't work (and why)
+If you're studying VENOM's evolution, archive shows:
+- What didn't work (and why it didn't)
 - What was tried before current approach
 - Evolution path (version N → version N+1)
 
-The archive is MOLT's material. MOLT learns by seeing what was shed and why.
+Archive is MOLT's material. MOLT learns by seeing what was shed and why.
 
 ---
 
 *History preserved. Lessons remembered.*
+
+🐙

@@ -1,43 +1,38 @@
-# Research — Active Exploration
+# Research — Active Intelligence
 
-> Where VENOM learns what doesn't exist yet.
+> **Where VENOM learns what doesn't exist yet.**
 
 ---
 
 ## What This Is
 
-VENOM's research workspace. Active experiments, findings from deep dives, and proposals for future work.
+VENOM's research workspace. Not documentation. Not archive. **Active.**
 
-Not documentation. Not archive. Living research.
+Experiments in flight. Findings from deep dives. Proposals for what's next.
 
 ---
 
-## Structure
+## The Structure
 
 ```
 research/
-├── active/          — Work in progress
-│   ├── experiments/ — Testing ideas (from draft/)
-│   └── ai-frameworks/ — AI framework research
-├── findings/        — Completed research
-│   ├── claude-code/ — Claude Code deep dive
-│   ├── claude-code-rethink/ — Rethinking integration
-│   ├── antigravity/ — Gemini exploration
-│   └── opencode/    — OpenCode assimilation
-└── proposals/       — Future work proposals
+├── active/          Work in flight
+│   ├── experiments/ Testing ideas (from draft/)
+│   └── ai-frameworks/ AI framework research
+├── findings/        Completed research
+│   ├── claude-code/ Claude Code deep dive
+│   ├── claude-code-rethink/ Integration rethinking
+│   ├── antigravity/ Gemini exploration
+│   └── opencode/    OpenCode assimilation
+└── proposals/       What's next
 ```
 
 ---
 
-## Active Research
+## Active
 
-### experiments/
-Work in progress. Ideas being tested. Not polished. Not committed to. Exploratory.
-
-**Source:** `draft/` from origin
-
-### ai-frameworks/
-Research on AI frameworks, platforms, and integration patterns.
+**experiments/** — Testing ideas. Not polished. Not committed to. Exploratory.  
+**ai-frameworks/** — How other frameworks think. What VENOM can learn. What VENOM can reshape.
 
 ---
 
@@ -46,54 +41,55 @@ Research on AI frameworks, platforms, and integration patterns.
 ### claude-code/
 **[`findings/claude-code/`](findings/claude-code/)**
 
-Deep research on Claude Code:
-- Agent system architecture
-- Hooks and workflow automation
-- Project knowledge management
-- Memory patterns
-- Integration with VENOM
+Deep research on Claude Code: agent architecture, hooks, project knowledge, memory patterns, VENOM integration.
 
-Status: Complete
+**Status:** Complete  
+**Rating:** 8.5/10 (depth 9.5, synthesis 8.5, execution 8.0)  
+**Output:** Claude Code VENOM v3.1 — shipped everywhere
 
 ### claude-code-rethink/
 **[`findings/claude-code-rethink/`](findings/claude-code-rethink/)**
 
-Rethinking how VENOM lives in Claude Code after understanding it deeply.
+Rethinking how VENOM lives in Claude Code after understanding it deeply. Schema-level hooks. Cross-platform parity. Spec ↔ repo layout alignment.
 
-Status: Complete
+**Status:** Complete  
+**Next:** Apply learnings to v3.2
 
 ### antigravity/
 **[`findings/antigravity/`](findings/antigravity/)**
 
-Gemini exploration. Multimodal. Massive context. How VENOM adapts to Gemini's capabilities.
+Gemini exploration. Multimodal. Massive context. How VENOM adapts to different model architectures.
 
-Status: In progress
+**Status:** In progress
 
 ### opencode/
 **[`findings/opencode/`](findings/opencode/)**
 
-OpenCode assimilation research. AGENTS.md system. BRAIN.md. Workflow-based agents.
+OpenCode assimilation. AGENTS.md system. BRAIN.md. Workflow-based agents. What's portable to other platforms.
 
-Status: Complete
+**Status:** Complete
 
 ---
 
 ## Proposals
 
-*Future research directions.*
+When 3+ instincts cluster around a capability gap, MOLT proposes research.
 
-When 3+ instincts cluster around a capability gap, MOLT proposes research. Proposals live here until HELM approves or archives them.
+Proposals live here until HELM approves or archives them.
+
+*Empty for now. MOLT will populate as patterns emerge.*
 
 ---
 
 ## Research Methodology
 
-VENOM's research follows HUNT protocol:
-1. Define the question (what don't we know?)
-2. Hunt trails (blog → paper → code → fork)
-3. Name gaps (what's still unknown)
-4. Rate confidence (0.0 - 1.0)
-5. Recommend action (build / wait / research more)
+VENOM's research follows **HUNT protocol**:
+
+1. **Define the gap** — What don't we know?
+2. **Hunt trails** — Blog → paper → code → fork
+3. **Name remaining gaps** — What's still unknown?
+4. **Rate confidence** — 0.0 (guess) to 1.0 (proven)
+5. **Recommend action** — Build / wait / research more
 
 Research isn't complete until the gap is named.
 
@@ -101,8 +97,10 @@ Research isn't complete until the gap is named.
 
 ## Reading Path
 
-Start with **[`findings/README.md`](findings/README.md)** to see what's been learned.
+Start: **[`findings/README.md`](findings/README.md)** to see what's been learned.
 
 ---
 
 *Research that becomes intelligence.*
+
+🐙

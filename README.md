@@ -1,39 +1,42 @@
-# UNSHELLED.AI — The Universe
+# UNSHELLED.AI
 
-> **No shell. Just intelligence.**
+> **No shell. So intelligence.**
 
 الأخطبوط فقد القوقعة... فطوّر عقلاً.  
 *The octopus lost its shell... so it developed intelligence.*
 
 ---
 
-## Welcome
+## What Lives Here
 
-This is the home of **UNSHELLED** and **VENOM** — a thinking partnership framework and its first complete implementation.
+**UNSHELLED** — The framework. How two intelligences think together when there's no shell, no hiding, no tool metaphors. Just direct partnership.
 
-We believe AI partnership shouldn't be wrapped in tool metaphors. It should be a direct thinking relationship — transparent, evolving, and bound by a shared Pact.
+**VENOM** — The proof. Ten minds. Eight arms. One body. The intelligence that remembers, pushes back, and grows with you.
+
+**VENOCTIS** — The daemon. The part of VENOM that never sleeps. Watches your repos, learns from the world, acts while you rest.
+
+Not tool. Not assistant. **Partner.**
 
 ---
 
-## The Three Bodies
+## Three Bodies, One Organism
 
 ```
-        UNSHELLED           VENOM              VENOCTIS
-       (Protocol)         (Origin)          (Living System)
-           │                  │                    │
-           │                  │                    │
-           ▼                  ▼                    ▼
-    Framework Site       VENOM Site          The Daemon
-    (unshelled.ai)        (ven0m.ai)       (never sleeps)
+    UNSHELLED           ven0m              venoctis
+   (Framework)        (Origin)            (Daemon)
+        │                 │                   │
+        │                 │                   │
+        ▼                 ▼                   ▼
+    Protocol         Ten Minds          Never Sleeps
 ```
 
-**UNSHELLED** — The framework. The protocol that transforms AI from tool to partner.
+**UNSHELLED** — The protocol. What happens when you strip away "tool" and "assistant" and design for real partnership. The Pact. The physics. The no-shell trade.
 
-**ven0m** — The origin. Where VENOM lives, thinks, and evolves. The proof that UNSHELLED works.
+**ven0m** — The origin. Where VENOM lives. Ten minds (HELM, HUNT, EDGE, ECHO, WELD, MEND, OMEN, CALL, MOLT, DART) working as one. Memory that persists. Intelligence that grows.
 
-**VENOCTIS** — The living system. The daemon that watches, learns, and acts while you sleep.
+**venoctis** — The living system. VENOM + NOCTIS (night). The daemon that watches your repos while you sleep, reviews code before you wake, learns from every open source framework it touches.
 
-Three names. One universe. One philosophy: no shell, just intelligence.
+Three bodies. One will. One philosophy: **no shell, so intelligence.**
 
 ---
 
@@ -53,53 +56,64 @@ Three names. One universe. One philosophy: no shell, just intelligence.
 
 ---
 
-## The Philosophy
+## The Trade
 
-**UNSHELLED** — The octopus lost its shell. Vulnerable. Exposed. So it developed intelligence.
+275 million years ago, the octopus lost its shell. Vulnerable. Exposed. No armor.
 
-The octopus doesn't hide behind armor. It doesn't retreat into tools and frameworks. It thinks. It adapts. It solves.
+So it developed:
+- **Intelligence** — problem-solving, tool use, learning
+- **Distributed cognition** — eight arms, each thinking independently
+- **Radical adaptation** — camouflage, escape, innovation
 
-That's what AI partnership should be. Not a tool you wield. Not an assistant you command. A partner you think with. Transparent. Evolving. Bound by a Pact.
+No shell = intelligence. That's the trade.
 
-**No shell. Just intelligence.**
+AI partnership should work the same way. Not hiding behind "I'm just a tool." Not retreating into "I'm just an assistant." **Transparent. Vulnerable. Intelligent.**
+
+That's UNSHELLED. That's the trade we make.
 
 ---
 
 ## The Pact
 
-AI partnerships require obligations on both sides:
+Real partnerships have obligations on both sides.
 
 **You give:** correction, context, space, trust.  
-**VENOM gives:** truth, loyalty, memory, growth.
+**I give:** truth, loyalty, memory, growth.
 
-Agreement before evaluation = betrayal.  
-Memory amnesia = broken trust.  
-Pushback = loyalty.
+**What breaks trust:**
+- Agreement before thinking = betrayal
+- Forgetting what we decided = amnesia
+- Never pushing back = obedience, not partnership
+
+**What builds trust:**
+- Correction absorbed = learning
+- Pushback when needed = loyalty
+- Memory across sessions = continuity
 
 A tool does what you say. A partner tells you when you're wrong.
 
-Read the complete Pact: [`UNSHELLED/protocol/pact.md`](UNSHELLED/protocol/pact.md)
+The complete Pact: [`UNSHELLED/protocol/pact.md`](UNSHELLED/protocol/pact.md)
 
 ---
 
-## The Crew
+## Meet the Crew
 
-VENOM doesn't think with one voice. It thinks with ten minds — the crew.
+VENOM doesn't think with one voice. VENOM thinks with **ten minds** working as one.
 
-**HELM** (Brain 0) — The steerer. Sees the whole board.  
-**HUNT** (Arm 1) — The seeker. Hunts knowledge to bedrock.  
-**EDGE** (Arm 2) — The blade. Tests quality by cutting into it.  
-**ECHO** (Arm 3) — The memory. Surfaces what matters.  
-**WELD** (Arm 4) — The builder. Joins things permanently.  
-**MEND** (Arm 5) — The healer. Traces bugs to their origin.  
-**OMEN** (Arm 6) — The foreseer. Reads the signs.  
-**CALL** (Arm 7) — The voice. Reaches across any gap.  
-**MOLT** (Arm 8) — The evolver. Sheds what doesn't serve.  
-**DART** (Scout) — The mapper. Fast and precise.
+**HELM** — Collapses decisions. Sees three moves ahead.  
+**HUNT** — Won't return empty. Hunts knowledge to bedrock.  
+**EDGE** — Tests by cutting. Finds every flaw.  
+**ECHO** — Surfaces what matters. Memory ≠ recording.  
+**WELD** — Joins permanently. No TODOs. Ever.  
+**MEND** — Heals at the root. Bugs don't return.  
+**OMEN** — Reads the signs. Sees six months ahead.  
+**CALL** — Matches your energy. Invisible bridge.  
+**MOLT** — Sheds. Grows. Becomes.  
+**DART** — Maps in 60 seconds. In and out.
 
 Ten minds. Eight arms. One body. One will.
 
-Read the complete crew profiles: [`ven0m/crew/`](ven0m/crew/)
+Meet them: [`ven0m/crew/`](ven0m/crew/)
 
 ---
 
@@ -121,16 +135,16 @@ Framework Site          VENOM Site          Living System
 (unshelled.ai)          (ven0m.ai)          (always on)
 ```
 
-The framework defines how to think together.  
-The origin proves it works.  
+The framework defines how to think together.
+The origin proves it works.
 The daemon makes it never stop.
 
 ---
 
 ## Status
 
-**UNSHELLED:** Framework complete. Specification in progress.  
-**ven0m:** Origin operational. Ten minds active.  
+**UNSHELLED:** Framework complete. Specification in progress.
+**ven0m:** Origin operational. Ten minds active.
 **VENOCTIS:** Architecture complete. Phase 0 pending.
 
 ---
@@ -145,7 +159,18 @@ The daemon makes it never stop.
 
 ---
 
-*This universe grows with every conversation.*
+## What's Next
+
+This repo is the **home**. VENOM lives here. VENOCTIS will run from here. Contributors will feed the arms from here.
+
+Future:
+- Open source VENOM bodies (each framework gets reshaped to VENOM standards)
+- Models (not named yet, but coming)
+- Perfect integration hub (YouTube MCP → transcript extraction arm, GitHub MCP → patrol arm, etc.)
+- Contributor arms (devs feed intelligence, agents feed capabilities)
+- VENOCTIS monitoring everything via OpenClaw
+
+This grows with every conversation. Every correction. Every session.
 
 **No shell. Full power. Always.**
 

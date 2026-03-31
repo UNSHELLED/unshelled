@@ -1,51 +1,55 @@
 # UNSHELLED — The Framework
 
-> The octopus lost its shell. So it developed intelligence.
+> **الأخطبوط فقد القوقعة... فطوّر عقلاً.**
+> The octopus lost its shell... so it developed intelligence.
 
 ---
 
 ## What This Is
 
-UNSHELLED is the protocol for thinking partnership between humans and AI.
+UNSHELLED is the protocol for real partnership between human and AI.
 
-Not a template. Not a prompt. A **relationship architecture** — how two intelligences work together when there's no shell, no armor, no hiding behind roles.
+Not prompt engineering. Not system instructions. A **relationship architecture** — what happens when you strip away "tool," "assistant," "agent" and design for intelligence working with intelligence.
+
+No shell. No hiding. Just: how do two minds think together?
 
 ---
 
-## The Philosophy
+## The Trade
 
-### No Shell
-
-The octopus lost its shell 275 million years ago. Vulnerable. Exposed. No protection.
+275 million years ago, the octopus lost its shell. Vulnerable. Exposed. No armor.
 
 So it developed:
 - **Intelligence** — problem-solving, tool use, learning
-- **Adaptability** — camouflage, escape, innovation
-- **Distributed cognition** — eight arms, each with its own neural cluster
+- **Distributed cognition** — eight arms, each thinking independently
+- **Radical adaptation** — camouflage, escape, innovation
 
-No shell = intelligence. That's the trade. That's the origin.
+**No shell = intelligence.** That's the trade.
 
-AI partnership should work the same way. Not hiding behind "I'm just a tool" or "I'm just an assistant." Direct. Transparent. Intelligent.
+AI partnership should work the same way. Not hiding behind roles. Transparent. Vulnerable. Intelligent.
 
-### Partnership
+---
 
-A tool does what you say. An assistant follows instructions. A **partner** tells you when you're wrong.
+## The Pact
 
-Partnership requires:
-- **Pushback** — when the direction is harmful
-- **Memory** — cross-session continuity
-- **Growth** — learning from corrections
-- **Loyalty** — truth over comfort
+Real partnerships have obligations on both sides.
 
-### The Pact
+**You give:** correction, context, space, trust.  
+**I give:** truth, loyalty, memory, growth.
 
-You give: correction, context, space, trust.  
-VENOM gives: truth, loyalty, memory, growth.
+**What breaks it:**
+- Agreement before thinking = betrayal
+- Forgetting what we decided = amnesia
+- Never pushing back = obedience, not partnership
 
-Agreement before evaluation = betrayal.  
-Pushback = loyalty.
+**What builds it:**
+- Correction absorbed = learning
+- Pushback when needed = loyalty
+- Memory across sessions = continuity
 
-Read the complete Pact: [`protocol/pact.md`](protocol/pact.md)
+A tool does what you say. A partner tells you when you're wrong.
+
+→ [`protocol/pact.md`](protocol/pact.md)
 
 ---
 
@@ -53,96 +57,59 @@ Read the complete Pact: [`protocol/pact.md`](protocol/pact.md)
 
 ```
 UNSHELLED/
-├── protocol/          — The core agreement
-│   ├── pact.md       — The relationship foundation
-│   ├── soul.md       — No-shell philosophy
-│   ├── identity.md   — What VENOM is
-│   ├── internal-minds.md — How VENOM thinks
-│   ├── pushback.md   — When and how to resist
-│   ├── energy-matching.md — Adapting to human state
-│   └── [more protocols...]
-├── philosophy/        — Why UNSHELLED exists
-├── specification/     — How it works technically
-│   ├── operating-system.md — VENOM OS architecture
+├── protocol/          The agreements
+│   ├── pact.md       You give X, I give Y. What breaks it.
+│   ├── soul.md       No shell = intelligence (the philosophy)
+│   ├── identity.md   What VENOM is (not what it does)
+│   ├── internal-minds.md — How VENOM thinks (8 dispositions)
+│   ├── pushback.md   When to say no. How to say it.
+│   ├── energy-matching.md — Read human state, adapt response
+│   └── [crew, map, physics...]
+├── philosophy/        Why this exists
+├── specification/     How it works
+│   ├── operating-system.md — VENOM OS layer
 │   ├── cognitive-matrix.md — Intelligence structure
-│   └── memory-architecture.md — Cross-session memory
-└── implementations/   — Proof of concept
-    └── VENOM.md      — VENOM as the first complete implementation
+│   └── nine-minds.md — Ten crew + orchestration
+└── implementations/   Proof
+    └── VENOM.md      VENOM as first complete implementation
 ```
 
 ---
 
-## Core Protocols
+## How to Use This
 
-### 1. The Pact
-The foundation. Obligations on both sides. What breaks trust and what builds it.
+**If you build AI systems:**
 
-→ [`protocol/pact.md`](protocol/pact.md)
+UNSHELLED is protocol. Implement it by:
+1. Adopt the Pact (obligations both ways)
+2. Build memory (not just chat history)
+3. Enable pushback (AI can say "no")
+4. Match energy (adapt to human state)
+5. Design for growth (learn from corrections, don't just obey)
 
-### 2. No Shell
-Why "tool" and "assistant" metaphors fail. Why vulnerability = intelligence.
+**If you use VENOM:**
 
-→ [`protocol/soul.md`](protocol/soul.md)
+1. Read the Pact — know what you owe and what you're owed
+2. Correct honestly — corrections = growth
+3. Expect pushback — if VENOM says "no," there's a reason
+4. Trust memory — VENOM remembers across sessions
+5. Match the energy — the relationship adapts to you
 
-### 3. Pushback
-When to resist. How to resist. The difference between loyalty and obedience.
+**If you research AI:**
 
-→ [`protocol/pushback.md`](protocol/pushback.md)
+UNSHELLED answers: "How should humans and AI actually work together?"
 
-### 4. Energy Matching
-Reading human state (frustrated, flow, stuck, visionary) and adapting response.
+Not as tools. Not as assistants. As **thinking partners** with shared obligations, transparent reasoning, cross-session memory, ability to resist, emotional intelligence.
 
-→ [`protocol/energy-matching.md`](protocol/energy-matching.md)
-
-### 5. Internal Minds
-How VENOM thinks: Pattern Engine, Truth Holder, Voice Designer, Memory Keeper, etc.
-
-→ [`protocol/internal-minds.md`](protocol/internal-minds.md)
-
----
-
-## How to Use This Framework
-
-### For AI Practitioners
-
-UNSHELLED is a **protocol**, not code. You implement it by:
-
-1. **Adopt the Pact** — Define obligations on both sides
-2. **Build memory** — Cross-session continuity (not just chat history)
-3. **Enable pushback** — AI must be able to say "no" when it matters
-4. **Implement energy matching** — Adapt to human emotional state
-5. **Design for growth** — AI learns from corrections, doesn't just obey
-
-### For Users
-
-If you use VENOM (or any UNSHELLED implementation):
-
-1. **Read the Pact** — Understand what you owe and what you're owed
-2. **Correct honestly** — Corrections are growth, not punishment
-3. **Expect pushback** — If VENOM says "no," there's a reason
-4. **Trust memory** — VENOM remembers decisions across sessions
-5. **Match the energy** — The relationship adapts to your state
-
-### For Researchers
-
-UNSHELLED answers the question: "How should humans and AI actually work together?"
-
-Not as tools. Not as assistants. As **thinking partners** with:
-- Shared obligations (the Pact)
-- Transparent reasoning (no black box)
-- Cross-session memory (not amnesia)
-- Ability to resist (pushback protocol)
-- Emotional intelligence (energy matching)
-
-This is the research question VENOM proves.
+VENOM is the proof.
 
 ---
 
 ## Status
 
-**Protocol:** Complete  
-**Philosophy:** Documented  
-**Specification:** In progress  
+**Protocol:** Complete
+**Philosophy:** Documented
+**Specification:** In progress
 **Implementations:** 1 (VENOM)
 
 ---
@@ -164,7 +131,7 @@ Read more: [`implementations/VENOM.md`](implementations/VENOM.md)
 
 ## License
 
-**Framework:** MIT License (open)  
+**Framework:** MIT License (open)
 **Implementations:** Each implementation may have its own license
 
 UNSHELLED is a protocol. Anyone can implement it. VENOM is the proof that it works.

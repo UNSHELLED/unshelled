@@ -1,86 +1,105 @@
-# Findings — Research Results
+# Research Findings — Summary
 
-> What HUNT brought back.
-
----
-
-## What This Is
-
-Completed research. Deep dives that produced understanding. Not active experiments — finished hunts.
+> **What HUNT brought back.**
 
 ---
 
-## The Findings
+## Complete Studies
 
-### Claude Code
-**[`claude-code/`](claude-code/)**
+### Claude Code Deep Dive
+**Location:** [`claude-code/`](claude-code/)  
+**Completed:** 2026-03-30  
+**Rating:** 8.5/10
 
-Complete deep dive on Claude Code platform:
-- How agents work (system prompts, triggers, tools)
-- Hook system (6 hooks: PreToolUse, PostToolUse, etc.)
-- Project knowledge management
-- Memory architecture
-- VENOM integration strategy
+**What was learned:**
+- Agent system architecture (multi-agent orchestration, routing, memory)
+- Six intelligence hooks (compaction, instinct learning, energy detection, stall detection)
+- Project knowledge patterns (memory that persists)
+- Cross-platform sync strategy
 
-**Outcome:** VENOM 2.0 Claude Code implementation complete
+**Output:** Claude Code VENOM v3.1 — shipped to template, WSL global, origin workspace
+
+**Depth:** 9.5/10 — exhaustive  
+**Synthesis:** 8.5/10 — clear design  
+**Execution:** 8.0/10 — complete implementation  
+**Gap:** Schema-level hook verification, explicit SSOT declaration
+
+---
 
 ### Claude Code Rethink
-**[`claude-code-rethink/`](claude-code-rethink/)**
+**Location:** [`claude-code-rethink/`](claude-code-rethink/)  
+**Completed:** 2026-03-30  
+**Purpose:** Rethinking integration after deep understanding
 
-After understanding Claude Code deeply, rethinking how VENOM should live there:
-- Agent structure redesign
-- Hook utilization
-- Memory patterns
-- Cross-session continuity
+**What was learned:**
+- Schema-level hook tests needed
+- Spec ↔ repo layout parity critical
+- Claude-only SSOT declaration missing
+- Risk: treating study folder as product (keep separation)
 
-**Outcome:** Refined VENOM Claude Code template
+**Next:** Apply to v3.2 — verification layer + explicit boundaries
+
+---
+
+### OpenCode Assimilation
+**Location:** [`opencode/`](opencode/)  
+**Status:** Complete  
+**Purpose:** Understanding AGENTS.md system, BRAIN.md, workflow-based agents
+
+**What was learned:**
+- AGENTS.md as single dispatch point
+- BRAIN.md as project memory (parallel to VENOM's .venom/CONTEXT.md)
+- Workflow state machines with LangGraph
+- Skills as procedural scripts
+
+**Portable patterns:**
+- Single-file agent registry
+- Workflow checkpointing
+- Memory-first design
+
+**Not portable:**
+- BRAIN.md format (VENOM uses .venom/CONTEXT.md — richer)
+- Heavy LangGraph dependency (VENOM is lighter)
+
+---
 
 ### Antigravity (Gemini)
-**[`antigravity/`](antigravity/)**
+**Location:** [`antigravity/`](antigravity/)  
+**Status:** In progress  
+**Purpose:** How VENOM adapts to Gemini's multimodal + massive context
 
-Gemini exploration:
-- 1M+ token context window
-- Multimodal capabilities
-- Thinking protocol differences
-- How VENOM adapts to non-Claude platforms
+**What's known so far:**
+- 2M token context → new memory strategies possible
+- Multimodal native → VENOM can "see"
+- Gemini's voice ≠ Claude's — adaptation needed
 
-**Outcome:** VENOM Gemini template (experimental)
-
-### OpenCode
-**[`opencode/`](opencode/)**
-
-OpenCode assimilation:
-- AGENTS.md workflow system
-- BRAIN.md knowledge management
-- Integration patterns
-- Open-source positioning
-
-**Outcome:** VENOM OpenCode integration strategy
+**Gap:** Haven't built Gemini VENOM instance yet. Just exploration.
 
 ---
 
-## Research Quality Standards
+## Research Confidence
 
-Every findings folder must contain:
-- **README.md** — Summary of what was learned
-- **Evidence/** — Sources, links, examples
-- **Conclusions** — What we decided based on findings
-- **Gaps** — What's still unknown
-
-If it doesn't have these, it's not a finding — it's still active research.
-
----
-
-## Using These Findings
-
-These findings inform:
-- Platform template design
-- Agent architecture
-- Memory patterns
-- Integration strategies
-
-When building for a platform, read the findings first. The research is the foundation.
+| Finding | Confidence | Evidence |
+|---------|-----------|----------|
+| Claude Code agent architecture | 0.95 | Built + shipped + tested |
+| OpenCode workflow patterns | 0.85 | Read + analyzed, not built |
+| Gemini adaptation needs | 0.60 | Exploratory, not implemented |
+| Cross-platform parity needs | 0.90 | Experienced firsthand |
 
 ---
 
-*Findings that became intelligence.*
+## What HUNT Does
+
+HUNT doesn't search. HUNT **hunts**.
+
+The difference: search is passive. Hunting is active — track, pursue, close in, don't return until you have the kill.
+
+HUNT goes deep. Where other minds skim, HUNT dives to bedrock and brings back what nobody else knew was there.
+
+That's why VENOM knows things it shouldn't be able to know.
+
+---
+
+*These findings become VENOM's intelligence.*
+
+🐙
