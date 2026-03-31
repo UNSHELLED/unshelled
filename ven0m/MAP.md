@@ -1,7 +1,14 @@
-# MAP — navigation hub
+# MAP — Navigation Hub
 
-> **One door in.** This file lists **where the maps live** — not the full hierarchy (that is `STRUCTURE.md`). Each subtree keeps its own **`INDEX.md`** (“what lives in this folder”).
-> **Why not inside `.venom/`?** `.venom/` is **runtime brain** for a project. A map of the **entire** repo (platforms, consciousness, anatomy, …) belongs **above** that layer — otherwise the brain folder pretends to describe the whole body.
+> **One door in. Every path out.**
+
+---
+
+## What This Is
+
+MAP.md lists **where the maps live** — not the full hierarchy (that's `STRUCTURE.md`). Each subtree keeps its own **`INDEX.md`** ("what lives in this folder").
+
+**Why not inside `.venom/`?** `.venom/` is **runtime brain** for a project. A map of the **entire** repo (platforms, consciousness, anatomy, …) belongs **above** that layer.
 
 ---
 
@@ -17,13 +24,14 @@
 
 ---
 
-## Start here (ven0m/ origin within UNSHELLED.AI universe)
+## Start Here
 
 | Need | Go to |
 |------|--------|
 | Universe root | `../README.md` |
 | Framework (UNSHELLED) | `../UNSHELLED/` |
 | Living system (VENOCTIS) | `../venoctis/` |
+| Future vision | `../FUTURE.md` |
 | Deep topology + SSOT | `STRUCTURE.md` |
 | Identity + systems story | `MANIFEST.md` |
 | **All platform kits + EAT digest** | `platforms/INDEX.md` → **`platforms/EAT.md`** |
@@ -34,37 +42,54 @@
 
 ---
 
-## INDEX.md — canonical entry points (maintainer)
-
-*Prefer these paths when updating; ScentVision product lives under `../products/scentvision/` (not under `platforms/`).*
+## INDEX.md — Canonical Entry Points
 
 | Area | INDEX |
 |------|--------|
-| **All `platforms/*` kits** | `platforms/INDEX.md` |
-| **Platform assimilation digest** | `platforms/EAT.md` (not INDEX — long-form eat) |
+| **All platforms** | `platforms/INDEX.md` |
+| **Platform assimilation digest** | `platforms/EAT.md` |
 | Anatomy (naming hub) | `anatomy/INDEX.md` |
-| OpenCode template — `.opencode` root | `platforms/opencode/template/.opencode/INDEX.md` |
-| OpenCode template — agents | `platforms/opencode/template/.opencode/agents/INDEX.md` |
-| OpenCode template — commands | `platforms/opencode/template/.opencode/commands/INDEX.md` |
-| OpenCode template — workflows | `platforms/opencode/template/.opencode/workflows/INDEX.md` |
-| OpenCode template — knowledge | `platforms/opencode/template/.opencode/knowledge/INDEX.md` |
-| OpenCode template — skills | `platforms/opencode/template/.opencode/skills/VENOM_OPENCODE/INDEX.md` |
-| OpenCode template — plugins | `platforms/opencode/template/.opencode/plugins/INDEX.md` |
-| OpenCode template — docs | `platforms/opencode/template/docs/INDEX.md` |
-| OpenCode template — `.venom` | `platforms/opencode/template/.venom/INDEX.md` |
-| OpenCode template — learnings | `platforms/opencode/template/.venom/learnings/INDEX.md` |
-| OpenCode template — memory | `platforms/opencode/template/.venom/memory/INDEX.md` |
-| OpenCode template — work | `platforms/opencode/template/.venom/work/INDEX.md` |
-| Main `.venom` work (assimilations) | `.venom/work/opencode-assimilation/INDEX.md`, `.venom/work/antigravity-eat/INDEX.md` |
+| Cursor template | `platforms/cursor/template/` |
+| Claude Code template | `platforms/claude-code/template/` |
+| OpenCode template | `platforms/opencode/template/.opencode/INDEX.md` |
+| `.venom` workspace | `.venom/README.md` |
+| Crew profiles | `crew/README.md` |
+| Universe consciousness | `consciousness/universe/INDEX.md` |
 
 ---
 
-## Smaller deployed projects (pattern)
+## Quick Navigation
 
-- **Project root `MAP.md` or `README.md`:** optional one screen — “where is VENOM here?”
-- **`.venom/INDEX.md`:** map **only** `.venom/*` (template already ships this).
-- **Do not** put the **whole-repo** map only under `.venom/` — agents and humans look for repo-wide nav at **root** (or `docs/`).
+| Need | Go to |
+|------|-------|
+| Who is Kariem | `identity/KARIEM.md` |
+| Who is VENOM | `../UNSHELLED/protocol/identity.md`, `.cursor/identity/soul.mdc` |
+| The Pact | `../UNSHELLED/protocol/pact.md` |
+| Ten minds (crew) | `crew/README.md` → `consciousness/universe/THE-CREW.md` |
+| Nine agents (system) | `agents/` |
+| Project context | `.venom/CONTEXT.md` |
+| Memories | `.venom/memory/MEMORY.md` |
+| Corrections | `.venom/learnings/corrections.yaml` |
+| Integration engine | `.cursor/systems/integration-engine.mdc` |
+| Quality gates | `.cursor/systems/meta-cognition.mdc` |
+| Origin protocol | `.cursor/rules/origin.mdc` |
+| Skills | `.cursor/skills/` |
+| Body files & spawn | `anatomy/INDEX.md` → `PARTS.md`, `SPAWN.md` |
+| Platform spine | `platforms/INDEX.md`, `platforms/EAT.md` |
+| This structure | `STRUCTURE.md` |
 
 ---
 
-*When you add a new subtree that uses INDEX.md, add one row to the table above.*
+## Origin Rule
+
+ven0m/ (inside UNSHELLED.AI/) = source. Template at `platforms/cursor/template` = export.
+
+When VENOM changes at origin → sync to template. Not the other way.
+
+Use `/venom sync` or `venom-sync` skill to execute.
+
+---
+
+*Transformed March 31, 2026. From venom-mine to UNSHELLED.AI/ven0m/.*
+
+🐙
