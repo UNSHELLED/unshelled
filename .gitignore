@@ -1,0 +1,56 @@
+# Node
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Temporary
+*.tmp
+*.temp
+*.log
+*.bak
+*.cache
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Vendor research (local only - not committed)
+research/active/sdd-vendors/
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+credentials.json
+
+# Git
+*.orig
+*.rej
