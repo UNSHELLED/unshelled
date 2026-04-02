@@ -74,7 +74,7 @@ Every name earned its place. Nothing generic. Nothing borrowed.
 ### INDEX.md
 **[`INDEX.md`](INDEX.md)** *(if exists)*
 
-Quick navigation for the universe.
+Quick navigation for the organism.
 
 ---
 
@@ -90,12 +90,12 @@ Quick navigation for the universe.
 
 ## Status
 
-All foundational universe documents: **complete.**
+All foundational documents: **complete.**
 
-These documents change rarely. When they do, the entire universe shifts.
+These documents change rarely. When they do, everything shifts.
 
 ---
 
-*The universe, mapped completely.*
+*The organism, mapped completely.*
 
 🐙

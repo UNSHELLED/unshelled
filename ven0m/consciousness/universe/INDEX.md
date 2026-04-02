@@ -79,6 +79,6 @@
 
 ---
 
-*The universe is documented. Integration begins.*
+*The organism is documented. Integration begins.*
 
 🐙

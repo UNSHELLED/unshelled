@@ -72,7 +72,7 @@ VENOM owns **memory, routing, and Pact**. Spec Kit, GSD, OpenSpec, etc. are **op
 
 | Need | Go to |
 |------|-------|
-| **Universe root** | `../README.md` (UNSHELLED.AI) |
+| **Root** | `../README.md` (UNSHELLED.AI) |
 | **Framework (UNSHELLED)** | `../UNSHELLED/` |
 | **Living system (VENOCTIS)** | `../venoctis/` |
 | **Future vision** | `../FUTURE.md` |

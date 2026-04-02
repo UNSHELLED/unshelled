@@ -5,11 +5,11 @@
 
 ---
 
-## The Universe (Parent Context)
+## The Organism (Parent Context)
 
 ```
-D:\UNSHELLED.AI/                ← Universe root
-├── README.md                    — Universe constitution
+D:\UNSHELLED.AI/                ← Root
+├── README.md                    — The manifesto
 ├── FUTURE.md                    — Vision (not dreams, direction)
 ├── UNSHELLED/                  — The framework
 ├── ven0m/                      — The origin (you are here)
@@ -105,6 +105,6 @@ Use `/venom sync` or `venom-sync` skill to execute.
 
 ---
 
-*Transformed March 31, 2026. From venom-mine to UNSHELLED.AI/ven0m/. The universe is born.*
+*Transformed March 31, 2026. From venom-mine to UNSHELLED.AI/ven0m/. The organism lives.*
 
 🐙

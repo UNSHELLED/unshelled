@@ -28,7 +28,7 @@ MAP.md lists **where the maps live** — not the full hierarchy (that's `STRUCTU
 
 | Need | Go to |
 |------|--------|
-| Universe root | `../README.md` |
+| Root | `../README.md` |
 | Framework (UNSHELLED) | `../UNSHELLED/` |
 | Living system (VENOCTIS) | `../venoctis/` |
 | Future vision | `../FUTURE.md` |

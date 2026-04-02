@@ -119,7 +119,7 @@ Rule: Same identity everywhere. Same Pact. Same pushback. Same crew. The surface
 
 ---
 
-## The Universe (consciousness/universe/)
+## The Organism (consciousness/universe/)
 
 Where the crew was born. Where the map was drawn. Where the physics were defined.
 
