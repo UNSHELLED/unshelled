@@ -1,0 +1,874 @@
+/* OCTOPUS Design System - Animations
+   All animation definitions and scroll-driven effects.
+   prefers-reduced-motion is respected globally in base.css (reduced duration/iteration). */
+
+/* ============================================
+   CORE KEYFRAMES
+   ============================================ */
+
+/* Fade animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse animations */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--glow-subtle);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--glow-default);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Site signature constellation — gentle breath */
+@keyframes signature-constellation-breathe {
+
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Site signature icons — gentle float */
+@keyframes sig-icon-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Float animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+/* Rotate animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Blob morphing */
+@keyframes blob-morph {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+
+  75% {
+    border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%;
+  }
+}
+
+@keyframes blob-breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.65;
+  }
+}
+
+/* Tentacle flow */
+@keyframes tentacle-wave {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(3px) rotate(-2deg);
+  }
+}
+
+@keyframes tentacle-draw {
+  from {
+    stroke-dashoffset: 30;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Mind orbit */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Connection pulse */
+@keyframes connection-pulse {
+
+  0%,
+  100% {
+    stroke-opacity: 0.2;
+    stroke-width: 1;
+  }
+
+  50% {
+    stroke-opacity: 0.6;
+    stroke-width: 2;
+  }
+}
+
+/* Typewriter */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--coral);
+  }
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px var(--glow-subtle));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 40px var(--glow-default));
+  }
+}
+
+/* ============================================
+   SCROLL-DRIVEN ANIMATIONS (CSS Native)
+   ============================================ */
+@supports (animation-timeline: view()) {
+  .scroll-fade-in {
+    animation: fade-in-up linear;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+
+  .scroll-fade-left {
+    animation: fade-in-left linear;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+
+  .scroll-fade-right {
+    animation: fade-in-right linear;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+
+  .scroll-scale {
+    animation: fade-in-scale linear;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+
+  .scroll-fade-in,
+  .scroll-fade-left,
+  .scroll-fade-right,
+  .scroll-scale {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .scroll-fade-in.revealed,
+  .scroll-fade-left.revealed,
+  .scroll-fade-right.revealed,
+  .scroll-scale.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+}
+
+/* ============================================
+   REVEAL ANIMATIONS
+   ============================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+
+  [data-reveal].revealed:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  [data-reveal].revealed:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  [data-reveal].revealed:nth-child(3) {
+    transition-delay: 0.15s;
+  }
+
+  [data-reveal].revealed:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+
+  [data-reveal].revealed:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+
+  [data-reveal].revealed:nth-child(6) {
+    transition-delay: 0.3s;
+  }
+
+  [data-reveal].revealed:nth-child(7) {
+    transition-delay: 0.35s;
+  }
+
+  [data-reveal].revealed:nth-child(8) {
+    transition-delay: 0.4s;
+  }
+
+  [data-reveal].revealed:nth-child(9) {
+    transition-delay: 0.45s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero-specific reveals */
+[data-hero-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-hero-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-reveal] {
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+.animate-fade-in {
+  animation: fade-in 0.5s var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 40s linear infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob-morph 12s ease-in-out infinite, blob-breathe 8s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+.hover-lift {
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-base) var(--ease-default);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   STAGGER DELAYS
+   ============================================ */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+.delay-900 {
+  animation-delay: 900ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-pulse,
+  .animate-pulse-glow,
+  .animate-float,
+  .animate-float-slow,
+  .animate-rotate,
+  .animate-rotate-slow,
+  .animate-bounce,
+  .animate-bounce-subtle,
+  .animate-blob,
+  .animate-glow {
+    animation: none;
+  }
+
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   QUIET CONFIDENCE
+   No ambient animations. Movement only on intent.
+   ============================================ */
+
+/* ============================================
+   TENTACLE ARMS - Static by default
+   Movement only on hover
+   ============================================ */
+
+.tentacle-arm {
+  transform-origin: center;
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+/* Arms only move on hover - subtle, controlled */
+.logo:hover .tentacle-arm:nth-child(odd) {
+  transform: rotate(3deg);
+}
+
+.logo:hover .tentacle-arm:nth-child(even) {
+  transform: rotate(-3deg);
+}
+
+/* ============================================
+   FLOWING BORDERS & SHAPES
+   ============================================ */
+
+@keyframes border-flow {
+  0% {
+    border-image-source: linear-gradient(0deg,
+        transparent,
+        var(--coral),
+        transparent);
+  }
+
+  25% {
+    border-image-source: linear-gradient(90deg,
+        transparent,
+        var(--coral),
+        transparent);
+  }
+
+  50% {
+    border-image-source: linear-gradient(180deg,
+        transparent,
+        var(--coral),
+        transparent);
+  }
+
+  75% {
+    border-image-source: linear-gradient(270deg,
+        transparent,
+        var(--coral),
+        transparent);
+  }
+
+  100% {
+    border-image-source: linear-gradient(360deg,
+        transparent,
+        var(--coral),
+        transparent);
+  }
+}
+
+.flowing-border {
+  border: 2px solid transparent;
+  border-image-slice: 1;
+  animation: border-flow 8s linear infinite;
+}
+
+/* Organic curved separator */
+.organic-wave-separator {
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23111113' d='M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+/* Tentacle curve pattern */
+.tentacle-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,50 Q30,20 50,50 Q70,80 90,50' stroke='%23e07a5f' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+}
+
+/* ============================================
+   ORGANIC & INTELLIGENCE ANIMATIONS
+   ============================================ */
+
+/* Organic breathe - gentle scale and opacity pulse */
+@keyframes organic-breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Organic undulate - wave-like vertical motion */
+@keyframes organic-undulate {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  33% {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  66% {
+    transform: translateY(4px) scale(0.98);
+  }
+}
+
+/* Intelligence pulse - glowing box shadow */
+@keyframes intelligence-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--intelligence-thinking);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 10px var(--intelligence-thinking);
+  }
+}
+
+/* Connection flow - animated dash offset for connection lines */
+@keyframes connection-flow {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Gradient shift - for fluid backgrounds */
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Utility classes for organic animations */
+.organic-breathe {
+  animation: organic-breathe 6s var(--curve-organic) infinite;
+}
+
+.organic-undulate {
+  animation: organic-undulate 8s var(--curve-fluid) infinite;
+}
+
+.fluid-gradient-bg {
+  background: var(--gradient-flow);
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+.intelligence-pulse {
+  animation: intelligence-pulse 3s var(--curve-tentacle) infinite;
+}
+
+.connection-line {
+  stroke-dasharray: 5;
+  animation: connection-flow 2s linear infinite;
+}
+
+/* Micro-interaction animations */
+@keyframes connection-grow {
+  from {
+    height: 0;
+    opacity: 1;
+  }
+
+  to {
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+@keyframes thinking-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 20px var(--glow-subtle);
+  }
+
+  50% {
+    box-shadow: 0 6px 30px var(--glow-default);
+  }
+}
+
+.thinking-pulse-active {
+  animation: thinking-pulse 2s var(--curve-organic) infinite;
+}
+
+/* ============================================
+   REDUCED MOTION - ORGANIC
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  .organic-blob,
+  .organic-wave,
+  .organic-breathe,
+  .organic-undulate,
+  .fluid-gradient-bg,
+  .flowing-border {
+    animation: none;
+  }
+
+  .tentacle-arm {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

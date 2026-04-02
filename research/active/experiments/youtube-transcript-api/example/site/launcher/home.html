@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OCTOPUS">
+  <title>OCTOPUS — Home</title>
+  <meta name="description" content="OCTOPUS launcher. Real Android-style home. Nine minds. One purpose.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="android.css">
+</head>
+
+<body class="home-screen">
+  <!-- Wallpaper: coral aurora + OCTOPUS product art -->
+  <div class="home-wallpaper" aria-hidden="true">
+    <div class="home-wallpaper-glow home-wallpaper-glow-1" aria-hidden="true"></div>
+    <div class="home-wallpaper-glow home-wallpaper-glow-2" aria-hidden="true"></div>
+  </div>
+
+  <!-- Status bar: Android layout -->
+  <header class="home-status android-status-bar" aria-hidden="true">
+    <span class="home-status-time android-status-time" id="home-status-time">--:--</span>
+    <div class="home-status-right android-status-icons">
+      <span class="android-wifi" aria-hidden="true"></span>
+      <span class="android-cellular" aria-hidden="true">
+        <span class="android-cellular-bars">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="android-cellular-label" id="home-cellular-label">4G</span>
+      </span>
+      <span class="android-battery" aria-hidden="true">
+        <span class="android-battery-icon" style="--android-battery-width: 72%;"></span>
+        <span class="android-battery-percent" id="home-battery-percent">72%</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- Main: date, search, app grid -->
+  <main class="home-scroll" id="home-main">
+    <section class="home-content">
+      <!-- Date: real launcher style -->
+      <p class="home-date" id="home-date" aria-hidden="true">Saturday, 31 Jan</p>
+
+      <!-- Search / assistant: Ask OCTOPUS — product hero -->
+      <a href="../demo/" class="home-search-chip" aria-label="Ask OCTOPUS">
+        <span class="home-search-icon" aria-hidden="true">
+          <svg class="home-search-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+            focusable="false">
+            <defs>
+              <linearGradient id="home-logo-core" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e07a5f" />
+                <stop offset="100%" stop-color="#ea8b72" />
+              </linearGradient>
+            </defs>
+            <path class="tentacle-arm" d="M20 20 Q12 8, 8 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q28 8, 32 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q6 16, 2 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q34 16, 38 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q8 28, 4 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q32 28, 36 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q6 24, 2 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <path class="tentacle-arm" d="M20 20 Q34 24, 38 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <circle class="logo-core" cx="20" cy="20" r="7" fill="url(#home-logo-core)" />
+          </svg>
+        </span>
+        <span class="home-search-text">
+          <span class="home-search-label">Ask OCTOPUS</span>
+          <span class="home-search-tagline">Nine minds waiting</span>
+        </span>
+      </a>
+
+      <!-- App grid: real Android apps + OCTOPUS product row (4 cols) -->
+      <nav class="home-grid" aria-label="Apps">
+        <!-- Row 1: Phone, Messages, WhatsApp, Gmail -->
+        <a href="#" class="home-app" data-app="phone" aria-label="Phone">
+          <span class="home-app-icon home-app-icon-phone" aria-hidden="true">Ph</span>
+          <span class="home-app-label">Phone</span>
+        </a>
+        <a href="#" class="home-app" data-app="messages" aria-label="Messages">
+          <span class="home-app-icon home-app-icon-messages" aria-hidden="true">Ms</span>
+          <span class="home-app-label">Messages</span>
+        </a>
+        <a href="#" class="home-app" data-app="whatsapp" aria-label="WhatsApp">
+          <span class="home-app-icon home-app-icon-whatsapp" aria-hidden="true">Wa</span>
+          <span class="home-app-label">WhatsApp</span>
+        </a>
+        <a href="#" class="home-app" data-app="gmail" aria-label="Gmail">
+          <span class="home-app-icon home-app-icon-gmail" aria-hidden="true">Gm</span>
+          <span class="home-app-label">Gmail</span>
+        </a>
+        <!-- Row 2: Chrome, Camera, Photos, Maps -->
+        <a href="#" class="home-app" data-app="chrome" aria-label="Chrome">
+          <span class="home-app-icon home-app-icon-chrome" aria-hidden="true">Ch</span>
+          <span class="home-app-label">Chrome</span>
+        </a>
+        <a href="#" class="home-app" data-app="camera" aria-label="Camera">
+          <span class="home-app-icon home-app-icon-camera" aria-hidden="true">Ca</span>
+          <span class="home-app-label">Camera</span>
+        </a>
+        <a href="#" class="home-app" data-app="photos" aria-label="Photos">
+          <span class="home-app-icon home-app-icon-photos" aria-hidden="true">Ph</span>
+          <span class="home-app-label">Photos</span>
+        </a>
+        <a href="#" class="home-app" data-app="maps" aria-label="Maps">
+          <span class="home-app-icon home-app-icon-maps" aria-hidden="true">Ma</span>
+          <span class="home-app-label">Maps</span>
+        </a>
+        <!-- Row 3: Play Store, Settings, Files, Calendar -->
+        <a href="#" class="home-app" data-app="play" aria-label="Play Store">
+          <span class="home-app-icon home-app-icon-play" aria-hidden="true">Pl</span>
+          <span class="home-app-label">Play Store</span>
+        </a>
+        <a href="#" class="home-app" data-app="settings" aria-label="Settings">
+          <span class="home-app-icon home-app-icon-settings" aria-hidden="true">⚙</span>
+          <span class="home-app-label">Settings</span>
+        </a>
+        <a href="#" class="home-app" data-app="files" aria-label="Files">
+          <span class="home-app-icon home-app-icon-files" aria-hidden="true">Fi</span>
+          <span class="home-app-label">Files</span>
+        </a>
+        <a href="#" class="home-app" data-app="calendar" aria-label="Calendar">
+          <span class="home-app-icon home-app-icon-calendar" aria-hidden="true">Cal</span>
+          <span class="home-app-label">Calendar</span>
+        </a>
+        <!-- Row 4: OCTOPUS product — real links -->
+        <a href="../demo/" class="home-app home-app-octopus" data-app="octopus" aria-label="OCTOPUS">
+          <span class="home-app-icon home-app-icon-octopus" aria-hidden="true">O</span>
+          <span class="home-app-label">OCTOPUS</span>
+        </a>
+        <a href="../demo/" class="home-app" data-app="demo" aria-label="Demo">
+          <span class="home-app-icon home-app-icon-demo" aria-hidden="true">D</span>
+          <span class="home-app-label">Demo</span>
+        </a>
+        <a href="../docs/" class="home-app" data-app="docs" aria-label="Docs">
+          <span class="home-app-icon home-app-icon-docs" aria-hidden="true">/</span>
+          <span class="home-app-label">Docs</span>
+        </a>
+        <a href="../download/" class="home-app" data-app="download" aria-label="Download">
+          <span class="home-app-icon home-app-icon-download" aria-hidden="true">↓</span>
+          <span class="home-app-label">Download</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <!-- Android gesture pill -->
+  <div class="android-pill-wrap" aria-hidden="true">
+    <span class="android-pill"></span>
+  </div>
+
+  <!-- App drawer: full Android slide-up, all apps -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true" aria-label="App drawer overlay">
+    <div class="drawer-panel" id="drawer-panel" role="dialog" aria-label="App drawer" aria-modal="true">
+      <header class="drawer-header">
+        <h2 class="drawer-title">Apps</h2>
+        <button type="button" class="drawer-close" id="drawer-close" aria-label="Close app drawer">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+      <div class="drawer-search-wrap">
+        <span class="drawer-search-icon" aria-hidden="true">◇</span>
+        <span class="drawer-search-placeholder">Search apps</span>
+      </div>
+      <div class="drawer-scroll" id="drawer-scroll">
+        <nav class="drawer-grid" aria-label="All apps">
+          <a href="#" class="drawer-app" data-app="phone" aria-label="Phone"><span
+              class="drawer-app-icon home-app-icon-phone">Ph</span><span class="drawer-app-label">Phone</span></a>
+          <a href="#" class="drawer-app" data-app="messages" aria-label="Messages"><span
+              class="drawer-app-icon home-app-icon-messages">Ms</span><span class="drawer-app-label">Messages</span></a>
+          <a href="#" class="drawer-app" data-app="whatsapp" aria-label="WhatsApp"><span
+              class="drawer-app-icon home-app-icon-whatsapp">Wa</span><span class="drawer-app-label">WhatsApp</span></a>
+          <a href="#" class="drawer-app" data-app="gmail" aria-label="Gmail"><span
+              class="drawer-app-icon home-app-icon-gmail">Gm</span><span class="drawer-app-label">Gmail</span></a>
+          <a href="#" class="drawer-app" data-app="chrome" aria-label="Chrome"><span
+              class="drawer-app-icon home-app-icon-chrome">Ch</span><span class="drawer-app-label">Chrome</span></a>
+          <a href="#" class="drawer-app" data-app="camera" aria-label="Camera"><span
+              class="drawer-app-icon home-app-icon-camera">Ca</span><span class="drawer-app-label">Camera</span></a>
+          <a href="#" class="drawer-app" data-app="photos" aria-label="Photos"><span
+              class="drawer-app-icon home-app-icon-photos">Ph</span><span class="drawer-app-label">Photos</span></a>
+          <a href="#" class="drawer-app" data-app="maps" aria-label="Maps"><span
+              class="drawer-app-icon home-app-icon-maps">Ma</span><span class="drawer-app-label">Maps</span></a>
+          <a href="#" class="drawer-app" data-app="play" aria-label="Play Store"><span
+              class="drawer-app-icon home-app-icon-play">Pl</span><span class="drawer-app-label">Play Store</span></a>
+          <a href="#" class="drawer-app" data-app="settings" aria-label="Settings"><span
+              class="drawer-app-icon home-app-icon-settings">⚙</span><span class="drawer-app-label">Settings</span></a>
+          <a href="#" class="drawer-app" data-app="files" aria-label="Files"><span
+              class="drawer-app-icon home-app-icon-files">Fi</span><span class="drawer-app-label">Files</span></a>
+          <a href="#" class="drawer-app" data-app="calendar" aria-label="Calendar"><span
+              class="drawer-app-icon home-app-icon-calendar">Cal</span><span
+              class="drawer-app-label">Calendar</span></a>
+          <a href="../demo/" class="drawer-app drawer-app-octopus" data-app="octopus" aria-label="OCTOPUS"><span
+              class="drawer-app-icon home-app-icon-octopus">O</span><span class="drawer-app-label">OCTOPUS</span></a>
+          <a href="../demo/" class="drawer-app" data-app="demo" aria-label="Demo"><span
+              class="drawer-app-icon home-app-icon-demo">D</span><span class="drawer-app-label">Demo</span></a>
+          <a href="../docs/" class="drawer-app" data-app="docs" aria-label="Docs"><span
+              class="drawer-app-icon home-app-icon-docs">/</span><span class="drawer-app-label">Docs</span></a>
+          <a href="../download/" class="drawer-app" data-app="download" aria-label="Download"><span
+              class="drawer-app-icon home-app-icon-download">↓</span><span class="drawer-app-label">Download</span></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dock: real Android style — 5 items; center = app drawer -->
+  <footer class="home-dock" aria-label="Shortcuts">
+    <a href="home.html" class="home-dock-item home-dock-active" aria-label="Home" aria-current="page">
+      <span class="home-dock-icon" aria-hidden="true">⌂</span>
+      <span class="home-dock-label">Home</span>
+    </a>
+    <a href="#" class="home-dock-item" aria-label="Messages">
+      <span class="home-dock-icon home-dock-icon-messages" aria-hidden="true">Ms</span>
+      <span class="home-dock-label">Messages</span>
+    </a>
+    <button type="button" class="home-dock-item home-dock-octopus" id="open-drawer" aria-label="Open app drawer">
+      <span class="home-dock-icon home-dock-icon-octopus" aria-hidden="true">O</span>
+      <span class="home-dock-label">Apps</span>
+    </button>
+    <a href="#" class="home-dock-item" aria-label="Chrome">
+      <span class="home-dock-icon home-dock-icon-chrome" aria-hidden="true">Ch</span>
+      <span class="home-dock-label">Chrome</span>
+    </a>
+    <a href="index.html" class="home-dock-item" aria-label="Lock">
+      <span class="home-dock-icon" aria-hidden="true">⌁</span>
+      <span class="home-dock-label">Lock</span>
+    </a>
+  </footer>
+
+  <script src="home.js"></script>
+</body>
+
+</html>

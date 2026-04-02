@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install OCTOPUS — Get Started</title>
+  <meta name="description"
+    content="Install OCTOPUS in your Cursor workspace. Quick install, manual setup, or clone. Step-by-step guide.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Install OCTOPUS — Get Started">
+  <meta property="og:description"
+    content="Install OCTOPUS in your Cursor workspace. Quick install, manual setup, or clone.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/download.css">
+</head>
+
+<body class="page-download">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <a href="../" class="logo">
+      <svg class="logo-tentacle" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="logo-core" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="#ea8b72" />
+          </linearGradient>
+        </defs>
+        <path class="tentacle-arm" d="M20 20 Q12 8, 8 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q28 8, 32 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 16, 2 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 16, 38 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q8 28, 4 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q32 28, 36 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 24, 2 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 24, 38 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <circle class="logo-core" cx="20" cy="20" r="7" fill="url(#logo-core)" aria-hidden="true" />
+      </svg>
+      <span class="logo-text">OCTOPUS</span>
+    </a>
+
+    <nav class="nav-main" aria-label="Main navigation">
+      <a href="../explore/">Explore</a>
+      <a href="../minds/">Minds</a>
+      <a href="../demo/">Demo</a>
+      <a href="../docs/">Docs</a>
+      <a href="./" class="nav-cta btn btn-primary btn-sm active">Install</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="download-hero">
+      <div class="download-hero-inner">
+        <span class="section-label" data-hero-reveal>Get Started</span>
+        <h1 class="section-title" data-hero-reveal><span>Install OCTOPUS</span></h1>
+        <p class="download-hero-desc" data-hero-reveal>
+          Add nine minds to your Cursor workspace in minutes.
+        </p>
+        <p class="download-hero-cta" data-hero-reveal>
+          <a href="#copy-package" class="btn btn-primary btn-lg">Copy package</a>
+        </p>
+        <p class="download-hero-trust" data-hero-reveal>Works with Cursor IDE</p>
+      </div>
+    </section>
+
+    <section class="download-options">
+      <div class="download-grid">
+        <div class="download-card featured" data-reveal>
+          <span class="download-badge">Recommended</span>
+          <h2 class="download-card-title">Copy package</h2>
+          <p class="download-card-description">Copy the <code>octopus-cursor</code> package into your project root. Then open Cursor and type <code>/o?</code>.</p>
+          <ul class="download-card-features">
+            <li>.cursorrules + .cursor/</li>
+            <li>Full OCTOPUS setup</li>
+            <li>Run /o? to init</li>
+          </ul>
+          <a href="#copy-package" class="btn btn-primary">Copy package</a>
+        </div>
+
+        <div class="download-card" data-reveal>
+          <h2 class="download-card-title">Manual</h2>
+          <p class="download-card-description">Set up step by step: .cursorrules, .cursor folder, verify.</p>
+          <ul class="download-card-features">
+            <li>Create .cursorrules</li>
+            <li>Add .cursor structure</li>
+            <li>Verify with /o?</li>
+          </ul>
+          <a href="#manual-setup" class="btn btn-secondary">Manual setup</a>
+        </div>
+
+        <div class="download-card" data-reveal>
+          <h2 class="download-card-title">Clone / ZIP</h2>
+          <p class="download-card-description">Clone the repo or download ZIP for development or the octopus-cursor package.</p>
+          <ul class="download-card-features">
+            <li>Git clone or ZIP</li>
+            <li>Unix and Windows</li>
+            <li>Full source</li>
+          </ul>
+          <a href="#clone" class="btn btn-secondary">Clone or download</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="copy-package" class="install-section">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Primary</span>
+        <h2 class="section-title"><span>Copy package</span></h2>
+      </div>
+
+      <div class="install-container">
+        <div class="quick-install-block" data-reveal>
+          <p class="step-description">Get the <code>octopus-cursor</code> package from the repo (clone or <a href="https://github.com/octopus-dev/octopus/archive/refs/heads/main.zip" rel="noopener">download ZIP</a>). Copy its contents into your project root: <code>.cursorrules</code> and the <code>.cursor/</code> folder. Then open Cursor and type <code>/o?</code>.</p>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">Unix / macOS (or Git Bash)</span>
+              <button class="code-block-copy" data-copy="#copy-unix" aria-label="Copy">Copy</button>
+            </div>
+            <pre><code id="copy-unix"># From repo root after clone or extract ZIP:
+cp octopus-cursor/.cursorrules .
+cp -r octopus-cursor/.cursor .</code></pre>
+          </div>
+          <p class="step-description">Windows (PowerShell):</p>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">PowerShell</span>
+              <button class="code-block-copy" data-copy="#copy-win" aria-label="Copy">Copy</button>
+            </div>
+            <pre><code id="copy-win"># From repo root after clone or extract ZIP:
+Copy-Item octopus-cursor\.cursorrules .
+Copy-Item -Recurse octopus-cursor\.cursor .</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="manual-setup" class="steps-section">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Other ways</span>
+        <h2 class="section-title"><span>Manual setup</span></h2>
+      </div>
+      <p class="download-section-intro" data-reveal>
+        Prefer copy-paste? <a href="#copy-package" class="text-accent">Use copy package above</a>.
+      </p>
+
+      <div class="steps-container">
+        <div class="step" data-reveal>
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Open Your Project in Cursor</h3>
+            <p class="step-description">Launch Cursor IDE and open your project folder. OCTOPUS works with any project
+              type.</p>
+          </div>
+        </div>
+
+        <div class="step" data-reveal>
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Create .cursorrules File</h3>
+            <p class="step-description">In your project root, create a file named <code>.cursorrules</code>. This is the
+              entry point for OCTOPUS.</p>
+            <div class="code-block">
+              <div class="code-block-header">
+                <span class="code-block-lang">.cursorrules</span>
+                <button class="code-block-copy" data-copy="#cursorrules-code" aria-label="Copy">Copy</button>
+              </div>
+              <pre><code id="cursorrules-code"># OCTOPUS Entry Point
+# Full documentation: https://octopus.dev/docs
+
+alwaysApply: true
+rules:
+  - .cursor/rules/core.mdc
+  - .cursor/rules/voice.mdc
+
+commands:
+  - .cursor/commands/o.md
+  - .cursor/commands/d.md
+  - .cursor/commands/r.md</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-reveal>
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Add .cursor Folder</h3>
+            <p class="step-description">Create the <code>.cursor</code> folder structure with rules, commands, and
+              learnings.</p>
+            <div class="code-block">
+              <div class="code-block-header">
+                <span class="code-block-lang">folder structure</span>
+              </div>
+              <pre><code>.cursor/
+├── rules/
+│   ├── core.mdc
+│   ├── voice.mdc
+│   ├── plan.mdc
+│   ├── build.mdc
+│   └── fix.mdc
+├── commands/
+│   ├── o.md
+│   ├── d.md
+│   └── r.md
+└── learnings/
+    ├── preferences.yaml
+    ├── project.yaml
+    └── corrections.yaml</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-reveal>
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Verify Installation</h3>
+            <p class="step-description">Open Cursor chat and type <code>/o?</code> to initialize OCTOPUS. All nine minds
+              should activate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clone" class="install-section">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Other ways</span>
+        <h2 class="section-title"><span>Clone or download</span></h2>
+      </div>
+
+      <div class="install-container">
+        <div class="clone-blocks" data-reveal>
+          <p class="step-description">Unix / macOS (or Git Bash on Windows):</p>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">Terminal</span>
+              <button class="code-block-copy" data-copy="#clone-unix" aria-label="Copy">Copy</button>
+            </div>
+            <pre><code id="clone-unix">git clone https://github.com/octopus-dev/octopus.git .octopus-temp
+cp .octopus-temp/octopus-cursor/.cursorrules . && cp -r .octopus-temp/octopus-cursor/.cursor .</code></pre>
+          </div>
+
+          <p class="step-description">Windows (PowerShell or Command Prompt):</p>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">PowerShell</span>
+              <button class="code-block-copy" data-copy="#clone-windows" aria-label="Copy">Copy</button>
+            </div>
+            <pre><code id="clone-windows">git clone https://github.com/octopus-dev/octopus.git .octopus-temp
+xcopy .octopus-temp\octopus-cursor\.cursor .cursor\ /E /I
+copy .octopus-temp\octopus-cursor\.cursorrules .</code></pre>
+          </div>
+
+          <a href="https://github.com/octopus-dev/octopus/archive/refs/heads/main.zip"
+            class="btn btn-secondary btn-lg clone-download-link" download>Download ZIP</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="verify-section">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Verification</span>
+        <h2 class="section-title"><span>Confirm it works</span></h2>
+      </div>
+
+      <div class="verify-container" data-reveal>
+        <h3 class="verify-title">After install</h3>
+        <p class="verify-intro">Open Cursor and run <code>/o?</code>. You should see all nine minds active.</p>
+        <button type="button" class="btn btn-secondary btn-sm" id="verify-show-btn" aria-expanded="false"
+          aria-controls="verification-results">Show checklist</button>
+        <div class="verification-results" id="verification-results" aria-live="polite" hidden>
+          <p class="verify-result-item"><strong>Check in your project:</strong></p>
+          <ul>
+            <li><code>.cursorrules</code> exists in project root</li>
+            <li><code>.cursor/rules/</code> folder exists</li>
+            <li><code>.cursor/commands/o.md</code> exists</li>
+            <li>In Cursor chat, type <code>/o?</code> and see "All 9 Arms Active"</li>
+          </ul>
+          <p class="verify-result-item">If all are true, installation is verified.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="site-signature" role="contentinfo" aria-label="OCTOPUS">
+    <div class="site-signature-wave" aria-hidden="true">
+      <svg viewBox="0 0 72 16" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="signature-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent" />
+            <stop offset="30%" stop-color="#e07a5f" />
+            <stop offset="50%" stop-color="#ea8b72" />
+            <stop offset="70%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="transparent" />
+          </linearGradient>
+        </defs>
+        <path d="M0 8 Q18 2 36 8 T72 8" />
+      </svg>
+    </div>
+    <div class="site-signature-constellation" aria-hidden="true">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle class="dot-core" cx="24" cy="24" r="2.5" />
+        <circle class="dot" cx="42" cy="24" r="1.5" />
+        <circle class="dot" cx="37" cy="37" r="1.5" />
+        <circle class="dot" cx="24" cy="42" r="1.5" />
+        <circle class="dot" cx="11" cy="37" r="1.5" />
+        <circle class="dot" cx="6" cy="24" r="1.5" />
+        <circle class="dot" cx="11" cy="11" r="1.5" />
+        <circle class="dot" cx="24" cy="6" r="1.5" />
+        <circle class="dot" cx="37" cy="11" r="1.5" />
+      </svg>
+    </div>
+    <p class="site-signature-mark">OCTOPUS</p>
+    <p class="site-signature-quote">
+      <span class="quote-en">The octopus has no shell... so it developed intelligence.</span>
+    </p>
+  </div>
+
+  <script src="../js/core.js"></script>
+  <script>
+    (function () {
+      var btn = document.getElementById('verify-show-btn');
+      var results = document.getElementById('verification-results');
+      if (!btn || !results) return;
+      btn.addEventListener('click', function () {
+        var hidden = results.hidden;
+        results.hidden = !hidden;
+        btn.setAttribute('aria-expanded', !hidden);
+        btn.textContent = hidden ? 'Hide checklist' : 'Show checklist';
+      });
+    })();
+  </script>
+</body>
+
+</html>

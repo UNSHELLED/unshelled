@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OCTOPUS">
+  <title>OCTOPUS</title>
+  <meta name="description" content="OCTOPUS. Nine minds. One purpose.">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="lock.css">
+  <link rel="stylesheet" href="android.css">
+</head>
+
+<body class="lock-screen" data-notifications="demo">
+  <!-- Status bar: Android layout — time left, WiFi, cellular, battery -->
+  <header class="lock-status android-status-bar" aria-hidden="true">
+    <span class="lock-status-time android-status-time" id="lock-status-time">--:--</span>
+    <div class="lock-status-right android-status-icons">
+      <span class="android-wifi" aria-hidden="true"></span>
+      <span class="android-cellular" aria-hidden="true">
+        <span class="android-cellular-bars">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="android-cellular-label" id="lock-cellular-label">4G</span>
+      </span>
+      <span class="android-battery" aria-hidden="true">
+        <span class="android-battery-icon" style="--android-battery-width: 72%;"></span>
+        <span class="android-battery-percent" id="lock-battery-percent">72%</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- Hero: name + logo (always) -->
+  <section class="lock-hero">
+    <h1 class="lock-wordmark" aria-label="OCTOPUS">OCTOPUS</h1>
+    <div class="lock-logo logo-animated" aria-hidden="true">
+      <svg class="lock-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <linearGradient id="lock-logo-core" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="#ea8b72" />
+          </linearGradient>
+        </defs>
+        <path class="tentacle-arm" d="M20 20 Q12 8, 8 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q28 8, 32 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 16, 2 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 16, 38 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q8 28, 4 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q32 28, 36 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 24, 2 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 24, 38 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <circle class="logo-core" cx="20" cy="20" r="7" fill="url(#lock-logo-core)" aria-hidden="true" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Notifications & messages: scrollable, all cases (0 = empty, N = list) -->
+  <div class="lock-feed" id="lock-feed" aria-label="Notifications and messages">
+    <div class="lock-feed-inner">
+      <article class="lock-card lock-card-message" data-type="message">
+        <span class="lock-card-avatar" aria-hidden="true">P</span>
+        <div class="lock-card-body">
+          <span class="lock-card-source">Pigo</span>
+          <p class="lock-card-preview">Nine minds waiting. Swipe up when ready.</p>
+        </div>
+        <time class="lock-card-time" datetime="14:32">14:32</time>
+      </article>
+      <article class="lock-card lock-card-notification" data-type="notification">
+        <div class="lock-card-body">
+          <span class="lock-card-source">OCTOPUS</span>
+          <p class="lock-card-preview">Deep lock screen — notifications, messages, status.</p>
+        </div>
+        <time class="lock-card-time" datetime="14:30">14:30</time>
+      </article>
+      <article class="lock-card lock-card-notification" data-type="notification">
+        <div class="lock-card-body">
+          <span class="lock-card-source">System</span>
+          <p class="lock-card-preview">All cases considered. AMOLED, safe areas, reduced motion.</p>
+        </div>
+        <time class="lock-card-time" datetime="14:28">14:28</time>
+      </article>
+    </div>
+  </div>
+
+  <!-- Android gesture pill (fixed bottom) -->
+  <div class="android-pill-wrap" aria-hidden="true">
+    <span class="android-pill"></span>
+  </div>
+
+  <!-- Unlock: swipe-up strip — creative, one organism -->
+  <footer class="lock-unlock-strip" id="lock-unlock" role="button" tabindex="0" aria-label="Swipe up to unlock">
+    <span class="lock-unlock-line" aria-hidden="true"></span>
+    <span class="lock-unlock-label">Swipe up to unlock</span>
+  </footer>
+
+  <script src="lock.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Playground — OCTOPUS</title>
+  <meta name="description" content="Try OCTOPUS commands live. Experience the adaptive AI coding companion.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/home.css">
+  <style>
+    .demo-hero {
+      padding: calc(var(--header-height) + var(--space-8)) var(--space-5) var(--space-6);
+      padding-left: max(var(--space-5), env(safe-area-inset-left));
+      padding-right: max(var(--space-5), env(safe-area-inset-right));
+      text-align: center;
+      position: relative;
+    }
+
+    .demo-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--aurora-1), var(--aurora-2);
+      opacity: 0.3;
+    }
+
+    .demo-section {
+      padding: var(--space-6) var(--space-5) var(--space-10);
+    }
+
+    .demo-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* State selector */
+    .state-selector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .state-label {
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+    }
+
+    .state-btn {
+      padding: var(--space-2) var(--space-4);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-default);
+    }
+
+    .state-btn:hover {
+      border-color: var(--border-accent);
+      color: var(--coral);
+    }
+
+    .state-btn:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+    }
+
+    .state-btn.active {
+      background: var(--gradient-brand);
+      border-color: transparent;
+      color: var(--text-inverse);
+    }
+
+    /* Terminal */
+    .terminal {
+      background: var(--bg-base);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-overlay);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .terminal-dot.red {
+      background: #ff5f56;
+    }
+
+    .terminal-dot.yellow {
+      background: #ffbd2e;
+    }
+
+    .terminal-dot.green {
+      background: #27ca40;
+    }
+
+    .terminal-title {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+    }
+
+    .terminal-body {
+      padding: var(--space-5);
+    }
+
+    /* Output area */
+    #demo-output {
+      min-height: 300px;
+      max-height: 500px;
+      overflow-y: auto;
+      margin-bottom: var(--space-4);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+
+    .demo-welcome {
+      color: var(--text-tertiary);
+      text-align: center;
+      padding: var(--space-8);
+    }
+
+    .demo-welcome p {
+      margin-bottom: var(--space-2);
+    }
+
+    .demo-hint {
+      color: var(--coral);
+      font-size: var(--text-xs);
+    }
+
+    .demo-response {
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border-subtle);
+      animation: fade-in-up 0.4s var(--ease-out-expo);
+    }
+
+    .demo-response:last-child {
+      border-bottom: none;
+    }
+
+    .demo-command {
+      color: var(--coral);
+      margin-bottom: var(--space-2);
+      font-weight: var(--font-medium);
+    }
+
+    .demo-result {
+      color: var(--text-secondary);
+    }
+
+    .demo-result strong {
+      color: var(--text-primary);
+    }
+
+    .demo-result code {
+      background: var(--bg-overlay);
+      padding: 0.1em 0.3em;
+      border-radius: var(--radius-sm);
+      font-size: 0.9em;
+    }
+
+    /* Input area */
+    .terminal-input {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .terminal-prompt {
+      color: var(--coral);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+    }
+
+    #demo-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      outline: none;
+    }
+
+    #demo-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    #demo-submit {
+      padding: var(--space-2) var(--space-4);
+      background: var(--gradient-brand);
+      border: none;
+      border-radius: var(--radius-md);
+      color: var(--text-inverse);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-default);
+    }
+
+    #demo-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--glow-default);
+    }
+
+    /* Suggestions */
+    .demo-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-5);
+    }
+
+    .demo-suggestions-label {
+      width: 100%;
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      margin-bottom: var(--space-2);
+    }
+
+    .demo-suggestion {
+      padding: var(--space-2) var(--space-3);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-default);
+    }
+
+    .demo-suggestion:hover {
+      border-color: var(--border-accent);
+      color: var(--coral);
+      background: var(--coral-bg-05);
+    }
+
+    /* Mind Activation Visualization */
+    .minds-activation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-1);
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-overlay);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-4);
+    }
+
+    .minds-activation-label {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-right: var(--space-2);
+    }
+
+    .mind-indicator {
+      width: 24px;
+      height: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: var(--font-bold);
+      color: var(--text-muted);
+      transition: all var(--duration-base) var(--ease-out-expo);
+    }
+
+    .mind-indicator.active {
+      background: var(--gradient-brand);
+      border-color: transparent;
+      color: var(--text-inverse);
+      box-shadow: 0 0 12px var(--glow-default);
+      animation: mind-pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes mind-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 12px var(--glow-default);
+      }
+
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px var(--glow-strong);
+      }
+    }
+
+    /* Thinking process visualization */
+    .thinking-process {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin: var(--space-3) 0;
+      padding: var(--space-2) var(--space-3);
+      background: var(--coral-bg-05);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      font-style: italic;
+    }
+
+    .thinking-process .thinking-icon {
+      width: 16px;
+      height: 16px;
+      animation: rotate 1.5s linear infinite;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .thinking-step {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) 0;
+      color: var(--text-tertiary);
+      font-size: var(--text-xs);
+    }
+
+    .thinking-step::before {
+      content: '→';
+      color: var(--coral);
+    }
+
+    .thinking-step.complete::before {
+      content: '✓';
+      color: #22c55e;
+    }
+
+    /* Typewriter effect for response */
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid var(--coral);
+      white-space: nowrap;
+      animation: typing 1.5s steps(40, end), blink-caret 0.5s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: var(--coral);
+      }
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .demo-hero {
+        padding: calc(var(--header-height) + var(--space-4)) var(--space-4) var(--space-4);
+      }
+
+      .demo-section {
+        padding: var(--space-4) var(--space-3);
+      }
+
+      .state-selector {
+        gap: var(--space-2);
+      }
+
+      .state-btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+      }
+
+      .minds-activation {
+        padding: var(--space-2);
+        gap: 2px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .minds-activation-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--space-1);
+      }
+
+      .mind-indicator {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+      }
+
+      .terminal {
+        border-radius: var(--radius-lg);
+      }
+
+      .terminal-body {
+        padding: var(--space-3);
+      }
+
+      #demo-output {
+        min-height: 200px;
+        max-height: 350px;
+        font-size: var(--text-xs);
+      }
+
+      .thinking-process {
+        font-size: 10px;
+        padding: var(--space-1) var(--space-2);
+      }
+
+      .demo-suggestions {
+        margin-top: var(--space-3);
+      }
+
+      .demo-suggestion {
+        font-size: 10px;
+        padding: var(--space-1) var(--space-2);
+      }
+    }
+
+    /* Touch-friendly for demo */
+    @media (hover: none) and (pointer: coarse) {
+
+      .state-btn,
+      .demo-suggestion {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      #demo-submit {
+        min-height: 48px;
+        padding: var(--space-3) var(--space-5);
+      }
+    }
+
+    /* Examples section */
+    .examples-section {
+      padding: var(--space-10) var(--space-5);
+      background: var(--bg-elevated);
+    }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-5);
+      max-width: var(--container-xl);
+      margin: var(--space-8) auto 0;
+    }
+
+    .example-card {
+      padding: var(--space-5);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+    }
+
+    .example-command {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--coral);
+      margin-bottom: var(--space-3);
+    }
+
+    .example-description {
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <a href="../" class="logo">
+      <svg class="logo-tentacle" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="logo-core" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="#ea8b72" />
+          </linearGradient>
+        </defs>
+        <path class="tentacle-arm" d="M20 20 Q12 8, 8 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q28 8, 32 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 16, 2 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 16, 38 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q8 28, 4 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q32 28, 36 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 24, 2 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 24, 38 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <circle class="logo-core" cx="20" cy="20" r="7" fill="url(#logo-core)" aria-hidden="true" />
+      </svg>
+      <span class="logo-text">OCTOPUS</span>
+    </a>
+
+    <nav class="nav-main" aria-label="Main navigation">
+      <a href="../explore/">Explore</a>
+      <a href="../minds/">Minds</a>
+      <a href="./" class="active">Demo</a>
+      <a href="../docs/">Docs</a>
+      <a href="../download/" class="nav-cta btn btn-primary btn-sm">Install</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="demo-hero">
+      <div style="position: relative; z-index: 2;">
+        <span class="section-label" data-hero-reveal>Interactive</span>
+        <h1 class="section-title" data-hero-reveal><span>Try OCTOPUS</span></h1>
+        <p class="section-description" data-hero-reveal style="max-width: 500px; margin: var(--space-3) auto 0;">
+          Type commands below and see how OCTOPUS responds. This is a simulation of the real experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <div class="demo-container">
+        <!-- State selector -->
+        <div class="state-selector" data-reveal role="group" aria-label="Developer state selection">
+          <span class="state-label" id="state-label">I'm feeling:</span>
+          <button class="state-btn" data-state="frustrated" role="radio" aria-checked="false">Frustrated</button>
+          <button class="state-btn active" data-state="flow" role="radio" aria-checked="true">In Flow</button>
+          <button class="state-btn" data-state="learning" role="radio" aria-checked="false">Learning</button>
+          <button class="state-btn" data-state="stuck" role="radio" aria-checked="false">Stuck</button>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal" data-reveal>
+          <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">OCTOPUS Terminal</span>
+          </div>
+
+          <div class="terminal-body">
+            <!-- Mind Activation Visualization -->
+            <div class="minds-activation" id="minds-viz">
+              <span class="minds-activation-label">Minds:</span>
+              <div class="mind-indicator" data-mind="0" title="Orchestrator">0</div>
+              <div class="mind-indicator" data-mind="1" title="Parser">1</div>
+              <div class="mind-indicator" data-mind="2" title="Analyzer">2</div>
+              <div class="mind-indicator" data-mind="3" title="Historian">3</div>
+              <div class="mind-indicator" data-mind="4" title="Pattern">4</div>
+              <div class="mind-indicator" data-mind="5" title="Mapper">5</div>
+              <div class="mind-indicator" data-mind="6" title="Predictor">6</div>
+              <div class="mind-indicator" data-mind="7" title="Communicator">7</div>
+              <div class="mind-indicator" data-mind="8" title="Learner">8</div>
+            </div>
+
+            <div id="demo-output" aria-live="polite" aria-label="Command output">
+              <div class="demo-welcome">
+                <p>Welcome to the OCTOPUS demo.</p>
+                <p>Type a command or click a suggestion below.</p>
+                <p class="demo-hint">Commands: /o (workflow) · /d (design) · /r (review)</p>
+              </div>
+            </div>
+
+            <div class="terminal-input">
+              <span class="terminal-prompt">></span>
+              <input type="text" id="demo-input" placeholder="/o plan user authentication" autocomplete="off" autofocus>
+              <button id="demo-submit">Run</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suggestions -->
+        <div class="demo-suggestions" data-reveal>
+          <span class="demo-suggestions-label">Try these:</span>
+          <button class="demo-suggestion" data-command="/o?">/o?</button>
+          <button class="demo-suggestion" data-command="/o plan user auth">/o plan user auth</button>
+          <button class="demo-suggestion" data-command="/o fix TypeError">/o fix TypeError</button>
+          <button class="demo-suggestion" data-command="/o build component">/o build component</button>
+          <button class="demo-suggestion" data-command="/o explain async/await">/o explain async/await</button>
+          <button class="demo-suggestion" data-command="/d scan">/d scan</button>
+          <button class="demo-suggestion" data-command="/r">/r</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="examples-section">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Command Reference</span>
+        <h2 class="section-title"><span>What You Can Do</span></h2>
+      </div>
+
+      <div class="examples-grid">
+        <div class="example-card" data-reveal>
+          <div class="example-command">/o plan [task]</div>
+          <p class="example-description">Plan complex features. Research first, then present a structured plan with
+            goals, tasks, and risks.</p>
+        </div>
+
+        <div class="example-card" data-reveal>
+          <div class="example-command">/o build [feature]</div>
+          <p class="example-description">Build components and features with production-quality code. No TODOs, no
+            placeholders.</p>
+        </div>
+
+        <div class="example-card" data-reveal>
+          <div class="example-command">/o fix [issue]</div>
+          <p class="example-description">Debug and fix issues. Shows chain of thought: read, hypothesize, verify, fix.
+          </p>
+        </div>
+
+        <div class="example-card" data-reveal>
+          <div class="example-command">/o explain [topic]</div>
+          <p class="example-description">Learn concepts with explanations adapted to your level. TL;DR, examples, key
+            points.</p>
+        </div>
+
+        <div class="example-card" data-reveal>
+          <div class="example-command">/d scan</div>
+          <p class="example-description">Extract design DNA from your codebase: colors, typography, spacing, motion.</p>
+        </div>
+
+        <div class="example-card" data-reveal>
+          <div class="example-command">/r</div>
+          <p class="example-description">Full 8-perspective review: correctness, security, performance, readability, and
+            more.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="site-signature" role="contentinfo" aria-label="OCTOPUS">
+    <div class="site-signature-wave" aria-hidden="true">
+      <svg viewBox="0 0 72 16" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="signature-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent" />
+            <stop offset="30%" stop-color="#e07a5f" />
+            <stop offset="50%" stop-color="#ea8b72" />
+            <stop offset="70%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="transparent" />
+          </linearGradient>
+        </defs>
+        <path d="M0 8 Q18 2 36 8 T72 8" />
+      </svg>
+    </div>
+    <div class="site-signature-constellation" aria-hidden="true">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle class="dot-core" cx="24" cy="24" r="2.5" />
+        <circle class="dot" cx="42" cy="24" r="1.5" />
+        <circle class="dot" cx="37" cy="37" r="1.5" />
+        <circle class="dot" cx="24" cy="42" r="1.5" />
+        <circle class="dot" cx="11" cy="37" r="1.5" />
+        <circle class="dot" cx="6" cy="24" r="1.5" />
+        <circle class="dot" cx="11" cy="11" r="1.5" />
+        <circle class="dot" cx="24" cy="6" r="1.5" />
+        <circle class="dot" cx="37" cy="11" r="1.5" />
+      </svg>
+    </div>
+    <p class="site-signature-mark">OCTOPUS</p>
+    <p class="site-signature-quote">
+      <span class="quote-en">The octopus has no shell... so it developed intelligence.</span>
+    </p>
+  </div>
+
+  <script src="../js/core.js"></script>
+  <script src="../js/demo-playground.js"></script>
+</body>
+
+</html>

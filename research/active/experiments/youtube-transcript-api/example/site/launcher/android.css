@@ -1,0 +1,174 @@
+/* OCTOPUS Launcher — Android-accurate shared UI. Real device demo.
+   Status bar (time, WiFi, cellular, battery), gesture navigation pill. */
+
+/* ========== Status bar: Android layout ========== */
+.android-status,
+.lock-status.android-status-bar,
+.home-status.android-status-bar {
+  min-height: 24px;
+  padding: 6px max(env(safe-area-inset-right), 16px) 8px max(env(safe-area-inset-left), 16px);
+}
+
+.android-status-time,
+.lock-status-time.android-status-time,
+.home-status-time.android-status-time {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.android-status-icons,
+.lock-status-right,
+.home-status-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* WiFi: 3 arcs (Material-style) */
+.android-wifi {
+  width: 16px;
+  height: 14px;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.android-wifi::before,
+.android-wifi::after {
+  content: "";
+  position: absolute;
+  border: 2px solid currentColor;
+  border-top: none;
+  border-radius: 0 0 100% 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.android-wifi::before {
+  width: 12px;
+  height: 6px;
+  bottom: 0;
+  opacity: 0.4;
+}
+
+.android-wifi::after {
+  width: 6px;
+  height: 4px;
+  bottom: 4px;
+  opacity: 1;
+}
+
+/* Cellular: 4 bars + 4G/5G label */
+.android-cellular {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-secondary);
+}
+
+.android-cellular-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.android-cellular-bars span {
+  width: 3px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.android-cellular-bars span:nth-child(1) { height: 4px; opacity: 0.4; }
+.android-cellular-bars span:nth-child(2) { height: 7px; opacity: 0.65; }
+.android-cellular-bars span:nth-child(3) { height: 10px; opacity: 0.85; }
+.android-cellular-bars span:nth-child(4) { height: 13px; opacity: 1; }
+
+.android-cellular-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-left: 1px;
+}
+
+/* Battery: outline + segmented fill + % */
+.android-battery {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-secondary);
+}
+
+.android-battery-icon {
+  width: 22px;
+  height: 11px;
+  border: 1.5px solid currentColor;
+  border-radius: 2.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.android-battery-icon::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: var(--android-battery-width, 65%);
+  min-width: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  opacity: 0.95;
+}
+
+.android-battery-percent {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========== Gesture navigation pill (Android 10+) ========== */
+.android-pill-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0 max(env(safe-area-inset-right), 24px) max(env(safe-area-inset-bottom), 8px) max(env(safe-area-inset-left), 24px);
+  pointer-events: none;
+}
+
+.android-pill {
+  width: 134px;
+  max-width: 40vw;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: rgba(224, 122, 95, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .android-pill {
+    transition: background var(--duration-fast), transform var(--duration-fast);
+  }
+}
+
+/* ========== Lock screen: pill above unlock strip ========== */
+.lock-screen .android-pill-wrap {
+  padding-bottom: max(env(safe-area-inset-bottom), 6px);
+}
+
+/* ========== Home: pill above dock ========== */
+.home-screen .android-pill-wrap {
+  bottom: 72px;
+  padding-bottom: 6px;
+}
+
+@media (max-width: 360px) {
+  .home-screen .android-pill-wrap {
+    bottom: 68px;
+  }
+}

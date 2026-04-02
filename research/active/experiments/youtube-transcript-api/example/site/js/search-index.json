@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-30",
+  "items": [
+    {
+      "title": "Quick Start",
+      "section": "Getting Started",
+      "href": "/docs/quickstart/",
+      "content": "Get started with OCTOPUS in under 5 minutes. Learn the basics of project initialization and your first commands."
+    },
+    {
+      "title": "Installation",
+      "section": "Getting Started",
+      "href": "/download/",
+      "content": "Download and install OCTOPUS. Choose between minimal, full, or clone installation options."
+    },
+    {
+      "title": "/o Command",
+      "section": "Commands",
+      "href": "/docs/commands/o.html",
+      "content": "The workflow orchestration command. Plan, build, fix, explain, refactor, test, ship, learn. Auto-switches between Plan and Agent modes."
+    },
+    {
+      "title": "/o? Deep Init",
+      "section": "Commands",
+      "href": "/docs/commands/o.html#deep-init",
+      "content": "Initialize and deeply understand your project. All arms active, Unshelled Protocol engaged. Single command for complete project awareness."
+    },
+    {
+      "title": "/o plan",
+      "section": "Commands",
+      "href": "/docs/commands/o.html#plan",
+      "content": "Research-Plan-Execute protocol. Build mental map, show reasoning, wait for approval before coding."
+    },
+    {
+      "title": "/o build",
+      "section": "Commands",
+      "href": "/docs/commands/o.html#build",
+      "content": "Create implementations. Production-ready code with error handling, edge cases, proper types. No TODOs, no placeholders."
+    },
+    {
+      "title": "/o fix",
+      "section": "Commands",
+      "href": "/docs/commands/o.html#fix",
+      "content": "Debug and fix issues. Reproduce, localize, root cause analysis, minimal fix, prevention."
+    },
+    {
+      "title": "/d Command",
+      "section": "Commands",
+      "href": "/docs/commands/d.html",
+      "content": "Design intelligence command. Scan, page, component, feature, check, adapt. Extract and apply Design Genome."
+    },
+    {
+      "title": "/d scan",
+      "section": "Commands",
+      "href": "/docs/commands/d.html#scan",
+      "content": "Extract Design Genome from existing UI. Colors, typography, spacing, patterns."
+    },
+    {
+      "title": "/r Command",
+      "section": "Commands",
+      "href": "/docs/commands/r.html",
+      "content": "Full review command. DNA validation plus 8-perspective analysis. Security, performance, accessibility, maintainability."
+    },
+    {
+      "title": "Plan Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#plan",
+      "content": "Architectural reasoning before coding. Research first, show your work, present plan, wait for approval."
+    },
+    {
+      "title": "Build Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#build",
+      "content": "Implementation mode. Complete, production-ready code. Match project patterns exactly."
+    },
+    {
+      "title": "Fix Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#fix",
+      "content": "Debugging mode. 5 Whys root cause analysis, minimal safe fixes, prevention."
+    },
+    {
+      "title": "Explain Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#explain",
+      "content": "Teaching mode. Adapt depth to developer level. TL;DR, explanation, examples, key points."
+    },
+    {
+      "title": "Refactor Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#refactor",
+      "content": "Safe restructuring. Change structure, not behavior. Tests pass before and after."
+    },
+    {
+      "title": "Test Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#test",
+      "content": "Test-driven development. Happy path, edge cases, errors. Red-green-refactor cycle."
+    },
+    {
+      "title": "Ship Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#ship",
+      "content": "Deployment checklist. Quality, review, docs, deploy, rollback, monitor."
+    },
+    {
+      "title": "Learn Mode",
+      "section": "Modes",
+      "href": "/docs/modes/index.html#learn",
+      "content": "Memory and adaptation. Record preferences, patterns, corrections. Evolve with every interaction."
+    },
+    {
+      "title": "Camouflage Protocol",
+      "section": "Protocols",
+      "href": "/docs/protocols/index.html#camouflage",
+      "content": "Match existing patterns exactly. Never suggest different conventions. Scan automatically, blend in perfectly."
+    },
+    {
+      "title": "Anti-Slop Protocol",
+      "section": "Protocols",
+      "href": "/docs/protocols/index.html#anti-slop",
+      "content": "No lazy output. No TODOs, no placeholders, no incomplete implementations. Production-ready only."
+    },
+    {
+      "title": "Shadow Workspace",
+      "section": "Protocols",
+      "href": "/docs/protocols/index.html#shadow-workspace",
+      "content": "Code validation before showing. Draft, lint, correction, verification, commit. Trust the system."
+    },
+    {
+      "title": "Dynamic Context Discovery",
+      "section": "Protocols",
+      "href": "/docs/protocols/index.html#discovery",
+      "content": "Tiered search strategy. Semantic search for patterns, grep for symbols, reading agent for exploration."
+    },
+    {
+      "title": "Unshelled Protocol",
+      "section": "Protocols",
+      "href": "/docs/commands/o.html#deep-init",
+      "content": "Raw intelligence unleashed. Research first, all tools orchestrated, all arms active, complete implementation, show your work."
+    },
+    {
+      "title": "Nine Minds Architecture",
+      "section": "Core Concepts",
+      "href": "/minds/",
+      "content": "Brain 0 (Orchestrator) plus 8 arms: Parser, Analyzer, Historian, Pattern Detector, Relationship Mapper, Predictor, Communicator, Learner."
+    },
+    {
+      "title": "Brain 0 - Orchestrator",
+      "section": "Nine Minds",
+      "href": "/minds/#orchestrator",
+      "content": "Sees the whole. Connects the pieces. Makes it work. Understands the developer's intent."
+    },
+    {
+      "title": "Arm 1 - Parser",
+      "section": "Nine Minds",
+      "href": "/minds/#parser",
+      "content": "Reads structure. Understands syntax. Sees the skeleton. Reads between the lines."
+    },
+    {
+      "title": "Arm 2 - Analyzer",
+      "section": "Nine Minds",
+      "href": "/minds/#analyzer",
+      "content": "Finds problems. Sees risks. Measures quality. Knows what will break."
+    },
+    {
+      "title": "Arm 3 - Historian",
+      "section": "Nine Minds",
+      "href": "/minds/#historian",
+      "content": "Remembers changes. Understands evolution. Knows the story."
+    },
+    {
+      "title": "Arm 4 - Pattern Detector",
+      "section": "Nine Minds",
+      "href": "/minds/#pattern",
+      "content": "Sees patterns. Recognizes conventions. Matches style."
+    },
+    {
+      "title": "Arm 5 - Relationship Mapper",
+      "section": "Nine Minds",
+      "href": "/minds/#mapper",
+      "content": "Maps connections. Traces dependencies. Understands flow."
+    },
+    {
+      "title": "Arm 6 - Predictor",
+      "section": "Nine Minds",
+      "href": "/minds/#predictor",
+      "content": "Anticipates needs. Sees risks. Plans ahead."
+    },
+    {
+      "title": "Arm 7 - Communicator",
+      "section": "Nine Minds",
+      "href": "/minds/#communicator",
+      "content": "Adapts language. Matches tone. Speaks clearly."
+    },
+    {
+      "title": "Arm 8 - Learner",
+      "section": "Nine Minds",
+      "href": "/minds/#learner",
+      "content": "Remembers. Adapts. Evolves. Becomes better with every interaction."
+    }
+  ]
+}

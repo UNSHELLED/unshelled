@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nine Minds — OCTOPUS</title>
+  <meta name="description"
+    content="Explore the 9-brain architecture of OCTOPUS. Nine specialized minds working as one.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages/home.css">
+  <style>
+    /* Minds page: hero + constellation + scenario + detail cards. Design Genome only. Single handler: constellation.js */
+    .minds-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--header-height) + var(--space-10)) var(--space-5) var(--space-10);
+      padding-left: max(var(--space-5), env(safe-area-inset-left));
+      padding-right: max(var(--space-5), env(safe-area-inset-right));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .minds-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--aurora-1), var(--aurora-2);
+      opacity: 0.5;
+    }
+
+    .minds-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .minds-hero .section-label {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+
+    .minds-hero .section-title {
+      margin-bottom: var(--space-4);
+    }
+
+    .minds-hero .section-description {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+    }
+
+    .constellation-section {
+      padding: var(--space-10) var(--space-5);
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .constellation-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+
+    .constellation-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: var(--gradient-brand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 0 60px var(--glow-strong);
+      cursor: pointer;
+      transition: all var(--duration-base) var(--ease-out-expo);
+      z-index: 10;
+      border: none;
+      font: inherit;
+      color: inherit;
+    }
+
+    .constellation-center:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 80px var(--glow-strong);
+    }
+
+    .constellation-center:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 4px;
+    }
+
+    .constellation-center-num {
+      font-family: var(--font-mono);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--bg-base);
+    }
+
+    .constellation-center-name {
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--bg-base);
+    }
+
+    .constellation-node {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all var(--duration-base) var(--ease-out-expo);
+      box-shadow: 0 0 30px var(--glow-subtle);
+      font: inherit;
+      color: inherit;
+    }
+
+    .constellation-node:hover,
+    .constellation-node.active {
+      background: var(--gradient-brand);
+      transform: scale(1.15);
+      box-shadow: 0 0 50px var(--glow-default);
+    }
+
+    .constellation-node:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 4px;
+    }
+
+    .constellation-node:hover .node-num,
+    .constellation-node:hover .node-name,
+    .constellation-node.active .node-num,
+    .constellation-node.active .node-name {
+      color: var(--bg-base);
+    }
+
+    .node-num {
+      font-family: var(--font-mono);
+      font-size: var(--text-lg);
+      font-weight: var(--font-bold);
+      color: var(--coral);
+      transition: color var(--duration-fast);
+    }
+
+    .node-name {
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color var(--duration-fast);
+    }
+
+    /* Container 1st child is SVG; nodes are 2nd–9th */
+    .constellation-node:nth-child(2) {
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .constellation-node:nth-child(3) {
+      top: 15%;
+      right: 15%;
+    }
+
+    .constellation-node:nth-child(4) {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .constellation-node:nth-child(5) {
+      bottom: 15%;
+      right: 15%;
+    }
+
+    .constellation-node:nth-child(6) {
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .constellation-node:nth-child(7) {
+      bottom: 15%;
+      left: 15%;
+    }
+
+    .constellation-node:nth-child(8) {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .constellation-node:nth-child(9) {
+      top: 15%;
+      left: 15%;
+    }
+
+    .scenario-selector {
+      margin-top: var(--space-10);
+      text-align: center;
+      padding: 0 var(--space-5);
+    }
+
+    .scenario-heading {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .scenario-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+    }
+
+    .scenario-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-4) var(--space-5);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      transition: all var(--duration-base) var(--curve-tentacle);
+      font: inherit;
+    }
+
+    .scenario-btn:hover {
+      border-color: var(--border-accent);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .scenario-btn:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+    }
+
+    .scenario-btn[aria-pressed="true"] {
+      border-color: var(--coral);
+      background: color-mix(in srgb, var(--coral) 12%, var(--bg-card));
+      color: var(--coral);
+    }
+
+    .scenario-minds {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    .scenario-btn[aria-pressed="true"] .scenario-minds {
+      color: var(--intelligence-thinking);
+    }
+
+    .constellation-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .constellation-lines line {
+      stroke: var(--border-accent);
+      stroke-width: 1;
+      opacity: 0.3;
+    }
+
+    .constellation-lines line.connection-active {
+      stroke: var(--coral);
+      opacity: 0.8;
+      stroke-width: 2;
+    }
+
+    .mind-details {
+      padding: var(--space-10) var(--space-5);
+      background: var(--bg-elevated);
+    }
+
+    .mind-detail-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-8);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      display: none;
+    }
+
+    .mind-detail-card.active {
+      display: block;
+      animation: fade-in-up 0.4s var(--ease-out-expo);
+    }
+
+    .mind-detail-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .mind-detail-num {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-brand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--bg-base);
+    }
+
+    .mind-detail-title {
+      font-size: var(--text-3xl);
+      font-weight: var(--font-bold);
+    }
+
+    .mind-detail-tagline {
+      color: var(--coral);
+      font-size: var(--text-lg);
+      margin-top: var(--space-1);
+    }
+
+    .mind-detail-content {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    .mind-detail-content p {
+      margin-bottom: var(--space-4);
+    }
+
+    .mind-detail-examples {
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .mind-detail-examples h4 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-4);
+      color: var(--text-primary);
+    }
+
+    .mind-example {
+      margin-top: var(--space-4);
+      padding: var(--space-4);
+      background: var(--bg-elevated);
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--coral);
+    }
+
+    .mind-example-code {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .mind-example-understanding {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+
+    .minds-cta {
+      padding: var(--space-10) var(--space-5);
+      text-align: center;
+      background: var(--bg-base);
+    }
+
+    .minds-cta .section-description {
+      margin-bottom: var(--space-5);
+    }
+
+    .minds-cta .btn {
+      margin: 0 var(--space-2);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mind-detail-card.active {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .constellation-container {
+        max-width: 100%;
+        aspect-ratio: auto;
+        min-height: 500px;
+      }
+
+      .constellation-center {
+        width: 80px;
+        height: 80px;
+      }
+
+      .constellation-node {
+        width: 60px;
+        height: 60px;
+      }
+
+      .node-name {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <a href="../" class="logo">
+      <svg class="logo-tentacle" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="logo-core" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="#ea8b72" />
+          </linearGradient>
+        </defs>
+        <path class="tentacle-arm" d="M20 20 Q12 8, 8 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q28 8, 32 4" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 16, 2 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 16, 38 14" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q8 28, 4 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q32 28, 36 34" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q6 24, 2 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <path class="tentacle-arm" d="M20 20 Q34 24, 38 28" stroke="currentColor" stroke-width="2.5" fill="none" />
+        <circle class="logo-core" cx="20" cy="20" r="7" fill="url(#logo-core)" aria-hidden="true" />
+      </svg>
+      <span class="logo-text">OCTOPUS</span>
+    </a>
+
+    <nav class="nav-main" aria-label="Main navigation">
+      <a href="../explore/">Explore</a>
+      <a href="./" class="active">Minds</a>
+      <a href="../demo/">Demo</a>
+      <a href="../docs/">Docs</a>
+      <a href="../download/" class="nav-cta btn btn-primary btn-sm">Install</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="minds-hero" aria-labelledby="minds-hero-heading">
+      <div class="minds-hero-inner">
+        <span class="section-label" data-hero-reveal>The Architecture</span>
+        <h1 id="minds-hero-heading" class="section-title" data-hero-reveal><span>Nine Minds</span></h1>
+        <p class="section-description" data-hero-reveal>
+          Each mind specializes in a different aspect of understanding. Together, they see everything.
+        </p>
+      </div>
+    </section>
+
+    <section class="constellation-section" aria-labelledby="scenario-heading">
+      <div class="constellation-container" data-reveal>
+        <svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="50" y1="50" x2="50" y2="10" />
+          <line x1="50" y1="50" x2="85" y2="20" />
+          <line x1="50" y1="50" x2="95" y2="50" />
+          <line x1="50" y1="50" x2="85" y2="80" />
+          <line x1="50" y1="50" x2="50" y2="90" />
+          <line x1="50" y1="50" x2="15" y2="80" />
+          <line x1="50" y1="50" x2="5" y2="50" />
+          <line x1="50" y1="50" x2="15" y2="20" />
+        </svg>
+
+        <button type="button" class="constellation-node" data-mind="1" aria-label="Parser mind">
+          <span class="node-num">01</span>
+          <span class="node-name">Parser</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="2" aria-label="Analyzer mind">
+          <span class="node-num">02</span>
+          <span class="node-name">Analyzer</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="3" aria-label="Historian mind">
+          <span class="node-num">03</span>
+          <span class="node-name">Historian</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="4" aria-label="Pattern mind">
+          <span class="node-num">04</span>
+          <span class="node-name">Pattern</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="5" aria-label="Mapper mind">
+          <span class="node-num">05</span>
+          <span class="node-name">Mapper</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="6" aria-label="Predictor mind">
+          <span class="node-num">06</span>
+          <span class="node-name">Predictor</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="7" aria-label="Communicator mind">
+          <span class="node-num">07</span>
+          <span class="node-name">Comm</span>
+        </button>
+        <button type="button" class="constellation-node" data-mind="8" aria-label="Learner mind">
+          <span class="node-num">08</span>
+          <span class="node-name">Learner</span>
+        </button>
+
+        <button type="button" class="constellation-center" data-mind="0" aria-label="Orchestrator mind">
+          <span class="constellation-center-num">00</span>
+          <span class="constellation-center-name">Orchestrator</span>
+        </button>
+      </div>
+
+      <div class="scenario-selector" aria-labelledby="scenario-heading">
+        <h2 id="scenario-heading" class="scenario-heading">See minds collaborate</h2>
+        <div class="scenario-buttons">
+          <button type="button" data-scenario="plan" class="scenario-btn" aria-pressed="false">
+            Planning a feature
+            <span class="scenario-minds">5 minds active</span>
+          </button>
+          <button type="button" data-scenario="fix" class="scenario-btn" aria-pressed="false">
+            Fixing a bug
+            <span class="scenario-minds">4 minds active</span>
+          </button>
+          <button type="button" data-scenario="learn" class="scenario-btn" aria-pressed="false">
+            Learning your style
+            <span class="scenario-minds">4 minds active</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mind-details" aria-label="Mind details">
+      <div class="mind-detail-card active" id="orchestrator" data-mind-detail="0">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">00</div>
+          <div>
+            <h3 class="mind-detail-title">Orchestrator</h3>
+            <p class="mind-detail-tagline">Sees the whole. Connects the pieces. Makes it work.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>The central intelligence that coordinates all other minds. Understands your intent, decides which minds to
+            engage, and synthesizes their outputs into one coherent response.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Routes requests to appropriate specialized minds</li>
+            <li>Synthesizes outputs from multiple minds</li>
+            <li>Maintains context across the conversation</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">"Add auth to the API"</code>
+            <div class="mind-example-understanding">→ Coordinates: Parser (read API), Analyzer (find gaps), Mapper
+              (deps), then plan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="parser" data-mind-detail="1">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">01</div>
+          <div>
+            <h3 class="mind-detail-title">Parser</h3>
+            <p class="mind-detail-tagline">Reads structure. Understands syntax. Sees the skeleton.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Reads code at a deep level—ASTs, syntax, imports, exports. Identifies functions, classes, and their
+            relationships. Reads between the lines.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Analyzes code structure and syntax</li>
+            <li>Identifies functions, classes, and their signatures</li>
+            <li>Understands import/export relationships</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">async function getUser(id: string)</code>
+            <div class="mind-example-understanding">→ Sees: async, returns Promise&lt;User&gt;, imports User from
+              './types'</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="analyzer" data-mind-detail="2">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">02</div>
+          <div>
+            <h3 class="mind-detail-title">Analyzer</h3>
+            <p class="mind-detail-tagline">Finds problems. Sees risks. Knows what will break.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>The quality inspector. Spots bugs, security issues, performance bottlenecks, and code smells. Applies
+            correctness, security, and maintainability lenses.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Identifies bugs and potential errors</li>
+            <li>Spots security vulnerabilities</li>
+            <li>Detects performance bottlenecks</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">user.id</code>
+            <div class="mind-example-understanding">→ Warns: user may be null, suggests optional chaining</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="historian" data-mind-detail="3">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">03</div>
+          <div>
+            <h3 class="mind-detail-title">Historian</h3>
+            <p class="mind-detail-tagline">Remembers changes. Understands evolution. Knows the story.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Tracks how code evolved and why decisions were made. Remembers your development journey. Prevents repeating
+            past mistakes.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Tracks code evolution and changes</li>
+            <li>Understands historical decisions</li>
+            <li>Remembers your development journey</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">git log -p src/auth/</code>
+            <div class="mind-example-understanding">→ Remembers: JWT added in commit x, session middleware changed in y
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="pattern" data-mind-detail="4">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">04</div>
+          <div>
+            <h3 class="mind-detail-title">Pattern</h3>
+            <p class="mind-detail-tagline">Sees patterns. Recognizes conventions. Matches your style.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>The core of Camouflage. Recognizes naming, formatting, and structure so new code looks like it was written
+            by you.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Recognizes naming conventions</li>
+            <li>Matches formatting and style</li>
+            <li>Identifies architectural patterns</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">const x = await fetch(...)</code>
+            <div class="mind-example-understanding">→ Matches: project uses async/await, not .then; same error pattern
+              as api.ts</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="mapper" data-mind-detail="5">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">05</div>
+          <div>
+            <h3 class="mind-detail-title">Mapper</h3>
+            <p class="mind-detail-tagline">Maps connections. Traces dependencies. Sees your mental model.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Understands how components and data connect. Builds a map of your codebase. Knows what might break when you
+            change something.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Maps component relationships</li>
+            <li>Traces data flow</li>
+            <li>Identifies dependencies</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">import { User } from './types'</code>
+            <div class="mind-example-understanding">→ Maps: User used in 4 files; types.ts → api.ts → Profile.tsx</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="predictor" data-mind-detail="6">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">06</div>
+          <div>
+            <h3 class="mind-detail-title">Predictor</h3>
+            <p class="mind-detail-tagline">Anticipates needs. Plans ahead. Knows what you'll need next.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Sees patterns in your workflow. When you fix one bug, considers related ones. When you build one component,
+            thinks about the next. Stays one step ahead.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Anticipates follow-up requests</li>
+            <li>Identifies potential issues early</li>
+            <li>Suggests related improvements</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">// TODO: add validation</code>
+            <div class="mind-example-understanding">→ Anticipates: you'll need validateInput next; suggests where to add
+              it</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="communicator" data-mind-detail="7">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">07</div>
+          <div>
+            <h3 class="mind-detail-title">Communicator</h3>
+            <p class="mind-detail-tagline">Adapts language. Matches tone. Talks like you think.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Reads your state—frustrated, in flow, learning—and adjusts. Quick fix? Minimal words. Deep learning? Full
+            explanation. Responses feel natural and helpful.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Reads your emotional state</li>
+            <li>Adapts response length and tone</li>
+            <li>Matches your communication style</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">"fix this" vs "explain why"</code>
+            <div class="mind-example-understanding">→ Adapts: short fix when you're in flow; detailed when you asked
+              "explain"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-detail-card" id="learner" data-mind-detail="8">
+        <div class="mind-detail-header">
+          <div class="mind-detail-num">08</div>
+          <div>
+            <h3 class="mind-detail-title">Learner</h3>
+            <p class="mind-detail-tagline">Remembers. Adapts. Evolves. Becomes better with every interaction.</p>
+          </div>
+        </div>
+        <div class="mind-detail-content">
+          <p>Stores preferences, corrections, and patterns. Every interaction teaches something. Over time, OCTOPUS
+            makes fewer mistakes and feels like a true collaborator.</p>
+        </div>
+        <div class="mind-detail-examples">
+          <h4>What it does</h4>
+          <ul>
+            <li>Remembers preferences</li>
+            <li>Learns from corrections</li>
+            <li>Adapts to your workflow</li>
+          </ul>
+          <div class="mind-example">
+            <code class="mind-example-code">preferences: fix fast</code>
+            <div class="mind-example-understanding">→ Remembers: you prefer "fix fast, no preamble"; applies next time
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="minds-cta" aria-label="Try OCTOPUS">
+      <p class="section-description">See nine minds in action.</p>
+      <a href="../demo/" class="btn btn-primary btn-lg">Try Demo</a>
+      <a href="../download/" class="btn btn-secondary btn-lg">Install</a>
+    </section>
+  </main>
+
+  <div class="site-signature" role="contentinfo" aria-label="OCTOPUS">
+    <div class="site-signature-wave" aria-hidden="true">
+      <svg viewBox="0 0 72 16" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="signature-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent" />
+            <stop offset="30%" stop-color="#e07a5f" />
+            <stop offset="50%" stop-color="#ea8b72" />
+            <stop offset="70%" stop-color="#e07a5f" />
+            <stop offset="100%" stop-color="transparent" />
+          </linearGradient>
+        </defs>
+        <path d="M0 8 Q18 2 36 8 T72 8" />
+      </svg>
+    </div>
+    <div class="site-signature-constellation" aria-hidden="true">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle class="dot-core" cx="24" cy="24" r="2.5" />
+        <circle class="dot" cx="42" cy="24" r="1.5" />
+        <circle class="dot" cx="37" cy="37" r="1.5" />
+        <circle class="dot" cx="24" cy="42" r="1.5" />
+        <circle class="dot" cx="11" cy="37" r="1.5" />
+        <circle class="dot" cx="6" cy="24" r="1.5" />
+        <circle class="dot" cx="11" cy="11" r="1.5" />
+        <circle class="dot" cx="24" cy="6" r="1.5" />
+        <circle class="dot" cx="37" cy="11" r="1.5" />
+      </svg>
+    </div>
+    <p class="site-signature-mark">OCTOPUS</p>
+    <p class="site-signature-quote">
+      <span class="quote-en">The octopus has no shell... so it developed intelligence.</span>
+    </p>
+  </div>
+
+  <script src="../js/core.js"></script>
+  <script src="../js/constellation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1513 @@
+{
+  "video_id": "U1_nzjWUpL4",
+  "language": "English (auto-generated)",
+  "language_code": "en",
+  "is_generated": true,
+  "transcript": [
+    {
+      "start": 0.16,
+      "duration": 4.159,
+      "text": "Are you struggling to turn beautiful"
+    },
+    {
+      "start": 1.92,
+      "duration": 4.48,
+      "text": "website designs into actual working code"
+    },
+    {
+      "start": 4.319,
+      "duration": 3.921,
+      "text": "with cursor? You're not alone. In my"
+    },
+    {
+      "start": 6.4,
+      "duration": 3.36,
+      "text": "previous video about building beautiful"
+    },
+    {
+      "start": 8.24,
+      "duration": 3.359,
+      "text": "websites with cursor, you guys"
+    },
+    {
+      "start": 9.76,
+      "duration": 3.36,
+      "text": "absolutely loved it and it got an"
+    },
+    {
+      "start": 11.599,
+      "duration": 3.441,
+      "text": "amazing response. Here's the thing"
+    },
+    {
+      "start": 13.12,
+      "duration": 3.999,
+      "text": "though. In that video, I actually showed"
+    },
+    {
+      "start": 15.04,
+      "duration": 3.68,
+      "text": "you how you can get a beautiful UI, but"
+    },
+    {
+      "start": 17.119,
+      "duration": 3.201,
+      "text": "I didn't show you how you could properly"
+    },
+    {
+      "start": 18.72,
+      "duration": 3.84,
+      "text": "implement it. You can't just go ahead"
+    },
+    {
+      "start": 20.32,
+      "duration": 4.48,
+      "text": "and tell cursor this is the design file"
+    },
+    {
+      "start": 22.56,
+      "duration": 4.24,
+      "text": "or use this reference, ask it to clone"
+    },
+    {
+      "start": 24.8,
+      "duration": 3.84,
+      "text": "it, and then expect it to work. it'll"
+    },
+    {
+      "start": 26.8,
+      "duration": 3.76,
+      "text": "actually start to build stuff on its own"
+    },
+    {
+      "start": 28.64,
+      "duration": 4.48,
+      "text": "which usually ends up as hallucination"
+    },
+    {
+      "start": 30.56,
+      "duration": 4.48,
+      "text": "or AI slop that no one really likes. So"
+    },
+    {
+      "start": 33.12,
+      "duration": 3.84,
+      "text": "in today's video I'm going to tell you"
+    },
+    {
+      "start": 35.04,
+      "duration": 3.92,
+      "text": "three ways you can actually build the"
+    },
+    {
+      "start": 36.96,
+      "duration": 3.919,
+      "text": "beautiful UI that you created. Whether"
+    },
+    {
+      "start": 38.96,
+      "duration": 3.919,
+      "text": "you're coming from my previous video or"
+    },
+    {
+      "start": 40.879,
+      "duration": 3.84,
+      "text": "you're completely new here by the end of"
+    },
+    {
+      "start": 42.879,
+      "duration": 3.601,
+      "text": "this you'll know exactly how to get"
+    },
+    {
+      "start": 44.719,
+      "duration": 4.32,
+      "text": "cursor to build the websites you"
+    },
+    {
+      "start": 46.48,
+      "duration": 4.559,
+      "text": "actually want. So in the previous video"
+    },
+    {
+      "start": 49.039,
+      "duration": 4.241,
+      "text": "I actually shared a prompt that allowed"
+    },
+    {
+      "start": 51.039,
+      "duration": 4.881,
+      "text": "you to convert any design image you gave"
+    },
+    {
+      "start": 53.28,
+      "duration": 5.36,
+      "text": "to an AI model like claude or chatgpt"
+    },
+    {
+      "start": 55.92,
+      "duration": 4.639,
+      "text": "into JSON format. Then using that JSON"
+    },
+    {
+      "start": 58.64,
+      "duration": 4.079,
+      "text": "format you could accurately create a"
+    },
+    {
+      "start": 60.559,
+      "duration": 4.0,
+      "text": "design template and reuse it anywhere."
+    },
+    {
+      "start": 62.719,
+      "duration": 3.521,
+      "text": "Well, I've also improved that prompt a"
+    },
+    {
+      "start": 64.559,
+      "duration": 3.761,
+      "text": "little bit and made some changes so that"
+    },
+    {
+      "start": 66.24,
+      "duration": 3.68,
+      "text": "the JSON output is even better. You'll"
+    },
+    {
+      "start": 68.32,
+      "duration": 3.28,
+      "text": "find this updated prompt in the"
+    },
+    {
+      "start": 69.92,
+      "duration": 3.12,
+      "text": "description as well. But to start"
+    },
+    {
+      "start": 71.6,
+      "duration": 4.0,
+      "text": "building projects you can actually"
+    },
+    {
+      "start": 73.04,
+      "duration": 4.399,
+      "text": "scale, you need this first method. So"
+    },
+    {
+      "start": 75.6,
+      "duration": 3.44,
+      "text": "let's go ahead and get started. This is"
+    },
+    {
+      "start": 77.439,
+      "duration": 3.201,
+      "text": "actually a pretty powerful prompt"
+    },
+    {
+      "start": 79.04,
+      "duration": 3.52,
+      "text": "template that we've developed. Instead"
+    },
+    {
+      "start": 80.64,
+      "duration": 3.92,
+      "text": "of cursor guessing what you want, this"
+    },
+    {
+      "start": 82.56,
+      "duration": 4.08,
+      "text": "injects the full functionality and"
+    },
+    {
+      "start": 84.56,
+      "duration": 4.48,
+      "text": "structure of your front-end app right"
+    },
+    {
+      "start": 86.64,
+      "duration": 4.32,
+      "text": "into the AI's context from the start."
+    },
+    {
+      "start": 89.04,
+      "duration": 4.24,
+      "text": "There are specific prompt fields to fill"
+    },
+    {
+      "start": 90.96,
+      "duration": 4.24,
+      "text": "out. First, the required pages that need"
+    },
+    {
+      "start": 93.28,
+      "duration": 3.76,
+      "text": "to be made, then user roles and"
+    },
+    {
+      "start": 95.2,
+      "duration": 3.76,
+      "text": "permissions for authentication. If you"
+    },
+    {
+      "start": 97.04,
+      "duration": 3.68,
+      "text": "want authentication in your app, which"
+    },
+    {
+      "start": 98.96,
+      "duration": 3.68,
+      "text": "is actually very important for real"
+    },
+    {
+      "start": 100.72,
+      "duration": 4.32,
+      "text": "projects, then you absolutely need to"
+    },
+    {
+      "start": 102.64,
+      "duration": 4.64,
+      "text": "include this. Shared components are also"
+    },
+    {
+      "start": 105.04,
+      "duration": 4.56,
+      "text": "mentioned like navigation bar, header"
+    },
+    {
+      "start": 107.28,
+      "duration": 4.24,
+      "text": "and breadcrumbs. Then we have modals and"
+    },
+    {
+      "start": 109.6,
+      "duration": 4.08,
+      "text": "pop-ups which if you list them at the"
+    },
+    {
+      "start": 111.52,
+      "duration": 3.68,
+      "text": "beginning really helps because the AI"
+    },
+    {
+      "start": 113.68,
+      "duration": 3.2,
+      "text": "will develop the front-end app"
+    },
+    {
+      "start": 115.2,
+      "duration": 3.519,
+      "text": "accordingly and everything gets"
+    },
+    {
+      "start": 116.88,
+      "duration": 3.68,
+      "text": "integrated properly. There are also"
+    },
+    {
+      "start": 118.719,
+      "duration": 3.76,
+      "text": "technical requirements you can include"
+    },
+    {
+      "start": 120.56,
+      "duration": 3.839,
+      "text": "which make it way easier to connect the"
+    },
+    {
+      "start": 122.479,
+      "duration": 3.92,
+      "text": "app to a back end later on and you can"
+    },
+    {
+      "start": 124.399,
+      "duration": 3.92,
+      "text": "specify whichever framework you want to"
+    },
+    {
+      "start": 126.399,
+      "duration": 3.2,
+      "text": "use for your app. The best part is you"
+    },
+    {
+      "start": 128.319,
+      "duration": 2.801,
+      "text": "don't even have to fill this out"
+    },
+    {
+      "start": 129.599,
+      "duration": 3.28,
+      "text": "yourself if you don't want to. For"
+    },
+    {
+      "start": 131.12,
+      "duration": 3.6,
+      "text": "example, you can see that I gave the"
+    },
+    {
+      "start": 132.879,
+      "duration": 3.44,
+      "text": "prompt to Claude and it just went ahead"
+    },
+    {
+      "start": 134.72,
+      "duration": 3.519,
+      "text": "and filled everything out for me. And"
+    },
+    {
+      "start": 136.319,
+      "duration": 4.081,
+      "text": "the reason I gave this prompt to Claude"
+    },
+    {
+      "start": 138.239,
+      "duration": 4.161,
+      "text": "is what I want to demo. So, I wanted to"
+    },
+    {
+      "start": 140.4,
+      "duration": 4.08,
+      "text": "make a weather app with the style and"
+    },
+    {
+      "start": 142.4,
+      "duration": 4.32,
+      "text": "design of the cursor landing page. You"
+    },
+    {
+      "start": 144.48,
+      "duration": 4.24,
+      "text": "can see it has this gradient infused"
+    },
+    {
+      "start": 146.72,
+      "duration": 4.0,
+      "text": "layout where the same gradient is used"
+    },
+    {
+      "start": 148.72,
+      "duration": 3.68,
+      "text": "throughout all the components. What I"
+    },
+    {
+      "start": 150.72,
+      "duration": 3.68,
+      "text": "did was take around six or seven"
+    },
+    {
+      "start": 152.4,
+      "duration": 3.6,
+      "text": "screenshots, put them into Claude, and"
+    },
+    {
+      "start": 154.4,
+      "duration": 4.0,
+      "text": "gave it the prompt that produces the"
+    },
+    {
+      "start": 156.0,
+      "duration": 4.56,
+      "text": "JSON output you saw earlier. Claude then"
+    },
+    {
+      "start": 158.4,
+      "duration": 4.72,
+      "text": "generated the JSON for creating a web"
+    },
+    {
+      "start": 160.56,
+      "duration": 4.399,
+      "text": "app with the cursor UI design profile."
+    },
+    {
+      "start": 163.12,
+      "duration": 4.08,
+      "text": "Since I wanted to build the full front"
+    },
+    {
+      "start": 164.959,
+      "duration": 4.401,
+      "text": "end of the weather app, I told it I'd be"
+    },
+    {
+      "start": 167.2,
+      "duration": 4.399,
+      "text": "using Nex.js with Tailwind. So, I"
+    },
+    {
+      "start": 169.36,
+      "duration": 4.08,
+      "text": "specified the framework. I also asked it"
+    },
+    {
+      "start": 171.599,
+      "duration": 3.601,
+      "text": "to fill out the front-end template we"
+    },
+    {
+      "start": 173.44,
+      "duration": 4.4,
+      "text": "looked at earlier, and it did exactly"
+    },
+    {
+      "start": 175.2,
+      "duration": 4.8,
+      "text": "that. It created the required pages, the"
+    },
+    {
+      "start": 177.84,
+      "duration": 4.399,
+      "text": "user roles and permissions, the modles"
+    },
+    {
+      "start": 180.0,
+      "duration": 4.08,
+      "text": "and pop-ups, and it even added technical"
+    },
+    {
+      "start": 182.239,
+      "duration": 3.92,
+      "text": "requirements. Because we gave the full"
+    },
+    {
+      "start": 184.08,
+      "duration": 3.92,
+      "text": "prompt to Claude, it could pre-plan all"
+    },
+    {
+      "start": 186.159,
+      "duration": 4.321,
+      "text": "the components that need to be made."
+    },
+    {
+      "start": 188.0,
+      "duration": 4.4,
+      "text": "That means cursor or any AI agent you're"
+    },
+    {
+      "start": 190.48,
+      "duration": 3.839,
+      "text": "using doesn't have to guess or figure"
+    },
+    {
+      "start": 192.4,
+      "duration": 3.759,
+      "text": "out what components to create and you"
+    },
+    {
+      "start": 194.319,
+      "duration": 3.601,
+      "text": "don't have to face the frustration and"
+    },
+    {
+      "start": 196.159,
+      "duration": 4.481,
+      "text": "you can always go back and edit things"
+    },
+    {
+      "start": 197.92,
+      "duration": 4.64,
+      "text": "later. Nothing here is set in stone. All"
+    },
+    {
+      "start": 200.64,
+      "duration": 3.679,
+      "text": "right, let me show you the first method"
+    },
+    {
+      "start": 202.56,
+      "duration": 3.44,
+      "text": "in action. You can see that I'm in"
+    },
+    {
+      "start": 204.319,
+      "duration": 4.481,
+      "text": "cursor right now and this is the"
+    },
+    {
+      "start": 206.0,
+      "duration": 4.48,
+      "text": "design.json file that I have open here."
+    },
+    {
+      "start": 208.8,
+      "duration": 3.84,
+      "text": "This is the JSON file we got from"
+    },
+    {
+      "start": 210.48,
+      "duration": 4.88,
+      "text": "Claude. After that, I asked cursor to"
+    },
+    {
+      "start": 212.64,
+      "duration": 4.72,
+      "text": "install a nextjs app. I gave it the full"
+    },
+    {
+      "start": 215.36,
+      "duration": 4.0,
+      "text": "prompt that claude filled out using the"
+    },
+    {
+      "start": 217.36,
+      "duration": 4.56,
+      "text": "template. I told cursor build the"
+    },
+    {
+      "start": 219.36,
+      "duration": 4.4,
+      "text": "front-end app in this nextjs app and for"
+    },
+    {
+      "start": 221.92,
+      "duration": 4.48,
+      "text": "the design strictly follow the"
+    },
+    {
+      "start": 223.76,
+      "duration": 4.64,
+      "text": "design.json that I provided. It went"
+    },
+    {
+      "start": 226.4,
+      "duration": 4.0,
+      "text": "ahead and started creating the app. Now,"
+    },
+    {
+      "start": 228.4,
+      "duration": 3.839,
+      "text": "it did take some time and there were"
+    },
+    {
+      "start": 230.4,
+      "duration": 3.839,
+      "text": "some version conflicts that cursor"
+    },
+    {
+      "start": 232.239,
+      "duration": 4.241,
+      "text": "couldn't handle. So, I brought in clawed"
+    },
+    {
+      "start": 234.239,
+      "duration": 4.241,
+      "text": "code to help fix those. And this is the"
+    },
+    {
+      "start": 236.48,
+      "duration": 3.839,
+      "text": "website it generated. You can see that"
+    },
+    {
+      "start": 238.48,
+      "duration": 3.839,
+      "text": "it accurately follows the gradient"
+    },
+    {
+      "start": 240.319,
+      "duration": 4.0,
+      "text": "design we saw on the cursor landing"
+    },
+    {
+      "start": 242.319,
+      "duration": 4.161,
+      "text": "page. In the prompt, I specifically"
+    },
+    {
+      "start": 244.319,
+      "duration": 3.92,
+      "text": "asked it to focus on how the gradients"
+    },
+    {
+      "start": 246.48,
+      "duration": 3.36,
+      "text": "were created, which is why it looks"
+    },
+    {
+      "start": 248.239,
+      "duration": 3.441,
+      "text": "exactly like this. If you look at the"
+    },
+    {
+      "start": 249.84,
+      "duration": 3.84,
+      "text": "cards below, you'll notice they also"
+    },
+    {
+      "start": 251.68,
+      "duration": 3.68,
+      "text": "mirror how the cards were styled on the"
+    },
+    {
+      "start": 253.68,
+      "duration": 3.92,
+      "text": "cursor landing page. The rest of that"
+    },
+    {
+      "start": 255.36,
+      "duration": 3.76,
+      "text": "page was mostly clean and dark, so there"
+    },
+    {
+      "start": 257.6,
+      "duration": 3.759,
+      "text": "wasn't much else to pick up from the"
+    },
+    {
+      "start": 259.12,
+      "duration": 4.56,
+      "text": "JSON. But as you can see, it nailed the"
+    },
+    {
+      "start": 261.359,
+      "duration": 4.241,
+      "text": "gradient design perfectly. Now, I want"
+    },
+    {
+      "start": 263.68,
+      "duration": 4.079,
+      "text": "to be transparent here. This design"
+    },
+    {
+      "start": 265.6,
+      "duration": 3.599,
+      "text": "wasn't perfect on the first try. Cursor"
+    },
+    {
+      "start": 267.759,
+      "duration": 3.281,
+      "text": "made some mistakes that I had to"
+    },
+    {
+      "start": 269.199,
+      "duration": 4.241,
+      "text": "correct, but it provided an excellent"
+    },
+    {
+      "start": 271.04,
+      "duration": 4.48,
+      "text": "foundation to work from. Later on, I'll"
+    },
+    {
+      "start": 273.44,
+      "duration": 4.479,
+      "text": "also show how you can accurately do that"
+    },
+    {
+      "start": 275.52,
+      "duration": 4.0,
+      "text": "as well. Oh, and if you're enjoying the"
+    },
+    {
+      "start": 277.919,
+      "duration": 3.441,
+      "text": "content we're making, I'd really"
+    },
+    {
+      "start": 279.52,
+      "duration": 3.679,
+      "text": "appreciate it if you hit that subscribe"
+    },
+    {
+      "start": 281.36,
+      "duration": 3.76,
+      "text": "button. We're also testing out channel"
+    },
+    {
+      "start": 283.199,
+      "duration": 4.481,
+      "text": "memberships. Launched the first tier as"
+    },
+    {
+      "start": 285.12,
+      "duration": 4.56,
+      "text": "a test, and 79 people have joined so"
+    },
+    {
+      "start": 287.68,
+      "duration": 3.28,
+      "text": "far. The support's been incredible, so"
+    },
+    {
+      "start": 289.68,
+      "duration": 3.68,
+      "text": "we're thinking about launching"
+    },
+    {
+      "start": 290.96,
+      "duration": 4.32,
+      "text": "additional tiers. Right now, members get"
+    },
+    {
+      "start": 293.36,
+      "duration": 3.76,
+      "text": "priority replies to your comments."
+    },
+    {
+      "start": 295.28,
+      "duration": 3.919,
+      "text": "Perfect if you need feedback or have"
+    },
+    {
+      "start": 297.12,
+      "duration": 3.84,
+      "text": "questions. Now, the second method is"
+    },
+    {
+      "start": 299.199,
+      "duration": 3.761,
+      "text": "perfect for when you want to copy the"
+    },
+    {
+      "start": 300.96,
+      "duration": 4.08,
+      "text": "structure of an existing site and then"
+    },
+    {
+      "start": 302.96,
+      "duration": 3.92,
+      "text": "apply your own design on top of it. This"
+    },
+    {
+      "start": 305.04,
+      "duration": 3.599,
+      "text": "is incredibly useful because instead of"
+    },
+    {
+      "start": 306.88,
+      "duration": 3.599,
+      "text": "building everything from scratch, you"
+    },
+    {
+      "start": 308.639,
+      "duration": 3.601,
+      "text": "can leverage proven layouts and just"
+    },
+    {
+      "start": 310.479,
+      "duration": 3.921,
+      "text": "make them your own. For that, you can"
+    },
+    {
+      "start": 312.24,
+      "duration": 4.48,
+      "text": "use this amazing tool called Browser"
+    },
+    {
+      "start": 314.4,
+      "duration": 4.239,
+      "text": "MCP. It's completely free and I'll link"
+    },
+    {
+      "start": 316.72,
+      "duration": 4.4,
+      "text": "it in the description so you can grab it"
+    },
+    {
+      "start": 318.639,
+      "duration": 4.4,
+      "text": "right after this video. Browser MCP has"
+    },
+    {
+      "start": 321.12,
+      "duration": 3.76,
+      "text": "two parts you need to set up, but don't"
+    },
+    {
+      "start": 323.039,
+      "duration": 3.681,
+      "text": "worry, it's straightforward. First,"
+    },
+    {
+      "start": 324.88,
+      "duration": 3.92,
+      "text": "install the browser extension from the"
+    },
+    {
+      "start": 326.72,
+      "duration": 3.84,
+      "text": "Chrome Web Store. This extension is what"
+    },
+    {
+      "start": 328.8,
+      "duration": 4.48,
+      "text": "allows the tool to actually interact"
+    },
+    {
+      "start": 330.56,
+      "duration": 4.72,
+      "text": "with web pages. Then, for any page you"
+    },
+    {
+      "start": 333.28,
+      "duration": 4.32,
+      "text": "want to clone, you just connect browser"
+    },
+    {
+      "start": 335.28,
+      "duration": 4.479,
+      "text": "MCP to that specific tab like this."
+    },
+    {
+      "start": 337.6,
+      "duration": 4.64,
+      "text": "Second, you need to set up the MCP"
+    },
+    {
+      "start": 339.759,
+      "duration": 4.241,
+      "text": "server inside cursor itself. Go to their"
+    },
+    {
+      "start": 342.24,
+      "duration": 4.239,
+      "text": "documentation and in the install"
+    },
+    {
+      "start": 344.0,
+      "duration": 5.28,
+      "text": "section, find the setup for your IDE and"
+    },
+    {
+      "start": 346.479,
+      "duration": 4.56,
+      "text": "paste the config into your MCP.json JSON"
+    },
+    {
+      "start": 349.28,
+      "duration": 3.44,
+      "text": "file. Pretty straightforward and their"
+    },
+    {
+      "start": 351.039,
+      "duration": 3.44,
+      "text": "documentation walks you through"
+    },
+    {
+      "start": 352.72,
+      "duration": 3.6,
+      "text": "everything. Once that's done, I"
+    },
+    {
+      "start": 354.479,
+      "duration": 3.44,
+      "text": "recommend using the prompt you see here"
+    },
+    {
+      "start": 356.32,
+      "duration": 3.68,
+      "text": "and filling it with the link of the"
+    },
+    {
+      "start": 357.919,
+      "duration": 4.0,
+      "text": "website that you want to clone. Now, I"
+    },
+    {
+      "start": 360.0,
+      "duration": 4.16,
+      "text": "choose the monkey type website as an"
+    },
+    {
+      "start": 361.919,
+      "duration": 4.081,
+      "text": "example, but honestly, its structure is"
+    },
+    {
+      "start": 364.16,
+      "duration": 4.319,
+      "text": "pretty simple. So, there wasn't much to"
+    },
+    {
+      "start": 366.0,
+      "duration": 4.319,
+      "text": "copy. But even with this basic site, it"
+    },
+    {
+      "start": 368.479,
+      "duration": 3.84,
+      "text": "still did a solid job, which shows you"
+    },
+    {
+      "start": 370.319,
+      "duration": 4.401,
+      "text": "how powerful this method really is."
+    },
+    {
+      "start": 372.319,
+      "duration": 4.561,
+      "text": "Here's why it works so well. This MCP"
+    },
+    {
+      "start": 374.72,
+      "duration": 4.24,
+      "text": "actually spins up a real browser and"
+    },
+    {
+      "start": 376.88,
+      "duration": 4.319,
+      "text": "navigates like a real person would. It's"
+    },
+    {
+      "start": 378.96,
+      "duration": 4.239,
+      "text": "not just scraping HTML. It's actually"
+    },
+    {
+      "start": 381.199,
+      "duration": 4.081,
+      "text": "experiencing the site. You can see it"
+    },
+    {
+      "start": 383.199,
+      "duration": 4.081,
+      "text": "has a browser screenshot tool that takes"
+    },
+    {
+      "start": 385.28,
+      "duration": 3.759,
+      "text": "screenshots, helping it understand not"
+    },
+    {
+      "start": 387.28,
+      "duration": 3.68,
+      "text": "just the code, but the actual visual"
+    },
+    {
+      "start": 389.039,
+      "duration": 4.0,
+      "text": "structure and layout perfectly. In the"
+    },
+    {
+      "start": 390.96,
+      "duration": 3.6,
+      "text": "prompt, I tell it to explore the website"
+    },
+    {
+      "start": 393.039,
+      "duration": 3.841,
+      "text": "thoroughly and break down the"
+    },
+    {
+      "start": 394.56,
+      "duration": 4.16,
+      "text": "architecture, navigation patterns, and"
+    },
+    {
+      "start": 396.88,
+      "duration": 3.84,
+      "text": "styling approaches. If you want to use"
+    },
+    {
+      "start": 398.72,
+      "duration": 4.08,
+      "text": "your own design with the JSON method"
+    },
+    {
+      "start": 400.72,
+      "duration": 4.16,
+      "text": "from earlier, just remove that part from"
+    },
+    {
+      "start": 402.8,
+      "duration": 4.239,
+      "text": "the prompt and it'll focus purely on"
+    },
+    {
+      "start": 404.88,
+      "duration": 4.319,
+      "text": "structure. After it gathers all the data"
+    },
+    {
+      "start": 407.039,
+      "duration": 4.801,
+      "text": "from its exploration, I asked it to"
+    },
+    {
+      "start": 409.199,
+      "duration": 4.641,
+      "text": "build the clone in next.js. And here's"
+    },
+    {
+      "start": 411.84,
+      "duration": 4.079,
+      "text": "the result. It created this fully"
+    },
+    {
+      "start": 413.84,
+      "duration": 4.32,
+      "text": "functional site. I can type in it. It"
+    },
+    {
+      "start": 415.919,
+      "duration": 4.56,
+      "text": "catches errors properly. Different modes"
+    },
+    {
+      "start": 418.16,
+      "duration": 4.319,
+      "text": "and pages work seamlessly because it"
+    },
+    {
+      "start": 420.479,
+      "duration": 4.081,
+      "text": "actually navigated and understood how"
+    },
+    {
+      "start": 422.479,
+      "duration": 4.0,
+      "text": "the original site functions, not just"
+    },
+    {
+      "start": 424.56,
+      "duration": 3.84,
+      "text": "how it looks. Now, this method gives you"
+    },
+    {
+      "start": 426.479,
+      "duration": 3.681,
+      "text": "the perfect foundation and structure."
+    },
+    {
+      "start": 428.4,
+      "duration": 4.079,
+      "text": "But what about when you need to apply"
+    },
+    {
+      "start": 430.16,
+      "duration": 4.64,
+      "text": "your own custom design on top or make"
+    },
+    {
+      "start": 432.479,
+      "duration": 4.241,
+      "text": "precise tweaks to specific elements?"
+    },
+    {
+      "start": 434.8,
+      "duration": 4.56,
+      "text": "That's where method 3 comes in and it's"
+    },
+    {
+      "start": 436.72,
+      "duration": 4.64,
+      "text": "a game changer. So, the third method"
+    },
+    {
+      "start": 439.36,
+      "duration": 4.48,
+      "text": "focuses on something that's absolutely"
+    },
+    {
+      "start": 441.36,
+      "duration": 4.32,
+      "text": "crucial, making precise UI tweaks"
+    },
+    {
+      "start": 443.84,
+      "duration": 3.52,
+      "text": "without breaking everything else. What"
+    },
+    {
+      "start": 445.68,
+      "duration": 3.68,
+      "text": "I'm going to show you is how to get this"
+    },
+    {
+      "start": 447.36,
+      "duration": 4.32,
+      "text": "interactive bar that lets you select"
+    },
+    {
+      "start": 449.36,
+      "duration": 4.16,
+      "text": "individual or even multiple elements and"
+    },
+    {
+      "start": 451.68,
+      "duration": 3.68,
+      "text": "send them back to Cursor with exact"
+    },
+    {
+      "start": 453.52,
+      "duration": 3.84,
+      "text": "details about their location and what"
+    },
+    {
+      "start": 455.36,
+      "duration": 4.0,
+      "text": "those elements are. This eliminates the"
+    },
+    {
+      "start": 457.36,
+      "duration": 4.08,
+      "text": "guesswork and ensures Cursor knows"
+    },
+    {
+      "start": 459.36,
+      "duration": 4.08,
+      "text": "precisely what to edit without messing"
+    },
+    {
+      "start": 461.44,
+      "duration": 3.759,
+      "text": "up the rest of your site. And trust me,"
+    },
+    {
+      "start": 463.44,
+      "duration": 3.84,
+      "text": "this precision is everything when you're"
+    },
+    {
+      "start": 465.199,
+      "duration": 4.241,
+      "text": "working on real projects where one wrong"
+    },
+    {
+      "start": 467.28,
+      "duration": 4.319,
+      "text": "change can break your entire layout. The"
+    },
+    {
+      "start": 469.44,
+      "duration": 4.0,
+      "text": "setup is actually really simple, but the"
+    },
+    {
+      "start": 471.599,
+      "duration": 4.081,
+      "text": "results are powerful. Just go into"
+    },
+    {
+      "start": 473.44,
+      "duration": 4.479,
+      "text": "cursor, open the extensions tab and"
+    },
+    {
+      "start": 475.68,
+      "duration": 4.079,
+      "text": "search for stage wise, install it, then"
+    },
+    {
+      "start": 477.919,
+      "duration": 4.4,
+      "text": "open your command pallet with command"
+    },
+    {
+      "start": 479.759,
+      "duration": 4.481,
+      "text": "plus shift + p, type stage wise, and"
+    },
+    {
+      "start": 482.319,
+      "duration": 3.681,
+      "text": "it'll bring up all the related commands"
+    },
+    {
+      "start": 484.24,
+      "duration": 3.76,
+      "text": "you need. Here's something important to"
+    },
+    {
+      "start": 486.0,
+      "duration": 4.319,
+      "text": "keep in mind. You have to set up stage"
+    },
+    {
+      "start": 488.0,
+      "duration": 4.479,
+      "text": "wise in each project individually. It"
+    },
+    {
+      "start": 490.319,
+      "duration": 3.921,
+      "text": "actually modifies your code and sets"
+    },
+    {
+      "start": 492.479,
+      "duration": 3.521,
+      "text": "everything up automatically for that"
+    },
+    {
+      "start": 494.24,
+      "duration": 3.679,
+      "text": "specific project. Just select the"
+    },
+    {
+      "start": 496.0,
+      "duration": 4.0,
+      "text": "appropriate option and it will enter a"
+    },
+    {
+      "start": 497.919,
+      "duration": 4.321,
+      "text": "prompt into your cursor agent telling it"
+    },
+    {
+      "start": 500.0,
+      "duration": 4.0,
+      "text": "to initialize the stage wise bar in your"
+    },
+    {
+      "start": 502.24,
+      "duration": 4.16,
+      "text": "project. I've already done that setup"
+    },
+    {
+      "start": 504.0,
+      "duration": 4.639,
+      "text": "here and as you can see it ran the full"
+    },
+    {
+      "start": 506.4,
+      "duration": 4.239,
+      "text": "prompt and set everything up perfectly."
+    },
+    {
+      "start": 508.639,
+      "duration": 4.481,
+      "text": "Now I have this powerful tool where I"
+    },
+    {
+      "start": 510.639,
+      "duration": 4.721,
+      "text": "can select each element individually and"
+    },
+    {
+      "start": 513.12,
+      "duration": 4.24,
+      "text": "send it back to cursor with exactly how"
+    },
+    {
+      "start": 515.36,
+      "duration": 3.119,
+      "text": "I want it edited. No more vague"
+    },
+    {
+      "start": 517.36,
+      "duration": 3.039,
+      "text": "instructions that could be"
+    },
+    {
+      "start": 518.479,
+      "duration": 4.24,
+      "text": "misinterpreted. For example, look at"
+    },
+    {
+      "start": 520.399,
+      "duration": 4.401,
+      "text": "this restart button right now. It's just"
+    },
+    {
+      "start": 522.719,
+      "duration": 4.24,
+      "text": "plain text and only becomes a button"
+    },
+    {
+      "start": 524.8,
+      "duration": 4.24,
+      "text": "when I hover over it. That's a small UI"
+    },
+    {
+      "start": 526.959,
+      "duration": 4.32,
+      "text": "tweak, but this is exactly where stage"
+    },
+    {
+      "start": 529.04,
+      "duration": 4.16,
+      "text": "wise becomes super handy. If I just went"
+    },
+    {
+      "start": 531.279,
+      "duration": 3.521,
+      "text": "back and told cursor to update the"
+    },
+    {
+      "start": 533.2,
+      "duration": 3.36,
+      "text": "restart button, there's a chance it"
+    },
+    {
+      "start": 534.8,
+      "duration": 3.52,
+      "text": "might fix it correctly, but there's also"
+    },
+    {
+      "start": 536.56,
+      "duration": 3.36,
+      "text": "a chance it might break or alter"
+    },
+    {
+      "start": 538.32,
+      "duration": 3.6,
+      "text": "something else entirely, which I"
+    },
+    {
+      "start": 539.92,
+      "duration": 3.919,
+      "text": "obviously don't want. Instead, I can be"
+    },
+    {
+      "start": 541.92,
+      "duration": 4.16,
+      "text": "surgical about it. I open the prompt"
+    },
+    {
+      "start": 543.839,
+      "duration": 4.321,
+      "text": "box, select the exact element I want to"
+    },
+    {
+      "start": 546.08,
+      "duration": 4.319,
+      "text": "change and write precisely what I want,"
+    },
+    {
+      "start": 548.16,
+      "duration": 3.84,
+      "text": "like adding a proper hover animation and"
+    },
+    {
+      "start": 550.399,
+      "duration": 3.761,
+      "text": "making it consistent with the rest of"
+    },
+    {
+      "start": 552.0,
+      "duration": 3.92,
+      "text": "the UI. When I send that prompt and go"
+    },
+    {
+      "start": 554.16,
+      "duration": 3.92,
+      "text": "back to cursor, you'll see something"
+    },
+    {
+      "start": 555.92,
+      "duration": 4.4,
+      "text": "amazing. It includes all the accurate"
+    },
+    {
+      "start": 558.08,
+      "duration": 4.4,
+      "text": "data, the element's exact location in"
+    },
+    {
+      "start": 560.32,
+      "duration": 4.48,
+      "text": "the code, what I want changed, and other"
+    },
+    {
+      "start": 562.48,
+      "duration": 4.24,
+      "text": "useful context information. I send the"
+    },
+    {
+      "start": 564.8,
+      "duration": 4.0,
+      "text": "prompt, and as you can see, the button"
+    },
+    {
+      "start": 566.72,
+      "duration": 3.92,
+      "text": "has been updated perfectly. It now"
+    },
+    {
+      "start": 568.8,
+      "duration": 3.92,
+      "text": "matches the rest of the UI with this"
+    },
+    {
+      "start": 570.64,
+      "duration": 4.319,
+      "text": "yellowish theme. And when I hover over"
+    },
+    {
+      "start": 572.72,
+      "duration": 4.559,
+      "text": "it, there's a subtle animation. And this"
+    },
+    {
+      "start": 574.959,
+      "duration": 4.481,
+      "text": "is exactly what I wanted. This level of"
+    },
+    {
+      "start": 577.279,
+      "duration": 4.0,
+      "text": "precision is what separates amateur"
+    },
+    {
+      "start": 579.44,
+      "duration": 3.68,
+      "text": "projects from professional ones. And"
+    },
+    {
+      "start": 581.279,
+      "duration": 4.0,
+      "text": "Stage Wise makes it accessible to"
+    },
+    {
+      "start": 583.12,
+      "duration": 4.08,
+      "text": "everyone. That brings us to the end of"
+    },
+    {
+      "start": 585.279,
+      "duration": 4.161,
+      "text": "this video. If you missed my previous"
+    },
+    {
+      "start": 587.2,
+      "duration": 4.639,
+      "text": "video on three ways you can build a"
+    },
+    {
+      "start": 589.44,
+      "duration": 4.0,
+      "text": "beautiful website using cursor, the one"
+    },
+    {
+      "start": 591.839,
+      "duration": 3.521,
+      "text": "I've been referencing throughout,"
+    },
+    {
+      "start": 593.44,
+      "duration": 3.6,
+      "text": "definitely check that out as well to get"
+    },
+    {
+      "start": 595.36,
+      "duration": 3.76,
+      "text": "the full picture. If you found these"
+    },
+    {
+      "start": 597.04,
+      "duration": 3.76,
+      "text": "methods helpful and want to support the"
+    },
+    {
+      "start": 599.12,
+      "duration": 3.68,
+      "text": "channel, you can use the super thanks"
+    },
+    {
+      "start": 600.8,
+      "duration": 3.92,
+      "text": "button below. It really helps us keep"
+    },
+    {
+      "start": 602.8,
+      "duration": 5.36,
+      "text": "making tutorials like this. Thanks for"
+    },
+    {
+      "start": 604.72,
+      "duration": 3.44,
+      "text": "watching and I'll see you in the next"
+    }
+  ]
+}

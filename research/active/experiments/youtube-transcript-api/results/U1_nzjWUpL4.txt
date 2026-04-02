@@ -1,0 +1,309 @@
+YouTube Video Transcript
+==================================================
+Video ID: U1_nzjWUpL4
+Language: English (auto-generated) (en)
+Is Generated: True
+Total snippets: 301
+==================================================
+
+[0.16s] Are you struggling to turn beautiful
+[1.92s] website designs into actual working code
+[4.32s] with cursor? You're not alone. In my
+[6.40s] previous video about building beautiful
+[8.24s] websites with cursor, you guys
+[9.76s] absolutely loved it and it got an
+[11.60s] amazing response. Here's the thing
+[13.12s] though. In that video, I actually showed
+[15.04s] you how you can get a beautiful UI, but
+[17.12s] I didn't show you how you could properly
+[18.72s] implement it. You can't just go ahead
+[20.32s] and tell cursor this is the design file
+[22.56s] or use this reference, ask it to clone
+[24.80s] it, and then expect it to work. it'll
+[26.80s] actually start to build stuff on its own
+[28.64s] which usually ends up as hallucination
+[30.56s] or AI slop that no one really likes. So
+[33.12s] in today's video I'm going to tell you
+[35.04s] three ways you can actually build the
+[36.96s] beautiful UI that you created. Whether
+[38.96s] you're coming from my previous video or
+[40.88s] you're completely new here by the end of
+[42.88s] this you'll know exactly how to get
+[44.72s] cursor to build the websites you
+[46.48s] actually want. So in the previous video
+[49.04s] I actually shared a prompt that allowed
+[51.04s] you to convert any design image you gave
+[53.28s] to an AI model like claude or chatgpt
+[55.92s] into JSON format. Then using that JSON
+[58.64s] format you could accurately create a
+[60.56s] design template and reuse it anywhere.
+[62.72s] Well, I've also improved that prompt a
+[64.56s] little bit and made some changes so that
+[66.24s] the JSON output is even better. You'll
+[68.32s] find this updated prompt in the
+[69.92s] description as well. But to start
+[71.60s] building projects you can actually
+[73.04s] scale, you need this first method. So
+[75.60s] let's go ahead and get started. This is
+[77.44s] actually a pretty powerful prompt
+[79.04s] template that we've developed. Instead
+[80.64s] of cursor guessing what you want, this
+[82.56s] injects the full functionality and
+[84.56s] structure of your front-end app right
+[86.64s] into the AI's context from the start.
+[89.04s] There are specific prompt fields to fill
+[90.96s] out. First, the required pages that need
+[93.28s] to be made, then user roles and
+[95.20s] permissions for authentication. If you
+[97.04s] want authentication in your app, which
+[98.96s] is actually very important for real
+[100.72s] projects, then you absolutely need to
+[102.64s] include this. Shared components are also
+[105.04s] mentioned like navigation bar, header
+[107.28s] and breadcrumbs. Then we have modals and
+[109.60s] pop-ups which if you list them at the
+[111.52s] beginning really helps because the AI
+[113.68s] will develop the front-end app
+[115.20s] accordingly and everything gets
+[116.88s] integrated properly. There are also
+[118.72s] technical requirements you can include
+[120.56s] which make it way easier to connect the
+[122.48s] app to a back end later on and you can
+[124.40s] specify whichever framework you want to
+[126.40s] use for your app. The best part is you
+[128.32s] don't even have to fill this out
+[129.60s] yourself if you don't want to. For
+[131.12s] example, you can see that I gave the
+[132.88s] prompt to Claude and it just went ahead
+[134.72s] and filled everything out for me. And
+[136.32s] the reason I gave this prompt to Claude
+[138.24s] is what I want to demo. So, I wanted to
+[140.40s] make a weather app with the style and
+[142.40s] design of the cursor landing page. You
+[144.48s] can see it has this gradient infused
+[146.72s] layout where the same gradient is used
+[148.72s] throughout all the components. What I
+[150.72s] did was take around six or seven
+[152.40s] screenshots, put them into Claude, and
+[154.40s] gave it the prompt that produces the
+[156.00s] JSON output you saw earlier. Claude then
+[158.40s] generated the JSON for creating a web
+[160.56s] app with the cursor UI design profile.
+[163.12s] Since I wanted to build the full front
+[164.96s] end of the weather app, I told it I'd be
+[167.20s] using Nex.js with Tailwind. So, I
+[169.36s] specified the framework. I also asked it
+[171.60s] to fill out the front-end template we
+[173.44s] looked at earlier, and it did exactly
+[175.20s] that. It created the required pages, the
+[177.84s] user roles and permissions, the modles
+[180.00s] and pop-ups, and it even added technical
+[182.24s] requirements. Because we gave the full
+[184.08s] prompt to Claude, it could pre-plan all
+[186.16s] the components that need to be made.
+[188.00s] That means cursor or any AI agent you're
+[190.48s] using doesn't have to guess or figure
+[192.40s] out what components to create and you
+[194.32s] don't have to face the frustration and
+[196.16s] you can always go back and edit things
+[197.92s] later. Nothing here is set in stone. All
+[200.64s] right, let me show you the first method
+[202.56s] in action. You can see that I'm in
+[204.32s] cursor right now and this is the
+[206.00s] design.json file that I have open here.
+[208.80s] This is the JSON file we got from
+[210.48s] Claude. After that, I asked cursor to
+[212.64s] install a nextjs app. I gave it the full
+[215.36s] prompt that claude filled out using the
+[217.36s] template. I told cursor build the
+[219.36s] front-end app in this nextjs app and for
+[221.92s] the design strictly follow the
+[223.76s] design.json that I provided. It went
+[226.40s] ahead and started creating the app. Now,
+[228.40s] it did take some time and there were
+[230.40s] some version conflicts that cursor
+[232.24s] couldn't handle. So, I brought in clawed
+[234.24s] code to help fix those. And this is the
+[236.48s] website it generated. You can see that
+[238.48s] it accurately follows the gradient
+[240.32s] design we saw on the cursor landing
+[242.32s] page. In the prompt, I specifically
+[244.32s] asked it to focus on how the gradients
+[246.48s] were created, which is why it looks
+[248.24s] exactly like this. If you look at the
+[249.84s] cards below, you'll notice they also
+[251.68s] mirror how the cards were styled on the
+[253.68s] cursor landing page. The rest of that
+[255.36s] page was mostly clean and dark, so there
+[257.60s] wasn't much else to pick up from the
+[259.12s] JSON. But as you can see, it nailed the
+[261.36s] gradient design perfectly. Now, I want
+[263.68s] to be transparent here. This design
+[265.60s] wasn't perfect on the first try. Cursor
+[267.76s] made some mistakes that I had to
+[269.20s] correct, but it provided an excellent
+[271.04s] foundation to work from. Later on, I'll
+[273.44s] also show how you can accurately do that
+[275.52s] as well. Oh, and if you're enjoying the
+[277.92s] content we're making, I'd really
+[279.52s] appreciate it if you hit that subscribe
+[281.36s] button. We're also testing out channel
+[283.20s] memberships. Launched the first tier as
+[285.12s] a test, and 79 people have joined so
+[287.68s] far. The support's been incredible, so
+[289.68s] we're thinking about launching
+[290.96s] additional tiers. Right now, members get
+[293.36s] priority replies to your comments.
+[295.28s] Perfect if you need feedback or have
+[297.12s] questions. Now, the second method is
+[299.20s] perfect for when you want to copy the
+[300.96s] structure of an existing site and then
+[302.96s] apply your own design on top of it. This
+[305.04s] is incredibly useful because instead of
+[306.88s] building everything from scratch, you
+[308.64s] can leverage proven layouts and just
+[310.48s] make them your own. For that, you can
+[312.24s] use this amazing tool called Browser
+[314.40s] MCP. It's completely free and I'll link
+[316.72s] it in the description so you can grab it
+[318.64s] right after this video. Browser MCP has
+[321.12s] two parts you need to set up, but don't
+[323.04s] worry, it's straightforward. First,
+[324.88s] install the browser extension from the
+[326.72s] Chrome Web Store. This extension is what
+[328.80s] allows the tool to actually interact
+[330.56s] with web pages. Then, for any page you
+[333.28s] want to clone, you just connect browser
+[335.28s] MCP to that specific tab like this.
+[337.60s] Second, you need to set up the MCP
+[339.76s] server inside cursor itself. Go to their
+[342.24s] documentation and in the install
+[344.00s] section, find the setup for your IDE and
+[346.48s] paste the config into your MCP.json JSON
+[349.28s] file. Pretty straightforward and their
+[351.04s] documentation walks you through
+[352.72s] everything. Once that's done, I
+[354.48s] recommend using the prompt you see here
+[356.32s] and filling it with the link of the
+[357.92s] website that you want to clone. Now, I
+[360.00s] choose the monkey type website as an
+[361.92s] example, but honestly, its structure is
+[364.16s] pretty simple. So, there wasn't much to
+[366.00s] copy. But even with this basic site, it
+[368.48s] still did a solid job, which shows you
+[370.32s] how powerful this method really is.
+[372.32s] Here's why it works so well. This MCP
+[374.72s] actually spins up a real browser and
+[376.88s] navigates like a real person would. It's
+[378.96s] not just scraping HTML. It's actually
+[381.20s] experiencing the site. You can see it
+[383.20s] has a browser screenshot tool that takes
+[385.28s] screenshots, helping it understand not
+[387.28s] just the code, but the actual visual
+[389.04s] structure and layout perfectly. In the
+[390.96s] prompt, I tell it to explore the website
+[393.04s] thoroughly and break down the
+[394.56s] architecture, navigation patterns, and
+[396.88s] styling approaches. If you want to use
+[398.72s] your own design with the JSON method
+[400.72s] from earlier, just remove that part from
+[402.80s] the prompt and it'll focus purely on
+[404.88s] structure. After it gathers all the data
+[407.04s] from its exploration, I asked it to
+[409.20s] build the clone in next.js. And here's
+[411.84s] the result. It created this fully
+[413.84s] functional site. I can type in it. It
+[415.92s] catches errors properly. Different modes
+[418.16s] and pages work seamlessly because it
+[420.48s] actually navigated and understood how
+[422.48s] the original site functions, not just
+[424.56s] how it looks. Now, this method gives you
+[426.48s] the perfect foundation and structure.
+[428.40s] But what about when you need to apply
+[430.16s] your own custom design on top or make
+[432.48s] precise tweaks to specific elements?
+[434.80s] That's where method 3 comes in and it's
+[436.72s] a game changer. So, the third method
+[439.36s] focuses on something that's absolutely
+[441.36s] crucial, making precise UI tweaks
+[443.84s] without breaking everything else. What
+[445.68s] I'm going to show you is how to get this
+[447.36s] interactive bar that lets you select
+[449.36s] individual or even multiple elements and
+[451.68s] send them back to Cursor with exact
+[453.52s] details about their location and what
+[455.36s] those elements are. This eliminates the
+[457.36s] guesswork and ensures Cursor knows
+[459.36s] precisely what to edit without messing
+[461.44s] up the rest of your site. And trust me,
+[463.44s] this precision is everything when you're
+[465.20s] working on real projects where one wrong
+[467.28s] change can break your entire layout. The
+[469.44s] setup is actually really simple, but the
+[471.60s] results are powerful. Just go into
+[473.44s] cursor, open the extensions tab and
+[475.68s] search for stage wise, install it, then
+[477.92s] open your command pallet with command
+[479.76s] plus shift + p, type stage wise, and
+[482.32s] it'll bring up all the related commands
+[484.24s] you need. Here's something important to
+[486.00s] keep in mind. You have to set up stage
+[488.00s] wise in each project individually. It
+[490.32s] actually modifies your code and sets
+[492.48s] everything up automatically for that
+[494.24s] specific project. Just select the
+[496.00s] appropriate option and it will enter a
+[497.92s] prompt into your cursor agent telling it
+[500.00s] to initialize the stage wise bar in your
+[502.24s] project. I've already done that setup
+[504.00s] here and as you can see it ran the full
+[506.40s] prompt and set everything up perfectly.
+[508.64s] Now I have this powerful tool where I
+[510.64s] can select each element individually and
+[513.12s] send it back to cursor with exactly how
+[515.36s] I want it edited. No more vague
+[517.36s] instructions that could be
+[518.48s] misinterpreted. For example, look at
+[520.40s] this restart button right now. It's just
+[522.72s] plain text and only becomes a button
+[524.80s] when I hover over it. That's a small UI
+[526.96s] tweak, but this is exactly where stage
+[529.04s] wise becomes super handy. If I just went
+[531.28s] back and told cursor to update the
+[533.20s] restart button, there's a chance it
+[534.80s] might fix it correctly, but there's also
+[536.56s] a chance it might break or alter
+[538.32s] something else entirely, which I
+[539.92s] obviously don't want. Instead, I can be
+[541.92s] surgical about it. I open the prompt
+[543.84s] box, select the exact element I want to
+[546.08s] change and write precisely what I want,
+[548.16s] like adding a proper hover animation and
+[550.40s] making it consistent with the rest of
+[552.00s] the UI. When I send that prompt and go
+[554.16s] back to cursor, you'll see something
+[555.92s] amazing. It includes all the accurate
+[558.08s] data, the element's exact location in
+[560.32s] the code, what I want changed, and other
+[562.48s] useful context information. I send the
+[564.80s] prompt, and as you can see, the button
+[566.72s] has been updated perfectly. It now
+[568.80s] matches the rest of the UI with this
+[570.64s] yellowish theme. And when I hover over
+[572.72s] it, there's a subtle animation. And this
+[574.96s] is exactly what I wanted. This level of
+[577.28s] precision is what separates amateur
+[579.44s] projects from professional ones. And
+[581.28s] Stage Wise makes it accessible to
+[583.12s] everyone. That brings us to the end of
+[585.28s] this video. If you missed my previous
+[587.20s] video on three ways you can build a
+[589.44s] beautiful website using cursor, the one
+[591.84s] I've been referencing throughout,
+[593.44s] definitely check that out as well to get
+[595.36s] the full picture. If you found these
+[597.04s] methods helpful and want to support the
+[599.12s] channel, you can use the super thanks
+[600.80s] button below. It really helps us keep
+[602.80s] making tutorials like this. Thanks for
+[604.72s] watching and I'll see you in the next

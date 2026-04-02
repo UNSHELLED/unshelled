@@ -1,0 +1,370 @@
+/* OCTOPUS Lock — full creative lock screen. All cases: status, notifications, messages, unlock. AMOLED. */
+
+/* ========== AMOLED & form factors ========== */
+.lock-screen {
+  --lock-bg: #000000;
+  --lock-bg-fallback: #0a0a0b;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lock-bg);
+  overflow: hidden;
+  position: relative;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  box-sizing: border-box;
+}
+
+/* ========== Status bar: time, battery, signal — all cases ========== */
+.lock-status {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) max(env(safe-area-inset-right), var(--space-4)) var(--space-2) max(env(safe-area-inset-left), var(--space-4));
+  min-height: 44px;
+  flex-shrink: 0;
+}
+
+.lock-status-time {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.lock-status-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.lock-status-battery {
+  display: block;
+  width: 22px;
+  height: 10px;
+  border: 1.5px solid var(--text-tertiary);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lock-battery-level {
+  position: absolute;
+  inset: 2px 2px 2px auto;
+  width: 70%;
+  background: var(--coral);
+  border-radius: 1px;
+  opacity: 0.9;
+}
+
+.lock-status-signal {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.lock-status-signal span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+.lock-status-signal span:nth-child(1) { height: 4px; opacity: 0.4; }
+.lock-status-signal span:nth-child(2) { height: 6px; opacity: 0.55; }
+.lock-status-signal span:nth-child(3) { height: 8px; opacity: 0.7; }
+.lock-status-signal span:nth-child(4) { height: 10px; opacity: 0.85; }
+.lock-status-signal span:nth-child(5) { height: 12px; opacity: 1; }
+
+/* ========== Hero: name + logo (always) ========== */
+.lock-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-4), 6vw, var(--space-6));
+  padding: var(--space-4);
+  flex-shrink: 0;
+}
+
+.lock-wordmark {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 10vw, 3rem);
+  font-weight: var(--font-extrabold);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-tight);
+  margin: 0;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--coral), var(--salmon), var(--salmon-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(224, 122, 95, 0.2));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lock-wordmark {
+    animation: lock-wordmark-glow 5s var(--curve-tentacle) ease-in-out infinite;
+  }
+}
+
+@keyframes lock-wordmark-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(224, 122, 95, 0.2)); opacity: 1; }
+  50% { filter: drop-shadow(0 0 28px rgba(224, 122, 95, 0.35)); opacity: 0.98; }
+}
+
+.lock-logo {
+  width: clamp(64px, 18vw, 110px);
+  height: clamp(64px, 18vw, 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-logo-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: var(--coral);
+  filter: drop-shadow(0 0 10px var(--glow-subtle));
+}
+
+.lock-logo .tentacle-arm {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  stroke-linecap: round;
+  transform-origin: 20px 20px;
+}
+
+.lock-logo .logo-core {
+  opacity: 0;
+  transform-origin: 20px 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lock-logo .tentacle-arm {
+    animation: lock-tentacle-draw 1.5s var(--curve-tentacle) forwards,
+               lock-tentacle-wave 2s var(--curve-tentacle) 2s infinite;
+  }
+  .lock-logo .tentacle-arm:nth-child(1) { animation-delay: 0.1s, 2.1s; }
+  .lock-logo .tentacle-arm:nth-child(2) { animation-delay: 0.15s, 2.15s; }
+  .lock-logo .tentacle-arm:nth-child(3) { animation-delay: 0.2s, 2.2s; }
+  .lock-logo .tentacle-arm:nth-child(4) { animation-delay: 0.25s, 2.25s; }
+  .lock-logo .tentacle-arm:nth-child(5) { animation-delay: 0.3s, 2.3s; }
+  .lock-logo .tentacle-arm:nth-child(6) { animation-delay: 0.35s, 2.35s; }
+  .lock-logo .tentacle-arm:nth-child(7) { animation-delay: 0.4s, 2.4s; }
+  .lock-logo .tentacle-arm:nth-child(8) { animation-delay: 0.45s, 2.45s; }
+  .lock-logo .logo-core {
+    animation: lock-logo-core-appear 0.5s var(--curve-tentacle) 0.55s forwards;
+  }
+}
+
+@keyframes lock-tentacle-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes lock-tentacle-wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(2deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(3px) rotate(-2deg); }
+}
+
+@keyframes lock-logo-core-appear {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lock-logo .tentacle-arm {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .lock-logo .logo-core {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ========== Notifications & messages: tentacles of information — all cases ========== */
+.lock-feed {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 max(env(safe-area-inset-right), var(--space-4)) var(--space-3) max(env(safe-area-inset-left), var(--space-4));
+}
+
+.lock-feed-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lock-feed-empty .lock-feed-inner {
+  display: none;
+}
+
+.lock-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--border-default);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform var(--duration-fast) var(--curve-tentacle),
+              box-shadow var(--duration-fast) var(--ease-out-expo);
+}
+
+.lock-card:active {
+  transform: scale(0.98);
+}
+
+.lock-card-message {
+  border-left-color: var(--coral);
+}
+
+.lock-card-notification {
+  border-left-color: var(--salmon);
+}
+
+.lock-card-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--salmon));
+  color: var(--text-inverse);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lock-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.lock-card-source {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--coral);
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.lock-card-preview {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-snug);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lock-card-time {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ========== Unlock strip: swipe up — one organism ========== */
+.lock-unlock-strip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) max(env(safe-area-inset-right), var(--space-5)) max(env(safe-area-inset-bottom), var(--space-6)) max(env(safe-area-inset-left), var(--space-5));
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.lock-unlock-line {
+  display: block;
+  width: 120px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, transparent, var(--coral) 30%, var(--salmon) 50%, var(--coral) 70%, transparent);
+  opacity: 0.8;
+  transition: opacity var(--duration-base) var(--ease-default),
+              box-shadow var(--duration-base) var(--ease-default);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lock-unlock-line {
+    animation: lock-unlock-breathe 2.5s var(--curve-tentacle) ease-in-out infinite;
+  }
+}
+
+@keyframes lock-unlock-breathe {
+  0%, 100% { opacity: 0.7; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.05); box-shadow: 0 0 12px var(--glow-subtle); }
+}
+
+.lock-unlock-strip:hover .lock-unlock-line,
+.lock-unlock-strip:focus-visible .lock-unlock-line {
+  opacity: 1;
+  box-shadow: 0 0 14px var(--glow-subtle);
+}
+
+.lock-unlock-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.lock-unlock-strip:hover .lock-unlock-label,
+.lock-unlock-strip:focus-visible .lock-unlock-label {
+  color: var(--text-tertiary);
+}
+
+.lock-unlock-strip:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+  border-radius: var(--radius-md);
+}
+
+/* ========== Unlock transition ========== */
+.lock-screen.lock-unlocked .lock-status,
+.lock-screen.lock-unlocked .lock-hero,
+.lock-screen.lock-unlocked .lock-feed,
+.lock-screen.lock-unlocked .lock-unlock-strip {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+              transform var(--duration-slow) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lock-screen.lock-unlocked .lock-status,
+  .lock-screen.lock-unlocked .lock-hero,
+  .lock-screen.lock-unlocked .lock-feed,
+  .lock-screen.lock-unlocked .lock-unlock-strip {
+    transition-duration: 0.01ms;
+  }
+}

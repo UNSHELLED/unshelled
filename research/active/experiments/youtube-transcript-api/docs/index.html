@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Pure Python transcript extraction. No browser. No selenium. Just raw intelligence accessing YouTube's InnerTube API. The octopus way: no shell, just capability.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* ============================================
+       LANDING PAGE — VENOM MASTERPIECE
+       ============================================ */
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--venom-coral);
+      color: var(--venom-text-on-coral);
+      padding: var(--venom-space-3) var(--venom-space-5);
+      border-radius: var(--venom-radius-lg);
+      font-weight: var(--venom-weight-semibold);
+      z-index: var(--venom-z-max);
+      transition: top var(--venom-duration-fast);
+    }
+
+    .skip-link:focus {
+      top: var(--venom-space-4);
+    }
+
+    /* ============================================
+       HEADER — Fixed, Glass, Navigation
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--venom-z-fixed);
+      background: var(--venom-overlay-base);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--venom-border-subtle);
+      transition: all var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    .header.scrolled {
+      box-shadow: var(--venom-shadow-md);
+    }
+
+    .header-inner {
+      max-width: var(--venom-container-xl);
+      margin: 0 auto;
+      padding: var(--venom-space-4) var(--venom-space-5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--venom-space-3);
+      text-decoration: none;
+      transition: opacity var(--venom-duration-fast);
+    }
+
+    .logo:hover {
+      opacity: 0.9;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--venom-gradient-primary);
+      border-radius: var(--venom-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Octopus tentacle pulse in logo */
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      animation: venom-pulse 3s ease-in-out infinite;
+    }
+
+    .logo-icon::after {
+      content: '▶';
+      color: white;
+      font-size: 14px;
+      margin-left: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-text {
+      font-family: var(--venom-font-display);
+      font-weight: var(--venom-weight-bold);
+      font-size: var(--venom-text-base);
+      color: var(--venom-text-primary);
+    }
+
+    .nav-main {
+      display: flex;
+      gap: var(--venom-space-6);
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--venom-text-secondary);
+      font-weight: var(--venom-weight-medium);
+      transition: color var(--venom-duration-fast);
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--venom-text-primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--venom-gradient-primary);
+      border-radius: var(--venom-radius-full);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--venom-space-2);
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--venom-text-secondary);
+      border-radius: var(--venom-radius-full);
+      transition: all var(--venom-duration-fast);
+    }
+
+    /* Mobile menu */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--venom-header-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--venom-bg-base);
+      padding: var(--venom-space-6);
+      z-index: var(--venom-z-fixed);
+      transform: translateX(-100%);
+      transition: transform var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    .mobile-nav.active {
+      transform: translateX(0);
+    }
+
+    .mobile-nav a {
+      display: block;
+      font-size: var(--venom-text-xl);
+      padding: var(--venom-space-4);
+      color: var(--venom-text-secondary);
+      text-decoration: none;
+      border-radius: var(--venom-radius-lg);
+    }
+
+    .mobile-nav a:hover {
+      background: var(--venom-bg-elevated);
+      color: var(--venom-coral);
+    }
+
+    @media (max-width: 768px) {
+      .nav-main { display: none; }
+      .menu-toggle { display: flex; }
+      .header-cta { display: none; }
+    }
+
+    /* ============================================
+       HERO — Bold, Atmospheric, Impactful
+       ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: calc(var(--venom-header-height) + var(--venom-space-8)) var(--venom-space-5) var(--venom-space-12);
+    }
+
+    /* Aurora background — the ocean depths */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--venom-aurora-1), var(--venom-aurora-2);
+      opacity: 0.6;
+      animation: venom-breath 25s ease-in-out infinite;
+    }
+
+    /* Floating particles — like plankton in the deep */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: var(--venom-coral);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .hero-particle:nth-child(1) { left: 8%; animation: venom-drift 15s ease-in-out infinite; }
+    .hero-particle:nth-child(2) { left: 18%; animation: venom-drift 18s ease-in-out infinite 2s; }
+    .hero-particle:nth-child(3) { left: 28%; animation: venom-drift 12s ease-in-out infinite 4s; }
+    .hero-particle:nth-child(4) { left: 68%; animation: venom-drift 20s ease-in-out infinite 1s; }
+    .hero-particle:nth-child(5) { left: 78%; animation: venom-drift 14s ease-in-out infinite 3s; }
+    .hero-particle:nth-child(6) { left: 88%; animation: venom-drift 16s ease-in-out infinite 5s; }
+    .hero-particle:nth-child(7) { left: 38%; animation: venom-drift 19s ease-in-out infinite 0.5s; }
+    .hero-particle:nth-child(8) { left: 48%; animation: venom-drift 13s ease-in-out infinite 2.5s; }
+
+    @keyframes venom-drift {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+      25% { transform: translateY(-30px) translateX(10px); opacity: 0.6; }
+      50% { transform: translateY(-10px) translateX(-15px); opacity: 0.3; }
+      75% { transform: translateY(-40px) translateX(5px); opacity: 0.5; }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--venom-space-2);
+      padding: var(--venom-space-2) var(--venom-space-4);
+      background: var(--venom-overlay-coral-12);
+      border: 1px solid var(--venom-border-coral);
+      border-radius: var(--venom-radius-full);
+      font-size: var(--venom-text-sm);
+      font-weight: var(--venom-weight-semibold);
+      color: var(--venom-coral);
+      margin-bottom: var(--venom-space-6);
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) forwards;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--venom-coral);
+      border-radius: 50%;
+      animation: venom-pulse 2s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-family: var(--venom-font-display);
+      font-size: var(--venom-text-7xl);
+      font-weight: var(--venom-weight-extrabold);
+      line-height: var(--venom-leading-tight);
+      margin-bottom: var(--venom-space-6);
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) 0.1s forwards;
+      opacity: 0;
+    }
+
+    .hero-title-line {
+      display: block;
+    }
+
+    .hero-title-gradient {
+      background: var(--venom-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: venom-shimmer 4s linear infinite;
+    }
+
+    .hero-description {
+      font-size: var(--venom-text-xl);
+      color: var(--venom-text-secondary);
+      max-width: 600px;
+      margin: 0 auto var(--venom-space-8);
+      line-height: var(--venom-leading-relaxed);
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) 0.2s forwards;
+      opacity: 0;
+    }
+
+    .hero-tagline {
+      font-size: var(--venom-text-lg);
+      color: var(--venom-coral);
+      font-weight: var(--venom-weight-semibold);
+      margin-bottom: var(--venom-space-4);
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) 0.15s forwards;
+      opacity: 0;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--venom-space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) 0.3s forwards;
+      opacity: 0;
+    }
+
+    /* ============================================
+       HERO CODE PREVIEW — Terminal Style
+       ============================================ */
+    .hero-code {
+      margin-top: var(--venom-space-12);
+      animation: venom-fade-in-up 0.6s var(--venom-ease-out) 0.4s forwards;
+      opacity: 0;
+    }
+
+    .code-window {
+      background: var(--venom-bg-input);
+      border: 1px solid var(--venom-border-default);
+      border-radius: var(--venom-radius-xl);
+      overflow: hidden;
+      box-shadow: var(--venom-shadow-xl), var(--venom-shadow-glow);
+      text-align: left;
+    }
+
+    .code-window-header {
+      display: flex;
+      align-items: center;
+      gap: var(--venom-space-2);
+      padding: var(--venom-space-3) var(--venom-space-4);
+      background: var(--venom-bg-elevated);
+      border-bottom: 1px solid var(--venom-border-subtle);
+    }
+
+    .code-window-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--venom-bg-card-hover);
+    }
+
+    .code-window-dot.red { background: #ff5f56; }
+    .code-window-dot.yellow { background: #ffbd2e; }
+    .code-window-dot.green { background: #27c93f; }
+
+    .code-window-title {
+      font-family: var(--venom-font-code);
+      font-size: var(--venom-text-xs);
+      color: var(--venom-text-muted);
+      margin-left: var(--venom-space-2);
+    }
+
+    .code-window-content {
+      padding: var(--venom-space-5);
+      font-family: var(--venom-font-code);
+      font-size: var(--venom-text-sm);
+      line-height: var(--venom-leading-relaxed);
+      overflow-x: auto;
+    }
+
+    .code-line {
+      display: block;
+    }
+
+    .code-keyword { color: var(--venom-coral); }
+    .code-string { color: var(--venom-ember); }
+    .code-function { color: var(--venom-blaze); }
+    .code-comment { color: var(--venom-text-muted); font-style: italic; }
+    .code-variable { color: var(--venom-text-primary); }
+
+    /* ============================================
+       PHILOSOPHY SECTION — The Octopus Way
+       ============================================ */
+    .philosophy {
+      padding: var(--venom-space-16) var(--venom-space-5);
+      background: var(--venom-bg-elevated);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--venom-coral), transparent);
+      opacity: 0.3;
+    }
+
+    .philosophy-inner {
+      max-width: var(--venom-container-xl);
+      margin: 0 auto;
+    }
+
+    .philosophy-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--venom-space-12);
+    }
+
+    .philosophy-label {
+      display: inline-block;
+      color: var(--venom-coral);
+      font-weight: var(--venom-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--venom-tracking-widest);
+      font-size: var(--venom-text-xs);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .philosophy-title {
+      font-size: var(--venom-text-4xl);
+      font-weight: var(--venom-weight-extrabold);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .philosophy-subtitle {
+      color: var(--venom-text-secondary);
+      font-size: var(--venom-text-lg);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--venom-space-6);
+    }
+
+    .philosophy-card {
+      background: var(--venom-bg-card);
+      border: 1px solid var(--venom-border-subtle);
+      border-radius: var(--venom-radius-xl);
+      padding: var(--venom-space-6);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    /* Unique colors for each philosophy card */
+    .philosophy-card:nth-child(1) {
+      border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .philosophy-card:nth-child(1)::before {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+
+    .philosophy-card:nth-child(1) .philosophy-icon {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(234, 88, 12, 0.1));
+    }
+
+    .philosophy-card:nth-child(2) {
+      border-color: rgba(168, 85, 247, 0.2);
+    }
+
+    .philosophy-card:nth-child(2)::before {
+      background: linear-gradient(135deg, #a855f7, #9333ea);
+    }
+
+    .philosophy-card:nth-child(2) .philosophy-icon {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(147, 51, 234, 0.1));
+    }
+
+    .philosophy-card:nth-child(3) {
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .philosophy-card:nth-child(3)::before {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .philosophy-card:nth-child(3) .philosophy-icon {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.1));
+    }
+
+    .philosophy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--venom-border-coral);
+      box-shadow: var(--venom-shadow-glow);
+    }
+
+    .philosophy-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .philosophy-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--venom-overlay-coral-08);
+      border-radius: var(--venom-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .philosophy-icon svg {
+      color: var(--venom-coral);
+    }
+
+    .philosophy-title {
+      font-size: var(--venom-text-xl);
+      font-weight: var(--venom-weight-bold);
+      margin-bottom: var(--venom-space-2);
+    }
+
+    .philosophy-description {
+      color: var(--venom-text-secondary);
+      line-height: var(--venom-leading-relaxed);
+    }
+
+    .philosophy-quote {
+      margin-top: var(--venom-space-4);
+      padding: var(--venom-space-3);
+      background: var(--venom-bg-elevated);
+      border-radius: var(--venom-radius-md);
+      font-style: italic;
+      color: var(--venom-text-muted);
+      font-size: var(--venom-text-sm);
+    }
+
+    /* ============================================
+       STATS SECTION — Numbers That Matter
+       ============================================ */
+    .stats {
+      padding: var(--venom-space-12) var(--venom-space-5);
+      background: var(--venom-bg-elevated);
+      border-top: 1px solid var(--venom-border-subtle);
+      border-bottom: 1px solid var(--venom-border-subtle);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--venom-space-8);
+      max-width: var(--venom-container-xl);
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: var(--venom-font-display);
+      font-size: var(--venom-text-5xl);
+      font-weight: var(--venom-weight-extrabold);
+      background: var(--venom-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: var(--venom-leading-tight);
+    }
+
+    .stat-label {
+      color: var(--venom-text-secondary);
+      margin-top: var(--venom-space-2);
+      font-size: var(--venom-text-sm);
+    }
+
+    /* ============================================
+       FEATURES SECTION — Why This API
+       ============================================ */
+    .features {
+      padding: var(--venom-space-16) var(--venom-space-5);
+    }
+
+    .features-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto var(--venom-space-12);
+    }
+
+    .features-label {
+      display: inline-block;
+      color: var(--venom-coral);
+      font-weight: var(--venom-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--venom-tracking-widest);
+      font-size: var(--venom-text-xs);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .features-title {
+      font-size: var(--venom-text-4xl);
+      font-weight: var(--venom-weight-extrabold);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .features-subtitle {
+      color: var(--venom-text-secondary);
+      font-size: var(--venom-text-lg);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--venom-space-6);
+      max-width: var(--venom-container-xl);
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: var(--venom-bg-card);
+      border: 1px solid var(--venom-border-subtle);
+      border-radius: var(--venom-radius-xl);
+      padding: var(--venom-space-6);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    /* Unique colors for each feature card */
+    .feature-card:nth-child(1) {
+      border-color: rgba(249, 115, 22, 0.15);
+    }
+
+    .feature-card:nth-child(1)::before {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+
+    .feature-card:nth-child(1) .feature-icon {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(234, 88, 12, 0.08));
+    }
+
+    .feature-card:nth-child(1) .feature-icon svg {
+      stroke: #f97316;
+    }
+
+    .feature-card:nth-child(2) {
+      border-color: rgba(59, 130, 246, 0.15);
+    }
+
+    .feature-card:nth-child(2)::before {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(37, 99, 235, 0.08));
+    }
+
+    .feature-card:nth-child(2) .feature-icon svg {
+      stroke: #3b82f6;
+    }
+
+    .feature-card:nth-child(3) {
+      border-color: rgba(34, 197, 94, 0.15);
+    }
+
+    .feature-card:nth-child(3)::before {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .feature-card:nth-child(3) .feature-icon {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(22, 163, 74, 0.08));
+    }
+
+    .feature-card:nth-child(3) .feature-icon svg {
+      stroke: #22c55e;
+    }
+
+    .feature-card:nth-child(4) {
+      border-color: rgba(168, 85, 247, 0.15);
+    }
+
+    .feature-card:nth-child(4)::before {
+      background: linear-gradient(135deg, #a855f7, #9333ea);
+    }
+
+    .feature-card:nth-child(4) .feature-icon {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(147, 51, 234, 0.08));
+    }
+
+    .feature-card:nth-child(4) .feature-icon svg {
+      stroke: #a855f7;
+    }
+
+    .feature-card:nth-child(5) {
+      border-color: rgba(236, 72, 153, 0.15);
+    }
+
+    .feature-card:nth-child(5)::before {
+      background: linear-gradient(135deg, #ec4899, #db2777);
+    }
+
+    .feature-card:nth-child(5) .feature-icon {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(219, 39, 119, 0.08));
+    }
+
+    .feature-card:nth-child(5) .feature-icon svg {
+      stroke: #ec4899;
+    }
+
+    .feature-card:nth-child(6) {
+      border-color: rgba(234, 179, 8, 0.15);
+    }
+
+    .feature-card:nth-child(6)::before {
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+    }
+
+    .feature-card:nth-child(6) .feature-icon {
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(202, 138, 4, 0.08));
+    }
+
+    .feature-card:nth-child(6) .feature-icon svg {
+      stroke: #eab308;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--venom-duration-base) var(--venom-ease-out);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--venom-border-coral);
+      box-shadow: var(--venom-shadow-glow);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--venom-overlay-coral-08);
+      border-radius: var(--venom-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .feature-icon svg {
+      color: var(--venom-coral);
+    }
+
+    .feature-title {
+      font-size: var(--venom-text-xl);
+      font-weight: var(--venom-weight-bold);
+      margin-bottom: var(--venom-space-2);
+    }
+
+    .feature-description {
+      color: var(--venom-text-secondary);
+      line-height: var(--venom-leading-relaxed);
+    }
+
+    /* ============================================
+       INSTALLATION SECTION — Quick Start
+       ============================================ */
+    .install {
+      padding: var(--venom-space-16) var(--venom-space-5);
+      text-align: center;
+      background: var(--venom-bg-elevated);
+    }
+
+    .install-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .install-title {
+      font-size: var(--venom-text-3xl);
+      font-weight: var(--venom-weight-extrabold);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .install-description {
+      color: var(--venom-text-secondary);
+      margin-bottom: var(--venom-space-6);
+    }
+
+    .install-command {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--venom-space-3);
+      background: var(--venom-bg-card);
+      border: 1px solid var(--venom-border-coral);
+      border-radius: var(--venom-radius-lg);
+      padding: var(--venom-space-4) var(--venom-space-5);
+      font-family: var(--venom-font-code);
+      font-size: var(--venom-text-lg);
+      margin: var(--venom-space-6) 0;
+    }
+
+    .install-prompt {
+      color: var(--venom-coral);
+    }
+
+    .install-code {
+      color: var(--venom-text-primary);
+    }
+
+    .copy-btn {
+      background: var(--venom-coral);
+      color: var(--venom-text-on-coral);
+      border: none;
+      padding: var(--venom-space-2) var(--venom-space-4);
+      border-radius: var(--venom-radius-md);
+      font-family: var(--venom-font-body);
+      font-size: var(--venom-text-sm);
+      font-weight: var(--venom-weight-semibold);
+      cursor: pointer;
+      transition: all var(--venom-duration-fast);
+    }
+
+    .copy-btn:hover {
+      background: var(--venom-coral-light);
+      transform: scale(1.05);
+    }
+
+    .copy-btn.copied {
+      background: var(--venom-color-success, #22c55e);
+    }
+
+    /* ============================================
+       CTA SECTION — Take Action
+       ============================================ */
+    .cta {
+      padding: var(--venom-space-16) var(--venom-space-5);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--venom-gradient-deep);
+      opacity: 0.5;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: var(--venom-text-4xl);
+      font-weight: var(--venom-weight-extrabold);
+      margin-bottom: var(--venom-space-4);
+    }
+
+    .cta-description {
+      color: var(--venom-text-secondary);
+      font-size: var(--venom-text-lg);
+      margin-bottom: var(--venom-space-6);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================
+       FOOTER — Links & Credits
+       ============================================ */
+    .footer {
+      padding: var(--venom-space-8) var(--venom-space-5);
+      border-top: 1px solid var(--venom-border-subtle);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--venom-space-6);
+      justify-content: center;
+      margin-bottom: var(--venom-space-4);
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--venom-text-secondary);
+      transition: color var(--venom-duration-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--venom-coral);
+    }
+
+    .footer-copyright {
+      color: var(--venom-text-muted);
+      font-size: var(--venom-text-sm);
+    }
+
+    /* ============================================
+       SEARCH TRIGGER IN NAV
+       ============================================ */
+    .search-trigger-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--venom-space-2);
+      padding: var(--venom-space-2) var(--venom-space-3);
+      background: var(--venom-bg-input);
+      border: 1px solid var(--venom-border-default);
+      border-radius: var(--venom-radius-md);
+      color: var(--venom-text-secondary);
+      font-size: var(--venom-text-sm);
+      cursor: pointer;
+      transition: all var(--venom-duration-fast);
+    }
+
+    .search-trigger-nav:hover {
+      border-color: var(--venom-border-coral);
+      color: var(--venom-text-primary);
+    }
+
+    .search-trigger-nav kbd {
+      padding: 2px 6px;
+      background: var(--venom-bg-elevated);
+      border-radius: var(--venom-radius-sm);
+      font-family: var(--venom-font-code);
+      font-size: var(--venom-text-xs);
+      color: var(--venom-text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .search-trigger-nav {
+        display: none;
+      }
+    }
+
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: var(--venom-text-4xl);
+      }
+
+      .hero-description {
+        font-size: var(--venom-text-base);
+      }
+
+      .philosophy-title {
+        font-size: var(--venom-text-2xl);
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .install-command {
+        flex-direction: column;
+        gap: var(--venom-space-2);
+        text-align: left;
+        padding: var(--venom-space-4);
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-icon,
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .philosophy-icon svg,
+      .feature-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .code-window-content {
+        font-size: var(--venom-text-xs);
+        padding: var(--venom-space-4);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon"></div>
+        <span class="logo-text">YT Transcript API</span>
+      </a>
+
+      <nav class="nav-main">
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="docs/" class="nav-link">Docs</a>
+        <a href="demo/" class="nav-link">Demo</a>
+        <a href="https://github.com/jdepoix/youtube-transcript-api" target="_blank" class="nav-link">GitHub</a>
+        <button class="search-trigger-nav" type="button" aria-label="Search documentation">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <kbd>⌘K</kbd>
+        </button>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="docs/" class="btn btn-primary header-cta">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#philosophy" class="nav-link">Philosophy</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="docs/" class="nav-link">Docs</a>
+    <a href="demo/" class="nav-link">Demo</a>
+    <a href="https://github.com/jdepoix/youtube-transcript-api" target="_blank" class="nav-link">GitHub</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-particles">
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>v1.2.3 — Python 3.8 to 3.14 supported</span>
+        </div>
+
+        <p class="hero-tagline">No Shell. Just Intelligence.</p>
+
+        <h1 class="hero-title">
+          <span class="hero-title-line">The API That</span>
+          <span class="hero-title-line"><span class="hero-title-gradient">Adapts to Anything</span></span>
+        </h1>
+
+        <p class="hero-description">
+          Pure Python transcript extraction. No selenium. No headless browser. Just direct access to YouTube's InnerTube API — the same way the octopus navigates without a shell.
+        </p>
+
+        <div class="hero-cta">
+          <a href="docs/" class="btn btn-primary btn-lg">
+            Read the Docs
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <path d="M5 8h6M9 5l3 3-3 3"/>
+            </svg>
+          </a>
+          <a href="demo/" class="btn btn-secondary btn-lg">Try Demo</a>
+          <a href="https://github.com/jdepoix/youtube-transcript-api" target="_blank" class="btn btn-ghost btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--venom-coral)" style="margin-right: 8px;">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235 3.015.555 3.795-.735 4.035-1.41.135-.345.72-1.41.72-1.41 0-.555.075-1.05.075-1.05.05-6.63.09-10.265-3.9-10.265-8.765 0-1.905.72-3.465 1.905-4.5.075-.12-.345-.075-.735.075-1.125.075-3.9 3.3-7.5 9.855-7.5 6.165 0 9.765 3.9 9.765 9.765 0 1.425-.105 2.565-.285 3.15.09.66.21 1.26.21 1.815 0 6.63-5.4 12-12 12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+
+        <div class="hero-code">
+          <div class="code-window">
+            <div class="code-window-header">
+              <div class="code-window-dot red"></div>
+              <div class="code-window-dot yellow"></div>
+              <div class="code-window-dot green"></div>
+              <span class="code-window-title">transcript.py</span>
+            </div>
+            <div class="code-window-content">
+              <span class="code-line"><span class="code-keyword">from</span> <span class="code-variable">youtube_transcript_api</span> <span class="code-keyword">import</span> <span class="code-function">YouTubeTranscriptApi</span></span>
+              <br><br>
+              <span class="code-line"><span class="code-comment"># No shell needed. Just intelligence.</span></span>
+              <br>
+              <span class="code-line"><span class="code-variable">ytt_api</span> = <span class="code-function">YouTubeTranscriptApi</span>()</span>
+              <br>
+              <span class="code-line"><span class="code-variable">transcript</span> = <span class="code-variable">ytt_api</span>.<span class="code-function">fetch</span>(<span class="code-string">'video_id'</span>)</span>
+              <br><br>
+              <span class="code-line"><span class="code-keyword">for</span> <span class="code-variable">snippet</span> <span class="code-keyword">in</span> <span class="code-variable">transcript</span>:</span>
+              <br>
+              <span class="code-line">    <span class="code-function">print</span>(<span class="code-variable">snippet</span>[<span class="code-string">'text'</span>])</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+      <div class="philosophy-inner">
+        <div class="philosophy-header venom-reveal">
+          <span class="philosophy-label">The Philosophy</span>
+          <h2 class="philosophy-title">No Shell. Just Intelligence.</h2>
+          <p class="philosophy-subtitle">Like the octopus, this API has no armor — only raw capability.</p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card venom-reveal">
+            <div class="philosophy-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="1.5">
+              <circle cx="12" cy="10" r="6"/>
+              <path d="M8 14c-1.5 2-3 3-4 4"/>
+              <path d="M16 14c1.5 2 3 3 4 4"/>
+              <path d="M6 12c-2 1-3.5 1-5 1"/>
+              <path d="M18 12c2 1 3.5 1 5 1"/>
+              <path d="M8 7c-1.5-1-3-1.5-4-2"/>
+              <path d="M16 7c1.5-1 3-1.5 4-2"/>
+              <circle cx="10" cy="9" r="1" fill="var(--venom-coral)"/>
+              <circle cx="14" cy="9" r="1" fill="var(--venom-coral)"/>
+            </svg>
+          </div>
+            <h3 class="philosophy-title">No Dependencies</h3>
+            <p class="philosophy-description">The octopus has no shell. This API needs no browser. Pure HTTP requests to YouTube's InnerTube — lightweight, fast, unencumbered.</p>
+            <div class="philosophy-quote">"Vulnerability forces growth."</div>
+          </div>
+
+          <div class="philosophy-card venom-reveal">
+            <div class="philosophy-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="1.5">
+              <path d="M9.5 2A9.5 9.5 0 0 1 19 11.5c0 3-1.5 5-3.5 6.5V21h-7v-3c-2-1.5-3.5-3.5-3.5-6.5A9.5 9.5 0 0 1 9.5 2z"/>
+              <path d="M9 10h.01M15 10h.01"/>
+              <circle cx="9.5" cy="10" r="1" fill="var(--venom-coral)"/>
+              <circle cx="14.5" cy="10" r="1" fill="var(--venom-coral)"/>
+              <path d="M8 17c1.5 1 3 1 4 1s2.5 0 4-1"/>
+            </svg>
+          </div>
+            <h3 class="philosophy-title">Distributed Intelligence</h3>
+            <p class="philosophy-description">Each arm thinks independently. The API handles transcript discovery, language detection, translation, formatting — all working in parallel.</p>
+            <div class="philosophy-quote">"No single point of failure."</div>
+          </div>
+
+          <div class="philosophy-card venom-reveal">
+            <div class="philosophy-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="1.5">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+            <h3 class="philosophy-title">Adaptive Flow</h3>
+            <p class="philosophy-description">The octopus fits through any gap. This API adapts to YouTube's changes, proxy configurations, and your specific needs.</p>
+            <div class="philosophy-quote">"Adaptation is honest communication."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">10M+</div>
+          <div class="stat-label">PyPI Downloads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Test Coverage</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">3.8+</div>
+          <div class="stat-label">Python Versions</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="features-header venom-reveal">
+        <span class="features-label">Features</span>
+        <h2 class="features-title">Why Use This API?</h2>
+        <p class="features-subtitle">Built for developers who value elegance over bloat.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">No Browser Required</h3>
+          <p class="feature-description">Pure HTTP requests. No selenium, no headless browser, no heavy dependencies. Just fast, lightweight transcript fetching.</p>
+        </div>
+
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Multi-Language Support</h3>
+          <p class="feature-description">Automatically generated subtitles, manual transcripts, and translation support for 100+ languages.</p>
+        </div>
+
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Built-in Translation</h3>
+          <p class="feature-description">Leverage YouTube's translation API directly. Get transcripts in any language you need.</p>
+        </div>
+
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Multiple Formats</h3>
+          <p class="feature-description">Export as JSON, SRT, WebVTT, or plain text. Built-in formatters for all common subtitle formats.</p>
+        </div>
+
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Proxy Support</h3>
+          <p class="feature-description">Built-in proxy configurations to handle IP blocking. Webshare integration included for residential proxies.</p>
+        </div>
+
+        <div class="feature-card venom-reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Production Ready</h3>
+          <p class="feature-description">Full type hints, 100% test coverage, and comprehensive documentation. Ready for production use.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="install">
+      <div class="install-content">
+        <h2 class="install-title">Install in Seconds</h2>
+        <p class="install-description">Available via PyPI. One command and you're ready.</p>
+
+        <div class="install-command">
+          <span class="install-prompt">$</span>
+          <span class="install-code">pip install youtube-transcript-api</span>
+          <button class="copy-btn" onclick="copyInstall(this)">Copy</button>
+        </div>
+
+        <p style="color: var(--venom-text-muted); font-size: var(--venom-text-sm);">
+          Or use <a href="docs/" style="color: var(--venom-coral);">Poetry</a> for dependency management.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-inner">
+        <h2 class="cta-title">Ready to Extract?</h2>
+        <p class="cta-description">Join thousands of developers who chose intelligence over bloat.</p>
+        <div style="display: flex; gap: var(--venom-space-4); justify-content: center; flex-wrap: wrap;">
+          <a href="docs/" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="demo/" class="btn btn-secondary btn-lg">Live Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="docs/">Documentation</a>
+      <a href="demo/">Demo</a>
+      <a href="minds/">How It Works</a>
+      <a href="https://github.com/jdepoix/youtube-transcript-api" target="_blank">GitHub</a>
+      <a href="https://pypi.org/project/youtube-transcript-api/" target="_blank">PyPI</a>
+    </div>
+    <p class="footer-copyright">
+      MIT License © Jonas Depoix. No shell. Just intelligence.
+    </p>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="search-modal" role="dialog" aria-modal="true" aria-label="Search documentation">
+    <div class="search-modal-backdrop" aria-hidden="true"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" class="search-input" placeholder="Search documentation..." aria-label="Search">
+        <button class="search-close" aria-label="Close search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--venom-coral)" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/enhancements.js"></script>
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const header = document.getElementById('header');
+    let isMenuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      mobileNav.classList.toggle('active', isMenuOpen);
+      document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+      menuToggle.setAttribute('aria-expanded', isMenuOpen);
+
+      // Animate hamburger to X
+      const spans = menuToggle.querySelectorAll('span');
+      if (isMenuOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        isMenuOpen = false;
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+        menuToggle.setAttribute('aria-expanded', 'false');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      });
+    });
+
+    // Header scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Copy install command
+    function copyInstall(btn) {
+      navigator.clipboard.writeText('pip install youtube-transcript-api');
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.venom-reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

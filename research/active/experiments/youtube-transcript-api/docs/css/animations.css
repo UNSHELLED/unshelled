@@ -1,0 +1,640 @@
+/* ============================================
+   VENOM ANIMATIONS
+   YouTube Transcript API — Organic Motion
+   ============================================ */
+
+/* ============================================
+   FADE ANIMATIONS — Smooth Entry
+   ============================================ */
+@keyframes venom-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes venom-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes venom-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes venom-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes venom-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   SCALE ANIMATIONS — Impact & Focus
+   ============================================ */
+@keyframes venom-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes venom-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes venom-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* ============================================
+   ORGANIC/TENTACLE ANIMATIONS — Fluid
+   ============================================ */
+@keyframes venom-tentacle-wave {
+  0%, 100% {
+    d: path("M20 20 Q12 8, 8 4");
+  }
+  25% {
+    d: path("M20 20 Q14 6, 10 2");
+  }
+  50% {
+    d: path("M20 20 Q16 10, 12 6");
+  }
+  75% {
+    d: path("M20 20 Q14 14, 10 10");
+  }
+}
+
+@keyframes venom-breath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes venom-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes venom-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes venom-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--venom-glow-subtle);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--venom-glow-default);
+  }
+}
+
+/* ============================================
+   ROTATION ANIMATIONS
+   ============================================ */
+@keyframes venom-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes venom-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* ============================================
+   BOB/FLOAT ANIMATIONS
+   ============================================ */
+@keyframes venom-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes venom-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============================================
+   SHAKE ANIMATIONS — Error/Attention
+   ============================================ */
+@keyframes venom-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes venom-jitter {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+}
+
+/* ============================================
+   SPECIAL EFFECTS
+   ============================================ */
+@keyframes venom-aurora {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes venom-typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes venom-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes venom-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES — Apply Animations
+   ============================================ */
+.venom-animate-fade-in { animation: venom-fade-in 0.6s var(--venom-ease-out) forwards; }
+.venom-animate-fade-in-up { animation: venom-fade-in-up 0.6s var(--venom-ease-out) forwards; }
+.venom-animate-fade-in-down { animation: venom-fade-in-down 0.6s var(--venom-ease-out) forwards; }
+.venom-animate-scale-in { animation: venom-scale-in 0.5s var(--venom-ease-spring) forwards; }
+
+/* Delays for staggered animations */
+.venom-delay-100 { animation-delay: 100ms; }
+.venom-delay-200 { animation-delay: 200ms; }
+.venom-delay-300 { animation-delay: 300ms; }
+.venom-delay-400 { animation-delay: 400ms; }
+.venom-delay-500 { animation-delay: 500ms; }
+.venom-delay-600 { animation-delay: 600ms; }
+
+/* ============================================
+   HOVER EFFECTS — Interactive Feedback
+   ============================================ */
+.venom-hover-lift {
+  transition: transform var(--venom-duration-base) var(--venom-ease-out);
+}
+
+.venom-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.venom-hover-scale {
+  transition: transform var(--venom-duration-base) var(--venom-ease-out);
+}
+
+.venom-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.venom-hover-glow {
+  transition: box-shadow var(--venom-duration-base) var(--venom-ease-out);
+}
+
+.venom-hover-glow:hover {
+  box-shadow: var(--venom-shadow-glow);
+}
+
+.venom-hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.venom-hover-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left var(--venom-duration-slower) var(--venom-ease-out);
+}
+
+.venom-hover-shine:hover::after {
+  left: 100%;
+}
+
+/* ============================================
+   REVEAL ON SCROLL
+   ============================================ */
+.venom-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--venom-ease-out);
+}
+
+.venom-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.venom-reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s var(--venom-ease-out);
+}
+
+.venom-reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.venom-reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s var(--venom-ease-out);
+}
+
+.venom-reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.venom-reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s var(--venom-ease-spring);
+}
+
+.venom-reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   SPECIAL COMPONENT ANIMATIONS
+   ============================================ */
+
+/* Hero badge pulse */
+.venom-badge-pulse {
+  animation: venom-pulse 2s ease-in-out infinite;
+}
+
+/* Hero title gradient flow */
+.venom-gradient-flow {
+  background: linear-gradient(
+    90deg,
+    var(--venom-coral),
+    var(--venom-ember),
+    var(--venom-blaze),
+    var(--venom-coral)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: venom-shimmer 4s linear infinite;
+}
+
+/* Floating elements */
+.venom-float {
+  animation: venom-float 4s ease-in-out infinite;
+}
+
+.venom-float-delayed {
+  animation: venom-float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Particle effect */
+.venom-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--venom-coral);
+  border-radius: 50%;
+  opacity: 0;
+  animation: venom-particle-rise 3s ease-in-out infinite;
+}
+
+@keyframes venom-particle-rise {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Loading dots */
+.venom-loading-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.venom-loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--venom-coral);
+  border-radius: 50%;
+  animation: venom-loading-bounce 1.4s ease-in-out infinite;
+}
+
+.venom-loading-dots span:nth-child(1) { animation-delay: 0s; }
+.venom-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.venom-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes venom-loading-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Progress bar animation */
+.venom-progress-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.venom-progress-animated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: venom-shimmer 2s linear infinite;
+}
+
+/* Card hover effect */
+.venom-card-3d {
+  perspective: 1000px;
+}
+
+.venom-card-3d-inner {
+  transition: transform var(--venom-duration-slow) var(--venom-ease-out);
+  transform-style: preserve-3d;
+}
+
+.venom-card-3d:hover .venom-card-3d-inner {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Text highlight animation */
+.venom-text-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.venom-text-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--venom-gradient-primary);
+  transition: width var(--venom-duration-slow) var(--venom-ease-out);
+}
+
+.venom-text-highlight:hover::after,
+.venom-text-highlight.active::after {
+  width: 100%;
+}
+
+/* Icon bounce */
+.venom-icon-bounce:hover {
+  animation: venom-bob 0.5s ease-in-out;
+}
+
+/* Ripple effect container */
+.venom-ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.venom-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(230, 32, 23, 0.3);
+  transform: scale(0);
+  animation: venom-ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes venom-ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   PAGE TRANSITIONS
+   ============================================ */
+.venom-page-enter {
+  animation: venom-fade-in-up 0.5s var(--venom-ease-out) forwards;
+}
+
+.venom-page-exit {
+  animation: venom-fade-in-down 0.3s var(--venom-ease-in-out) forwards;
+}
+
+/* ============================================
+   SPECIAL EFFECTS
+   ============================================ */
+
+/* Neon glow effect */
+.venom-neon {
+  text-shadow:
+    0 0 7px var(--venom-coral),
+    0 0 10px var(--venom-coral),
+    0 0 21px var(--venom-coral),
+    0 0 42px var(--venom-coral-dark);
+  animation: venom-neon-flicker 3s infinite alternate;
+}
+
+@keyframes venom-neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 7px var(--venom-coral),
+      0 0 10px var(--venom-coral),
+      0 0 21px var(--venom-coral),
+      0 0 42px var(--venom-coral-dark);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* Morphing shape */
+.venom-morph {
+  animation: venom-morph 8s ease-in-out infinite;
+}
+
+@keyframes venom-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 40% 70% 60%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%;
+  }
+}
+
+/* Background pattern animation */
+.venom-pattern-scroll {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e62017' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: venom-pattern-scroll 60s linear infinite;
+}
+
+@keyframes venom-pattern-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+/* Counter animation */
+.venom-counter {
+  display: inline-block;
+  animation: venom-counter-pop 0.3s var(--venom-ease-spring);
+}
+
+@keyframes venom-counter-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================
+   REDUCED MOTION OVERRIDES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .venom-animate-fade-in,
+  .venom-animate-fade-in-up,
+  .venom-animate-fade-in-down,
+  .venom-animate-scale-in,
+  .venom-reveal,
+  .venom-reveal-left,
+  .venom-reveal-right,
+  .venom-reveal-scale,
+  .venom-float,
+  .venom-float-delayed,
+  .venom-particle,
+  .venom-badge-pulse,
+  .venom-gradient-flow,
+  .venom-neon,
+  .venom-morph,
+  .venom-pattern-scroll {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .venom-reveal.visible,
+  .venom-reveal-left.visible,
+  .venom-reveal-right.visible,
+  .venom-reveal-scale.visible {
+    opacity: 1;
+    transform: none;
+  }
+}

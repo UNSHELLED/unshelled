@@ -1,0 +1,349 @@
+/* ============================================
+   VENOM DESIGN SYSTEM
+   YouTube Transcript API — Masterpiece Variables
+   ============================================ */
+
+:root {
+  /* ============================================
+     BRAND IDENTITY
+     ============================================ */
+  /* Primary coral - YouTube inspired, uniquely ours */
+  --venom-coral: #E62017;
+  --venom-coral-dark: #B8150E;
+  --venom-coral-light: #FF4D45;
+
+  /* Accent palette */
+  --venom-ember: #FF6B35;
+  --venom-blaze: #FF8C42;
+  --venom-heat: #FFAE67;
+
+  /* Deep ocean for contrast */
+  --venom-deep: #0D0E12;
+  --venom-abyss: #08090B;
+  --venom-void: #030405;
+
+  /* Intelligence states */
+  --venom-dormant: rgba(230, 32, 23, 0.15);
+  --venom-thinking: rgba(230, 32, 23, 0.4);
+  --venom-active: rgba(230, 32, 23, 0.8);
+  --venom-flow: rgba(230, 32, 23, 1);
+
+  /* ============================================
+     GRADIENTS — Organic, Fluid, Alive
+     ============================================ */
+  --venom-gradient-primary: linear-gradient(135deg, #E62017 0%, #FF4D45 50%, #FF6B35 100%);
+  --venom-gradient-heat: linear-gradient(135deg, #FF6B35, #FF8C42, #FFAE67);
+  --venom-gradient-deep: linear-gradient(180deg, #0D0E12 0%, #08090B 100%);
+
+  /* Aurora backgrounds — breathing */
+  --venom-aurora-1: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(230, 32, 23, 0.15), transparent 50%);
+  --venom-aurora-2: radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 107, 53, 0.1), transparent 40%);
+  --venom-aurora-3: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(230, 32, 23, 0.08), transparent 60%);
+
+  /* Flow gradients — tentacle-like movement */
+  --venom-flow-wave: linear-gradient(90deg, transparent, rgba(230, 32, 23, 0.2), transparent);
+  --venom-flow-pulse: radial-gradient(circle at center, rgba(230, 32, 23, 0.3), transparent 70%);
+
+  /* ============================================
+     BACKGROUND LAYERS
+     ============================================ */
+  --venom-bg-base: #0D0E12;
+  --venom-bg-elevated: #131519;
+  --venom-bg-card: #1A1D23;
+  --venom-bg-card-hover: #22262E;
+  --venom-bg-input: #0A0B0E;
+  --venom-bg-surface: #1F232B;
+
+  /* Overlay system */
+  --venom-overlay-base: rgba(13, 14, 18, 0.9);
+  --venom-overlay-heavy: rgba(13, 14, 18, 0.95);
+  --venom-overlay-glass: rgba(13, 14, 18, 0.7);
+
+  /* Coral overlays */
+  --venom-overlay-coral-03: rgba(230, 32, 23, 0.03);
+  --venom-overlay-coral-05: rgba(230, 32, 23, 0.05);
+  --venom-overlay-coral-08: rgba(230, 32, 23, 0.08);
+  --venom-overlay-coral-12: rgba(230, 32, 23, 0.12);
+  --venom-overlay-coral-20: rgba(230, 32, 23, 0.2);
+
+  /* ============================================
+     TEXT HIERARCHY
+     ============================================ */
+  --venom-text-primary: #F5F3F0;
+  --venom-text-secondary: #B8B5B0;
+  --venom-text-tertiary: #8A8782;
+  --venom-text-muted: #5A5754;
+  --venom-text-faint: #3A3836;
+
+  /* Text on coral */
+  --venom-text-on-coral: #FFFFFF;
+  --venom-text-on-coral-dim: rgba(255, 255, 255, 0.85);
+
+  /* ============================================
+     BOUNDARIES
+     ============================================ */
+  --venom-border-subtle: rgba(255, 255, 255, 0.04);
+  --venom-border-default: rgba(255, 255, 255, 0.08);
+  --venom-border-emphasis: rgba(255, 255, 255, 0.12);
+  --venom-border-coral: rgba(230, 32, 23, 0.4);
+  --venom-border-coral-strong: rgba(230, 32, 23, 0.6);
+
+  /* ============================================
+     GLOW & ATMOSPHERE
+     ============================================ */
+  --venom-glow-subtle: rgba(230, 32, 23, 0.08);
+  --venom-glow-default: rgba(230, 32, 23, 0.2);
+  --venom-glow-strong: rgba(230, 32, 23, 0.35);
+  --venom-glow-intense: rgba(230, 32, 23, 0.5);
+
+  /* Shadows */
+  --venom-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --venom-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --venom-shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --venom-shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.6);
+  --venom-shadow-glow: 0 0 40px var(--venom-glow-default);
+  --venom-shadow-glow-strong: 0 0 60px var(--venom-glow-strong);
+
+  /* ============================================
+     TYPOGRAPHY — Character & Soul
+     ============================================ */
+  /* Display font — bold, memorable */
+  --venom-font-display: "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Body font — refined, readable */
+  --venom-font-body: "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Code font — crisp, technical */
+  --venom-font-code: "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+  /* Font sizes — fluid type scale */
+  --venom-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --venom-text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --venom-text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --venom-text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --venom-text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --venom-text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --venom-text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --venom-text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
+  --venom-text-5xl: clamp(3rem, 2rem + 5vw, 4.5rem);
+  --venom-text-6xl: clamp(3.75rem, 2.5rem + 6.25vw, 5.5rem);
+  --venom-text-7xl: clamp(4.5rem, 3rem + 7.5vw, 6.5rem);
+
+  /* Font weights */
+  --venom-weight-normal: 400;
+  --venom-weight-medium: 500;
+  --venom-weight-semibold: 600;
+  --venom-weight-bold: 700;
+  --venom-weight-extrabold: 800;
+
+  /* Line heights */
+  --venom-leading-tight: 1.1;
+  --venom-leading-snug: 1.25;
+  --venom-leading-normal: 1.5;
+  --venom-leading-relaxed: 1.75;
+
+  /* Letter spacing */
+  --venom-tracking-tight: -0.02em;
+  --venom-tracking-normal: 0;
+  --venom-tracking-wide: 0.025em;
+  --venom-tracking-wider: 0.05em;
+  --venom-tracking-widest: 0.1em;
+
+  /* ============================================
+     SPACING — Rhythm & Breath (Fluid)
+     ============================================ */
+  --venom-space-0: 0;
+  --venom-space-px: 1px;
+  --venom-space-0_5: 0.125rem;
+  --venom-space-1: 0.25rem;
+  --venom-space-1_5: 0.375rem;
+  --venom-space-2: 0.5rem;
+  --venom-space-2_5: 0.625rem;
+  --venom-space-3: 0.75rem;
+  --venom-space-3_5: 0.875rem;
+  --venom-space-4: clamp(1rem, 0.875rem + 0.625vw, 1.25rem);
+  --venom-space-5: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
+  --venom-space-6: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --venom-space-7: clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
+  --venom-space-8: clamp(2rem, 1.75rem + 1.25vw, 2.5rem);
+  --venom-space-9: clamp(2.25rem, 2rem + 1.25vw, 3rem);
+  --venom-space-10: clamp(2.5rem, 2.25rem + 1.25vw, 3.5rem);
+  --venom-space-11: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+  --venom-space-12: clamp(3.5rem, 3rem + 2.5vw, 4.5rem);
+  --venom-space-14: clamp(4rem, 3.5rem + 2.5vw, 5rem);
+  --venom-space-16: clamp(5rem, 4rem + 5vw, 6rem);
+  --venom-space-20: clamp(6rem, 5rem + 5vw, 7rem);
+  --venom-space-24: clamp(8rem, 6rem + 10vw, 10rem);
+  --venom-space-28: clamp(10rem, 8rem + 10vw, 12rem);
+  --venom-space-32: clamp(12rem, 10rem + 10vw, 14rem);
+
+  /* ============================================
+     CORNERS — Soft but Confident
+     ============================================ */
+  --venom-radius-none: 0;
+  --venom-radius-sm: 6px;
+  --venom-radius-md: 10px;
+  --venom-radius-lg: 16px;
+  --venom-radius-xl: 24px;
+  --venom-radius-2xl: 32px;
+  --venom-radius-3xl: 48px;
+  --venom-radius-full: 9999px;
+
+  /* ============================================
+     TRANSITIONS — Organic Movement
+     ============================================ */
+  /* Easing curves — tentacle-like */
+  --venom-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --venom-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --venom-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --venom-ease-fluid: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Durations */
+  --venom-duration-instant: 100ms;
+  --venom-duration-fast: 200ms;
+  --venom-duration-base: 300ms;
+  --venom-duration-slow: 500ms;
+  --venom-duration-slower: 700ms;
+  --venom-duration-epic: 1000ms;
+
+  /* ============================================
+     LAYOUT — Fluid Containers
+     ============================================ */
+  --venom-container-sm: clamp(640px, 90vw, 640px);
+  --venom-container-md: clamp(768px, 92vw, 768px);
+  --venom-container-lg: clamp(1024px, 94vw, 1024px);
+  --venom-container-xl: clamp(1280px, 95vw, 1280px);
+  --venom-container-2xl: clamp(1536px, 96vw, 1536px);
+  --venom-container-full: 100%;
+
+  /* Header */
+  --venom-header-height: clamp(64px, 5vw + 48px, 72px);
+  --venom-header-height-mobile: 64px;
+
+  /* Docs layout */
+  --venom-sidebar-width: clamp(250px, 20vw, 280px);
+  --venom-right-sidebar-width: clamp(240px, 18vw, 280px);
+  --venom-content-max: clamp(650px, 75vw, 800px);
+
+  /* ============================================
+     Z-INDEX — Layer System
+     ============================================ */
+  --venom-z-base: 0;
+  --venom-z-raised: 10;
+  --venom-z-dropdown: 100;
+  --venom-z-sticky: 200;
+  --venom-z-fixed: 300;
+  --venom-z-modal-backdrop: 400;
+  --venom-z-modal: 500;
+  --venom-z-popover: 600;
+  --venom-z-tooltip: 700;
+  --venom-z-max: 9999;
+
+  /* ============================================
+     BREAKPOINTS
+     ============================================ */
+  --venom-bp-xs: 375px;
+  --venom-bp-sm: 640px;
+  --venom-bp-md: 768px;
+  --venom-bp-lg: 1024px;
+  --venom-bp-xl: 1280px;
+  --venom-bp-2xl: 1536px;
+
+  /* ============================================
+     COMPONENT SPECIFIC — Fluid Sizing
+     ============================================ */
+  /* Buttons */
+  --venom-btn-padding-sm: clamp(0.4rem 0.8rem, 0.5rem 1rem, 0.5rem 1rem);
+  --venom-btn-padding-md: clamp(0.6rem 1.2rem, 0.75rem 1.5rem, 0.75rem 1.5rem);
+  --venom-btn-padding-lg: clamp(0.8rem 1.6rem, 1rem 2rem, 1rem 2rem);
+  --venom-btn-padding-xl: clamp(1rem 2rem, 1.25rem 2.5rem, 1.25rem 2.5rem);
+
+  /* Cards */
+  --venom-card-padding-sm: clamp(0.8rem, 0.75rem + 0.25vw, 1rem);
+  --venom-card-padding-md: clamp(1.2rem, 1rem + 1vw, 1.5rem);
+  --venom-card-padding-lg: clamp(1.6rem, 1.5rem + 0.5vw, 2rem);
+  --venom-card-padding-xl: clamp(2rem, 1.75rem + 1.25vw, 2.5rem);
+
+  /* Code blocks */
+  --venom-code-padding: clamp(1rem, 0.875rem + 0.625vw, 1.25rem);
+  --venom-code-radius: 12px;
+
+  /* Inputs */
+  --venom-input-padding: clamp(0.75rem 0.875rem, 0.875rem 1rem, 0.875rem 1rem);
+  --venom-input-radius: 12px;
+}
+
+/* ============================================
+   MOBILE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    /* Smaller spacing on mobile */
+    --venom-space-4: 1rem;
+    --venom-space-5: 1.25rem;
+    --venom-space-6: 1.5rem;
+    --venom-space-8: 2rem;
+    --venom-space-10: 2.5rem;
+    --venom-space-12: 3rem;
+
+    /* Smaller text on mobile */
+    --venom-text-xl: 1.25rem;
+    --venom-text-2xl: 1.5rem;
+    --venom-text-3xl: 1.875rem;
+    --venom-text-4xl: 2.25rem;
+    --venom-text-5xl: 3rem;
+    --venom-text-6xl: 3.75rem;
+
+    /* Full width content on mobile */
+    --venom-content-max: 100%;
+    --venom-sidebar-width: 0;
+    --venom-right-sidebar-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    /* Even smaller for very small screens */
+    --venom-space-4: 0.875rem;
+    --venom-space-5: 1rem;
+    --venom-space-6: 1.25rem;
+    --venom-space-8: 1.5rem;
+    --venom-space-10: 2rem;
+    --venom-space-12: 2.5rem;
+
+    --venom-text-xl: 1.125rem;
+    --venom-text-2xl: 1.25rem;
+    --venom-text-3xl: 1.5rem;
+    --venom-text-4xl: 1.75rem;
+    --venom-text-5xl: 2.25rem;
+  }
+}
+
+/* ============================================
+   DARK MODE PREFERENCE
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST
+   ============================================ */
+@media (prefers-contrast: high) {
+  :root {
+    --venom-coral: #FF3333;
+    --venom-text-primary: #FFFFFF;
+    --venom-text-secondary: #E8E8E8;
+    --venom-border-default: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --venom-duration-base: 0.01ms;
+    --venom-duration-slow: 0.01ms;
+  }
+}
