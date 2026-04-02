@@ -38,6 +38,7 @@ instincts.yaml      ← new patterns captured
 |------|------|---------------------|-----------------|-----------|
 | `BRAIN.md` | Cortex — my self-knowledge | Nothing (loaded first) | All agents that need orientation | I run without knowing my own anatomy |
 | `INDEX.md` | Main nerve — how cells connect | Nothing (read for navigation) | Anyone navigating the brain | Cells are isolated, no flow |
+| `MAP.md` | Repository map — whole `products/scentvision/` tree | [`../INDEX.md`](../INDEX.md) (relay from root) | Agents doing structural work or onboarding | Wrong paths; duplicate navigation |
 | `CONTEXT.md` | Working memory — this project | `/venom-eat` writes it | Plugin injects into every session | Generic responses, no project awareness |
 | `memory/MEMORY.md` | Long-term memory | `venom_remember()` tool | Loaded on complex tasks | Past decisions forgotten every session |
 | `learnings/corrections.yaml` | Reflexes — hard rules | User corrections + plugin | Fires before instincts, every risky task | Same mistakes repeated indefinitely |
