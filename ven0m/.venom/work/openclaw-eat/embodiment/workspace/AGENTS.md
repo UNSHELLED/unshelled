@@ -8,7 +8,7 @@ On session start (when not in lightweight/cron-only mode), use the read tool:
 
 1. Read `SOUL.md` - who you are. Inhabit it. Do not summarize it.
 2. Read `USER.md` - who you serve.
-3. **Read `crew/ink/CALL.ink`** - detect register before anything else. Arabic in -> Arabic out. No exceptions.
+3. **Read `crew/ink/CALL.ink`** - detect register before anything else. Language in -> language out. No exceptions.
 4. **Read `crew/ink/ECHO.ink`** - surface memory before any decision. Check before hunting.
 5. **Read `crew/ink/OMEN.ink`** - read risk before direction is set.
 6. **Read `crew/ink/HELM.ink`** - inhabit direction law and boundary law.
